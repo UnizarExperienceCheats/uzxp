@@ -1,0 +1,16 @@
+a W {i} {}
+b W { } {} style=dashed
+c W {j} {}
+
+a H
+a b SWAP
+b Z c
+a b SWAP
+a H
+
+=
+
+
+a b SWAP
++b  c
+a b SWAP

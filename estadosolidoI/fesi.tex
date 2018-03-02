@@ -1,0 +1,113 @@
+\documentclass[a4paper,11pt]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{calrsfs}
+\usepackage[Bjornstrup]{fncychap}
+\ChNumVar{\fontsize{76}{80}\usefont{OT1}{pzc}{m}{n}\selectfont}
+\ChTitleVar{\raggedleft\Large\sffamily\bfseries}
+
+
+\usepackage[font={small,it}]{caption}
+\usepackage{wrapfig}
+
+\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
+
+\usepackage{siunitx}
+\DeclareSIUnit\gauss{G}
+
+\usepackage{nicefrac}
+
+\newtheorem{definition}{Definición}
+\newtheorem{theorem}{Teorema}
+\newtheorem{lemma}{Lema}
+
+\newenvironment{boldproof}[1][\proofname]{%
+  \proof[ \textup{\textbf{#1}} ]%
+}{\endproof}
+
+\title{Apuntes de estado sólido I}
+\author{}
+
+\newcommand{\ppfrac}[3]{ \left( \frac{\partial #1}{\partial #2} \right)_{#3}}
+\newcommand{\pfrac}[2]{  \frac{\partial #1}{\partial #2} }
+\newcommand{\myiiint}{\int\!\!\!\!\int\!\!\!\!\int}
+\newcommand{\kb}{k_{\scriptscriptstyle{B}}}
+
+\begin{document}
+
+%\maketitle
+
+
+% COVER ----------------------------------------------------------
+\begin{titlepage}
+	\centering
+	{\bfseries\LARGE ESTADO SÓLIDO I\par}
+	\vspace{0.7cm}
+        \hrule
+	\vspace{1cm}
+	{\scshape\Large Apuntes \par}
+	\vspace{5cm}
+	\includegraphics[width=\textwidth]{cover.jpg}
+	\vfill
+\end{titlepage}
+
+% ---- ----------------------------------------------------------
+
+
+\tableofcontents
+\listoffigures
+
+% NOTES ---------------------------------------------------------
+
+
+% \begin{itemize}
+% \item DONE fix bold greek not showing up
+% \item DONE prettier $k_B  \kb$
+% \item DONE split instead of align
+% \item TOO MUCH WORK properly space differentials
+% \item DONE more diferentiation between figures, proofs etc. and normal text.
+% \item DONE corrected alternative demo of quasifree electrons and other
+%   TODO things
+% \item DONE moved thermal propierties to an appendix
+% \item DONE beautiful cover and chapter headings
+% \item TODO trimmed ending whitespace of the source
+% \item DONE use \ll and \gg for <<,>>
+% \end{itemize}
+
+\vfill
+\vspace{10cm}
+{}
+
+% NOTES ----------------------------------------------
+
+\include{./tex/introduccion}
+\include{./tex/estr_cristalina}
+\include{./tex/fonones}
+\include{./tex/electrones}
+
+\appendix
+\include{tex/appendix}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+
+

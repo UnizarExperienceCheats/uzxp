@@ -1,0 +1,147 @@
+\message{ !name(fesiII.tex)}\documentclass{tufte-book}
+
+\usepackage{luatex85} % For emacs preview-latex
+
+
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\unaccentedoperators
+
+% Packages
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{systeme}
+\usepackage{booktabs}
+\usepackage{cancel}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\DeclareSIUnit\emu{emu}
+\DeclareSIUnit\oersterd{Oe}
+\DeclareSIUnit\gauss{Gs}
+\sisetup{range-phrase={ a }}
+\usepackage{physics}
+\usepackage{nicefrac}
+\usepackage{tikz}
+\usepackage{isotope}
+\usetikzlibrary{babel}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{positioning}
+
+
+\usepackage{lettrine}
+
+
+\usepackage{fancyvrb}
+
+\usepackage[bold-style=ISO]{unicode-math}
+\usepackage{bm}
+\usepackage{cancel}
+\usepackage{blindtext}
+\usepackage{microtype}
+
+\usepackage{todonotes}
+\presetkeys{todonotes}{fancyline}{}
+
+
+% Reset chapter counter in parts
+\makeatletter
+\@addtoreset{chapter}{part}
+\makeatother
+
+
+
+% Colors
+
+\colorlet{SectioningColor}{NavyBlue}
+\colorlet{ExerciseNumberColor}{blue!50!white}
+\colorlet{ExerciseColor}{blue!15!white}
+\definecolor{PlotDefault}{HTML}{64B5CD}
+\definecolor{PlotSecondary}{HTML}{CCB974}
+\definecolor{NiceBlue}{HTML}{64B5CD}
+\definecolor{NiceRed}{HTML}{C44E52}
+
+
+% Fonts and sectioning
+
+% Set up the spacing using fontspec features
+\renewcommand\allcapsspacing[1]{{\addfontfeature{LetterSpace=15}#1}}
+\renewcommand\smallcapsspacing[1]{{\addfontfeature{LetterSpace=10}#1}}
+
+\setmainfont{Linux Libertine}
+\setsansfont{Linux Biolinum}
+\setmonofont{Input Mono Narrow}
+\setmathfont{Libertinus Math}
+\newfontfamily\sansfont{Linux Biolinum}
+\newfontfamily\chaptersfont{Linux Biolinum}
+
+\usepackage[Lenny]{fncychap}
+\ChNameVar{\sansfont\Large}
+\ChTitleVar{\hfill\huge\sansfont\scshape}
+
+\usepackage{titlesec}
+\newfontfamily\sectionsfont[Color=SectioningColor]{Linux Biolinum}
+\titleformat*{\section}{\large\bfseries\scshape\sectionsfont}
+\titleformat*{\subsection}{\large\scshape\sectionsfont}
+
+% Numbered sections?
+\setcounter{secnumdepth}{0}
+
+
+% Math defines
+\usepackage{mathrsfs}
+\newcommand{\Ham}{\mathscr{H}}
+\newcommand{\Hil}{\mathcal{H}}
+
+\newcommand{\oh}{{\nicefrac{1}{2}} }
+\newcommand{\moh}{{\nicefrac{-1}{2}} }
+
+\newcommand{\sub}[1]{_{{\scriptscriptstyle\mathit{#1}}}}
+\newcommand{\kb}{k\sub{B}}
+
+\newcommand{\mb}{μ\sub{B}}
+
+% Others
+\newcommand\orbital[1]{
+  \raisebox{-1.5mm}{
+    \begin{tikzpicture}[square/.style={regular polygon,regular polygon sides=4}]
+      \node[square, draw, inner sep=-0.15mm, minimum size=0.65cm] at (0,0)
+      {\small #1};
+    \end{tikzpicture}
+  }
+}
+\newcommand\orbitalsep{\!\!\!\!\!}
+
+% For the exercises
+\usepackage[most]{tcolorbox}
+\tcbset{
+    frame code={}
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=ExerciseColor,
+    colframe=white,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=0mm,
+    boxsep=5pt,
+    arc=0pt,outer arc=0pt,
+    }
+
+
+\title{Estado sólido II}
+\author{John Doe}
+
+\setcounter{tocdepth}{1}
+\begin{document}
+
+\message{ !name(fesiII.tex) !offset(2115) }
+\begin{equation}
+  \expval{n_k} = \frac{1}{e^{β ℏω} - 1}
+\end{equation}
+\message{ !name(fesiII.tex) !offset(5287) }
+
+\end{document}

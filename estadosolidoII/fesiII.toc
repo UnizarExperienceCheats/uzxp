@@ -1,0 +1,70 @@
+\select@language {spanish}
+\contentsline {section}{Meta stuff}{5}{section*.1}
+\contentsline {subsection}{Bibliografía}{5}{subsection*.2}
+\contentsline {subsection}{Estadística}{5}{subsection*.3}
+\contentsline {part}{I\hspace {1em}Teoría}{7}{part.1}
+\contentsline {chapter}{\numberline {1}Dieléctricos y ferroeléctricos}{9}{chapter.1.1}
+\contentsline {section}{Campo eléctrico microscópico}{9}{section*.4}
+\contentsline {section}{Campo eléctrico local en un átomo}{10}{section*.5}
+\contentsline {section}{Constante dieléctrica y polarizabilidad}{11}{section*.6}
+\contentsline {section}{Origen de la polarizabilidad y respuesta a campo variable}{11}{section*.7}
+\contentsline {subsection}{Polarizabilidad electrónica}{11}{subsection*.8}
+\contentsline {subsection}{Polarizabilidad orientacional}{12}{subsection*.9}
+\contentsline {subsection}{Polarizabilidad iónica}{13}{subsection*.10}
+\contentsline {section}{Piezoelectricidad}{13}{section*.11}
+\contentsline {section}{Ferroelectricidad}{13}{section*.12}
+\contentsline {subsection}{Ley de Curie-Weiss}{14}{subsection*.13}
+\contentsline {subsection}{Dominios ferroeléctricos}{14}{subsection*.14}
+\contentsline {section}{Transición ferroeléctrica}{15}{section*.15}
+\contentsline {subsection}{\textit {Polarization Catastrophe}: enfoque macroscópico}{15}{subsection*.16}
+\contentsline {subsection}{\textit {Phonon mode softening}: enfoque microscópico}{15}{subsection*.17}
+\contentsline {section}{Teoría de Landau de las transiciones de fase}{16}{section*.18}
+\contentsline {chapter}{\numberline {2}Sólidos magnéticos}{17}{chapter.1.2}
+\contentsline {section}{Clasificación}{17}{section*.19}
+\contentsline {section}{Diamagnetismo}{18}{section*.20}
+\contentsline {subsection}{Teoría clásica}{18}{subsection*.21}
+\contentsline {subsection}{Teoría cuántica}{19}{subsection*.22}
+\contentsline {section}{Paramagnetismo}{20}{section*.23}
+\contentsline {subsection}{Teoría clásica}{20}{subsection*.24}
+\contentsline {subsection}{Teoría cuántica}{20}{subsection*.25}
+\contentsline {subsection}{Quenching orbital}{21}{subsection*.26}
+\contentsline {subsection}{Paramagnetismo de Van-Vleck}{23}{subsection*.27}
+\contentsline {subsection}{Contribución electrónica}{24}{subsection*.28}
+\contentsline {section}{Ferromagnetismo}{25}{section*.29}
+\contentsline {section}{Interacción de canje}{26}{section*.30}
+\contentsline {subsection}{Hamiltoniano de Heisenberg}{27}{subsection*.31}
+\contentsline {section}{Teoría de campo medio}{27}{section*.32}
+\contentsline {subsection}{Hamiltoniano de Heisenberg para campo medio}{29}{subsection*.33}
+\contentsline {section}{Teoría de Landau de transiciones de fase}{29}{section*.34}
+\contentsline {section}{Criterio de Stoner}{30}{section*.35}
+\contentsline {section}{Spin waves}{31}{section*.36}
+\contentsline {subsection}{Excitaciones térmicas de magnones}{33}{subsection*.37}
+\contentsline {chapter}{\numberline {3}Interacciones ferromagnéticas}{35}{chapter.1.3}
+\contentsline {section}{Interacciones magnéticas en metales}{35}{section*.38}
+\contentsline {subsection}{Canje directo}{35}{subsection*.39}
+\contentsline {subsection}{Canje indirecto}{36}{subsection*.40}
+\contentsline {section}{Interacciones magnéticas en aislantes}{36}{section*.41}
+\contentsline {subsection}{Supercanje}{36}{subsection*.42}
+\contentsline {subsection}{Doble canje}{37}{subsection*.43}
+\contentsline {section}{Antiferromagnetismo y ferrimagnetismo}{39}{section*.44}
+\contentsline {section}{Dominios ferromagnéticos}{40}{section*.45}
+\contentsline {subsection}{Energía de anisotropía}{40}{subsection*.46}
+\contentsline {subsection}{Paredes de dominio}{40}{subsection*.47}
+\contentsline {chapter}{\numberline {4}Superconductividad}{43}{chapter.1.4}
+\contentsline {section}{Efecto Meissner}{43}{section*.48}
+\contentsline {section}{Gap superconductor}{44}{section*.49}
+\contentsline {section}{Ecuación de London}{45}{section*.50}
+\contentsline {section}{Aspectos básicos de la teoría BCS}{46}{section*.51}
+\contentsline {subsection}{Longitudes características}{47}{subsection*.52}
+\contentsline {section}{Superconductores tipo II}{48}{section*.53}
+\contentsline {subsection}{Cuantización del flujo}{48}{subsection*.54}
+\contentsline {subsection}{Vórtices}{49}{subsection*.55}
+\contentsline {section}{Reflexiones de Andreev}{49}{section*.56}
+\contentsline {chapter}{\numberline {5}Nanociencia}{51}{chapter.1.5}
+\contentsline {section}{Nanopartículas}{51}{section*.57}
+\contentsline {section}{Espectroscopía}{52}{section*.58}
+\contentsline {section}{Nanopartículas}{52}{section*.59}
+\contentsline {subsection}{Magnetic hyperthermia}{53}{subsection*.60}
+\contentsline {section}{Thin films}{53}{section*.61}
+\contentsline {part}{II\hspace {1em}Ejercicios}{55}{part.2}
+\contentsfinish 

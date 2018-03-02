@@ -1,0 +1,117 @@
+\select@language {spanish}
+\contentsline {part}{I\hspace {1em}Introducción}{13}{part.1}
+\contentsline {chapter}{\numberline {1}Hamiltoniano del sólido}{15}{chapter.1}
+\contentsline {chapter}{\numberline {2}Aproximación de Born-Oppenheimer}{17}{chapter.2}
+\contentsline {part}{II\hspace {1em}Estructura cristalina}{21}{part.2}
+\contentsline {chapter}{\numberline {3}Redes de Bravais}{23}{chapter.3}
+\contentsline {section}{\numberline {3.1}Redes cúbicas}{24}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Simple Cubic}{25}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Body-Centered Cubic}{25}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Face-Centered Cubic}{26}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Clasificación de estructuras}{28}{subsection.3.1.4}
+\contentsline {section}{\numberline {3.2}La red recíproca}{28}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Vectores primitivos de la red recíproca}{28}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Funciones periódicas}{30}{section.3.3}
+\contentsline {section}{\numberline {3.4}Planos cristalinos}{31}{section.3.4}
+\contentsline {section}{\numberline {3.5}Índices de Miller}{31}{section.3.5}
+\contentsline {paragraph}{Ejemplo de cálculo}{32}{section*.14}
+\contentsline {chapter}{\numberline {4}Determinación de estructuras}{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}Teoría mecanocuántica del scattering}{33}{section.4.1}
+\contentsline {section}{\numberline {4.2}Formulaciones clásicas}{34}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Bragg}{34}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Laue}{35}{subsection.4.2.2}
+\contentsline {subsubsection}{Esfera de Ewald}{37}{section*.18}
+\contentsline {subsection}{\numberline {4.2.3}Factor de estructura}{37}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Factor de forma}{38}{subsection.4.2.4}
+\contentsline {subsubsection}{Rayos X}{39}{section*.20}
+\contentsline {subsubsection}{Neutrones}{39}{section*.21}
+\contentsline {subsubsection}{Extinciones sistemáticas}{39}{section*.23}
+\contentsline {section}{\numberline {4.3}Determinación de estructuras}{40}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Geometría de Laue}{40}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Método del cristal giratorio}{42}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Método del polvo (Debye-Scherrer)}{42}{subsection.4.3.3}
+\contentsline {section}{\numberline {4.4}Cristales finitos y efectos térmicos}{43}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Fórmula de Scherrer}{44}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Efectos térmicos}{45}{subsection.4.4.2}
+\contentsline {chapter}{\numberline {5}Cohesión en cristales}{47}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introducción}{47}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Justificación de los exponentes del potencial}{49}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}Cristales moleculares}{50}{section.5.2}
+\contentsline {section}{\numberline {5.3}Cristales iónicos}{51}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Energía de Madelung}{52}{subsection.5.3.1}
+\contentsline {section}{\numberline {5.4}Cristales covalentes}{52}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}H\textsubscript {2} toy model}{53}{subsection.5.4.1}
+\contentsline {section}{\numberline {5.5}Enlace metálico}{53}{section.5.5}
+\contentsline {part}{III\hspace {1em}Fonones}{55}{part.3}
+\contentsline {chapter}{\numberline {6}Dinámica de red}{57}{chapter.6}
+\contentsline {section}{\numberline {6.1}Análisis de la relación de dispersión}{57}{section.6.1}
+\contentsline {section}{\numberline {6.2}Cadena diatómica}{58}{section.6.2}
+\contentsline {section}{\numberline {6.3}Caso 3D}{59}{section.6.3}
+\contentsline {section}{\numberline {6.4}Modelo cuántico}{61}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Cadena lineal monoatómica}{61}{subsection.6.4.1}
+\contentsline {section}{\numberline {6.5}Técnicas experimentales}{64}{section.6.5}
+\contentsline {chapter}{\numberline {7}Propiedades térmicas de la red}{67}{chapter.7}
+\contentsline {section}{\numberline {7.1}Calor específico de la red}{68}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Modelo de Einstein}{69}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Modelo de Debye}{70}{subsection.7.1.2}
+\contentsline {section}{\numberline {7.2}Dilatación térmica}{71}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Estadística clásica}{72}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Modelo cuántico (Teoría de Grüneisen)}{72}{subsection.7.2.2}
+\contentsline {section}{\numberline {7.3}Conductividad térmica}{73}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Teoría cinética elemental}{73}{subsection.7.3.1}
+\contentsline {section}{\numberline {7.4}Ecuación de fonones de Boltzmann}{75}{section.7.4}
+\contentsline {section}{\numberline {7.5}Interacción fonón-fonón}{76}{section.7.5}
+\contentsline {section}{\numberline {7.6}Dependencia térmica de $\boldsymbol {\kappa }$}{77}{section.7.6}
+\contentsline {part}{IV\hspace {1em}Electrones, transporte electrónico}{79}{part.4}
+\contentsline {chapter}{\numberline {8}Modelo de Drude}{81}{chapter.8}
+\contentsline {section}{\numberline {8.1}Conducción eléctrica}{82}{section.8.1}
+\contentsline {section}{\numberline {8.2}Momento electrónico}{82}{section.8.2}
+\contentsline {section}{\numberline {8.3}Efecto Hall, magnetoresistencia}{83}{section.8.3}
+\contentsline {section}{\numberline {8.4}Conductividad AC}{84}{section.8.4}
+\contentsline {section}{\numberline {8.5}Propiedades térmicas}{85}{section.8.5}
+\contentsline {section}{\numberline {8.6}Efecto Seebeck}{85}{section.8.6}
+\contentsline {chapter}{\numberline {9}Modelo de Sommerfield}{87}{chapter.9}
+\contentsline {section}{\numberline {9.1}Calor específico}{88}{section.9.1}
+\contentsline {subsection}{\numberline {9.1.1}Cálculo preciso}{90}{subsection.9.1.1}
+\contentsline {section}{\numberline {9.2}Propiedades del gas de Fermi}{90}{section.9.2}
+\contentsline {subsection}{\numberline {9.2.1}Conductividad eléctrica}{92}{subsection.9.2.1}
+\contentsline {subsubsection}{Altas temperaturas}{93}{section*.62}
+\contentsline {subsubsection}{Bajas temperaturas}{93}{section*.63}
+\contentsline {paragraph}{Procesos U}{95}{section*.65}
+\contentsline {subsubsection}{Temperaturas prácticamente nulas}{95}{section*.68}
+\contentsline {subsection}{\numberline {9.2.2}Conductividad térmica}{95}{subsection.9.2.2}
+\contentsline {subsubsection}{Dependencia térmica de $\kappa $}{97}{section*.69}
+\contentsline {subsubsection}{Ley de Wiedemann-Franz en zona intermedia}{97}{section*.70}
+\contentsline {chapter}{\numberline {10}Electrones en potencial periódico}{99}{chapter.10}
+\contentsline {section}{\numberline {10.1}Teorema de Bloch}{99}{section.10.1}
+\contentsline {section}{\numberline {10.2}Consecuencias del teorema de Bloch}{101}{section.10.2}
+\contentsline {section}{\numberline {10.3}Modelo 1D}{103}{section.10.3}
+\contentsline {section}{\numberline {10.4}Ecuación central}{104}{section.10.4}
+\contentsline {section}{\numberline {10.5}Aproximación de red vacía}{106}{section.10.5}
+\contentsline {section}{\numberline {10.6}Aproximación de electrones cuasilibres}{107}{section.10.6}
+\contentsline {subsection}{\numberline {10.6.1}Demostración alternativa}{107}{subsection.10.6.1}
+\contentsline {subsection}{\numberline {10.6.2}Comportamiento de la energía en la frontera}{109}{subsection.10.6.2}
+\contentsline {section}{\numberline {10.7}Tight binding}{111}{section.10.7}
+\contentsline {subsection}{\numberline {10.7.1}Aplicación en electrones s}{112}{subsection.10.7.1}
+\contentsline {subsubsection}{Ejemplo: Estructura SC}{114}{section*.80}
+\contentsline {section}{\numberline {10.8}Bandas en metales, semiconductores y aislantes}{114}{section.10.8}
+\contentsline {subsection}{\numberline {10.8.1}Ejemplos de aplicación de los modelos}{115}{subsection.10.8.1}
+\contentsline {paragraph}{Aluminio}{115}{section*.83}
+\contentsline {paragraph}{Cobre}{116}{section*.85}
+\contentsline {paragraph}{Germanio}{116}{section*.87}
+\contentsline {chapter}{\numberline {11}Dinámica semiclásica de electrones Bloch}{119}{chapter.11}
+\contentsline {section}{\numberline {11.1}Teorema de la masa efectiva}{119}{section.11.1}
+\contentsline {subsection}{\numberline {11.1.1}Caso concreto: frontera de PZB}{121}{subsection.11.1.1}
+\contentsline {section}{\numberline {11.2}Aproximación semiclásica}{122}{section.11.2}
+\contentsline {section}{\numberline {11.3}Campos eléctricos constantes}{123}{section.11.3}
+\contentsline {subsection}{\numberline {11.3.1}Huecos}{124}{subsection.11.3.1}
+\contentsline {section}{\numberline {11.4}Movimiento en campos magnéticos}{125}{section.11.4}
+\contentsline {section}{\numberline {11.5}Niveles de Landau}{127}{section.11.5}
+\contentsline {subsection}{\numberline {11.5.1}Degeneración de los anillos}{129}{subsection.11.5.1}
+\contentsline {subsection}{\numberline {11.5.2}Tratamiento general}{130}{subsection.11.5.2}
+\contentsline {subsection}{\numberline {11.5.3}Oscilaciones}{131}{subsection.11.5.3}
+\contentsline {chapter}{\numberline {A}Suma de red}{135}{chapter.1}
+\contentsline {chapter}{\numberline {B}Dependencia térmica de $\boldsymbol {\kappa }$}{137}{chapter.2}
+\contentsline {section}{\numberline {B.1}Calor específico}{137}{section.2.1}
+\contentsline {subsection}{\numberline {B.1.1}Contribución de $c_v^\text {el.}$}{137}{subsection.2.1.1}
+\contentsline {section}{\numberline {B.2}Dispersión, tiempo libre medio}{138}{section.2.2}

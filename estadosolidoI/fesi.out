@@ -1,0 +1,101 @@
+\BOOKMARK [-1][-]{part.1}{I Introducción}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Hamiltoniano del sólido}{part.1}% 2
+\BOOKMARK [0][-]{chapter.2}{Aproximación de Born-Oppenheimer}{part.1}% 3
+\BOOKMARK [-1][-]{part.2}{II Estructura cristalina}{}% 4
+\BOOKMARK [0][-]{chapter.3}{Redes de Bravais}{part.2}% 5
+\BOOKMARK [1][-]{section.3.1}{Redes cúbicas}{chapter.3}% 6
+\BOOKMARK [2][-]{subsection.3.1.1}{Simple Cubic}{section.3.1}% 7
+\BOOKMARK [2][-]{subsection.3.1.2}{Body-Centered Cubic}{section.3.1}% 8
+\BOOKMARK [2][-]{subsection.3.1.3}{Face-Centered Cubic}{section.3.1}% 9
+\BOOKMARK [2][-]{subsection.3.1.4}{Clasificación de estructuras}{section.3.1}% 10
+\BOOKMARK [1][-]{section.3.2}{La red recíproca}{chapter.3}% 11
+\BOOKMARK [2][-]{subsection.3.2.1}{Vectores primitivos de la red recíproca}{section.3.2}% 12
+\BOOKMARK [1][-]{section.3.3}{Funciones periódicas}{chapter.3}% 13
+\BOOKMARK [1][-]{section.3.4}{Planos cristalinos}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.5}{Índices de Miller}{chapter.3}% 15
+\BOOKMARK [0][-]{chapter.4}{Determinación de estructuras}{part.2}% 16
+\BOOKMARK [1][-]{section.4.1}{Teoría mecanocuántica del scattering}{chapter.4}% 17
+\BOOKMARK [1][-]{section.4.2}{Formulaciones clásicas}{chapter.4}% 18
+\BOOKMARK [2][-]{subsection.4.2.1}{Bragg}{section.4.2}% 19
+\BOOKMARK [2][-]{subsection.4.2.2}{Laue}{section.4.2}% 20
+\BOOKMARK [2][-]{subsection.4.2.3}{Factor de estructura}{section.4.2}% 21
+\BOOKMARK [2][-]{subsection.4.2.4}{Factor de forma}{section.4.2}% 22
+\BOOKMARK [1][-]{section.4.3}{Determinación de estructuras}{chapter.4}% 23
+\BOOKMARK [2][-]{subsection.4.3.1}{Geometría de Laue}{section.4.3}% 24
+\BOOKMARK [2][-]{subsection.4.3.2}{Método del cristal giratorio}{section.4.3}% 25
+\BOOKMARK [2][-]{subsection.4.3.3}{Método del polvo \(Debye-Scherrer\)}{section.4.3}% 26
+\BOOKMARK [1][-]{section.4.4}{Cristales finitos y efectos térmicos}{chapter.4}% 27
+\BOOKMARK [2][-]{subsection.4.4.1}{Fórmula de Scherrer}{section.4.4}% 28
+\BOOKMARK [2][-]{subsection.4.4.2}{Efectos térmicos}{section.4.4}% 29
+\BOOKMARK [0][-]{chapter.5}{Cohesión en cristales}{part.2}% 30
+\BOOKMARK [1][-]{section.5.1}{Introducción}{chapter.5}% 31
+\BOOKMARK [2][-]{subsection.5.1.1}{Justificación de los exponentes del potencial}{section.5.1}% 32
+\BOOKMARK [1][-]{section.5.2}{Cristales moleculares}{chapter.5}% 33
+\BOOKMARK [1][-]{section.5.3}{Cristales iónicos}{chapter.5}% 34
+\BOOKMARK [2][-]{subsection.5.3.1}{Energía de Madelung}{section.5.3}% 35
+\BOOKMARK [1][-]{section.5.4}{Cristales covalentes}{chapter.5}% 36
+\BOOKMARK [2][-]{subsection.5.4.1}{H2 toy model}{section.5.4}% 37
+\BOOKMARK [1][-]{section.5.5}{Enlace metálico}{chapter.5}% 38
+\BOOKMARK [-1][-]{part.3}{III Fonones}{}% 39
+\BOOKMARK [0][-]{chapter.6}{Dinámica de red}{part.3}% 40
+\BOOKMARK [1][-]{section.6.1}{Análisis de la relación de dispersión}{chapter.6}% 41
+\BOOKMARK [1][-]{section.6.2}{Cadena diatómica}{chapter.6}% 42
+\BOOKMARK [1][-]{section.6.3}{Caso 3D}{chapter.6}% 43
+\BOOKMARK [1][-]{section.6.4}{Modelo cuántico}{chapter.6}% 44
+\BOOKMARK [2][-]{subsection.6.4.1}{Cadena lineal monoatómica}{section.6.4}% 45
+\BOOKMARK [1][-]{section.6.5}{Técnicas experimentales}{chapter.6}% 46
+\BOOKMARK [0][-]{chapter.7}{Propiedades térmicas de la red}{part.3}% 47
+\BOOKMARK [1][-]{section.7.1}{Calor específico de la red}{chapter.7}% 48
+\BOOKMARK [2][-]{subsection.7.1.1}{Modelo de Einstein}{section.7.1}% 49
+\BOOKMARK [2][-]{subsection.7.1.2}{Modelo de Debye}{section.7.1}% 50
+\BOOKMARK [1][-]{section.7.2}{Dilatación térmica}{chapter.7}% 51
+\BOOKMARK [2][-]{subsection.7.2.1}{Estadística clásica}{section.7.2}% 52
+\BOOKMARK [2][-]{subsection.7.2.2}{Modelo cuántico \(Teoría de Grüneisen\)}{section.7.2}% 53
+\BOOKMARK [1][-]{section.7.3}{Conductividad térmica}{chapter.7}% 54
+\BOOKMARK [2][-]{subsection.7.3.1}{Teoría cinética elemental}{section.7.3}% 55
+\BOOKMARK [1][-]{section.7.4}{Ecuación de fonones de Boltzmann}{chapter.7}% 56
+\BOOKMARK [1][-]{section.7.5}{Interacción fonón-fonón}{chapter.7}% 57
+\BOOKMARK [1][-]{section.7.6}{Dependencia térmica de bold0mu mumu }{chapter.7}% 58
+\BOOKMARK [-1][-]{part.4}{IV Electrones, transporte electrónico}{}% 59
+\BOOKMARK [0][-]{chapter.8}{Modelo de Drude}{part.4}% 60
+\BOOKMARK [1][-]{section.8.1}{Conducción eléctrica}{chapter.8}% 61
+\BOOKMARK [1][-]{section.8.2}{Momento electrónico}{chapter.8}% 62
+\BOOKMARK [1][-]{section.8.3}{Efecto Hall, magnetoresistencia}{chapter.8}% 63
+\BOOKMARK [1][-]{section.8.4}{Conductividad AC}{chapter.8}% 64
+\BOOKMARK [1][-]{section.8.5}{Propiedades térmicas}{chapter.8}% 65
+\BOOKMARK [1][-]{section.8.6}{Efecto Seebeck}{chapter.8}% 66
+\BOOKMARK [0][-]{chapter.9}{Modelo de Sommerfield}{part.4}% 67
+\BOOKMARK [1][-]{section.9.1}{Calor específico}{chapter.9}% 68
+\BOOKMARK [2][-]{subsection.9.1.1}{Cálculo preciso}{section.9.1}% 69
+\BOOKMARK [1][-]{section.9.2}{Propiedades del gas de Fermi}{chapter.9}% 70
+\BOOKMARK [2][-]{subsection.9.2.1}{Conductividad eléctrica}{section.9.2}% 71
+\BOOKMARK [2][-]{subsection.9.2.2}{Conductividad térmica}{section.9.2}% 72
+\BOOKMARK [0][-]{chapter.10}{Electrones en potencial periódico}{part.4}% 73
+\BOOKMARK [1][-]{section.10.1}{Teorema de Bloch}{chapter.10}% 74
+\BOOKMARK [1][-]{section.10.2}{Consecuencias del teorema de Bloch}{chapter.10}% 75
+\BOOKMARK [1][-]{section.10.3}{Modelo 1D}{chapter.10}% 76
+\BOOKMARK [1][-]{section.10.4}{Ecuación central}{chapter.10}% 77
+\BOOKMARK [1][-]{section.10.5}{Aproximación de red vacía}{chapter.10}% 78
+\BOOKMARK [1][-]{section.10.6}{Aproximación de electrones cuasilibres}{chapter.10}% 79
+\BOOKMARK [2][-]{subsection.10.6.1}{Demostración alternativa}{section.10.6}% 80
+\BOOKMARK [2][-]{subsection.10.6.2}{Comportamiento de la energía en la frontera}{section.10.6}% 81
+\BOOKMARK [1][-]{section.10.7}{Tight binding}{chapter.10}% 82
+\BOOKMARK [2][-]{subsection.10.7.1}{Aplicación en electrones s}{section.10.7}% 83
+\BOOKMARK [1][-]{section.10.8}{Bandas en metales, semiconductores y aislantes}{chapter.10}% 84
+\BOOKMARK [2][-]{subsection.10.8.1}{Ejemplos de aplicación de los modelos}{section.10.8}% 85
+\BOOKMARK [0][-]{chapter.11}{Dinámica semiclásica de electrones Bloch}{part.4}% 86
+\BOOKMARK [1][-]{section.11.1}{Teorema de la masa efectiva}{chapter.11}% 87
+\BOOKMARK [2][-]{subsection.11.1.1}{Caso concreto: frontera de PZB}{section.11.1}% 88
+\BOOKMARK [1][-]{section.11.2}{Aproximación semiclásica}{chapter.11}% 89
+\BOOKMARK [1][-]{section.11.3}{Campos eléctricos constantes}{chapter.11}% 90
+\BOOKMARK [2][-]{subsection.11.3.1}{Huecos}{section.11.3}% 91
+\BOOKMARK [1][-]{section.11.4}{Movimiento en campos magnéticos}{chapter.11}% 92
+\BOOKMARK [1][-]{section.11.5}{Niveles de Landau}{chapter.11}% 93
+\BOOKMARK [2][-]{subsection.11.5.1}{Degeneración de los anillos}{section.11.5}% 94
+\BOOKMARK [2][-]{subsection.11.5.2}{Tratamiento general}{section.11.5}% 95
+\BOOKMARK [2][-]{subsection.11.5.3}{Oscilaciones}{section.11.5}% 96
+\BOOKMARK [0][-]{chapter.1}{Suma de red}{part.4}% 97
+\BOOKMARK [0][-]{chapter.2}{Dependencia térmica de bold0mu mumu }{part.4}% 98
+\BOOKMARK [1][-]{section.2.1}{Calor específico}{chapter.2}% 99
+\BOOKMARK [2][-]{subsection.2.1.1}{Contribución de cvel.}{section.2.1}% 100
+\BOOKMARK [1][-]{section.2.2}{Dispersión, tiempo libre medio}{chapter.2}% 101

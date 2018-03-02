@@ -1,0 +1,171 @@
+\part{Introducción}
+
+\chapter{Hamiltoniano del sólido}
+\label{sec:ham}
+En el estado sólido la escala de energías ronda (utilizando
+$\bar E \sim K_B T$) las decenas de meV, en condiciones
+razonables como $T \in (300,1000)K$ .
+
+Para calcular el Hamiltoniano, analizamos las distintas interacciones
+existentes: ion-ion, electrón-electrón e ion-electrón. Son todas
+principalmente culombianas. Tenemos por tanto
+$\mathcal{H} =
+\mathcal{H}_{ion}+\mathcal{H}_{el}+\mathcal{H}_{el-ion}$.
+\begin{align}
+  \mathcal{H}_{ion} &= \sum_j \frac{P_j^2}{2M_j}+ \frac{1}{2} \sum_{j \neq j'} \frac{1}{4\pi\epsilon_0}\frac{Z_j Z_{j'}e^2}{\vert \mathbf{R}_j - \mathbf{R}_{j'} \vert} \\
+  \mathcal{H}_{el} &= \sum_i \frac{p_i^2}{2m}+ \frac{1}{2} \sum_{i \neq i'} \frac{1}{4\pi\epsilon_0}\frac{e^2}{\vert \mathbf{r}_i - \mathbf{r}_{i'} \vert} \\
+  \mathcal{H}_{ion} &= - \sum_{i,i'} \frac{1}{4\pi\epsilon_0}\frac{Z_je^2}{\vert \mathbf{r}_i - \mathbf{R}_{j} \vert}
+\end{align}
+
+El estado ordenado de nuestro sistema permite sustituir las posiciones
+$\mathbf{R}_j$ de los iones por posiciones indexadas por enteros.
+\begin{equation}
+  \mathbf{R}_j \rightarrow \mathbf{R}_n =
+  \underbrace{\mathbf{R}_n^0}_{\text{equilibrum}} +
+  \underbrace{\mathbf{u}_n}_{\mathrlap{\text{small perturb.}}} 
+\end{equation}
+Los potenciales quedan como
+\begin{equation}
+  V(\mathbf{R}_j-\mathbf{R}_j') =   V(\mathbf{R}_n-\mathbf{R}_m') =   V(\mathbf{R}_n^0-\mathbf{R}_m^0) + \delta   V(\mathbf{R}_n-\mathbf{R}_m)
+\end{equation}
+y con el mismo procedimiento
+\begin{equation}
+  v(\mathbf{r}_i-\mathbf{R}_n)  =   v(\mathbf{r}_i^0-\mathbf{R}_n^0) + \delta   v(\mathbf{r}_i-\mathbf{R}_n)
+\end{equation}
+Con los nuevos potenciales, dejamos el Hamiltoniano como 
+\begin{align}
+  \label{eq:finalH}
+  \mathcal{H} &= \sum_n \frac{P_n^2}{2M_n}+\frac{1}{2} \sum_{n \neq m}
+                \delta   V(\mathbf{R}_n-\mathbf{R}_m) +  \tag{Lattice dinamics}  \\
+              &+ \sum_i \frac{p_i^2}{2m}+\frac{1}{2} \sum_{i \neq i'} \frac{1}{4\pi\epsilon_0}\frac{e^2}{\vert \mathbf{r}_i - \mathbf{r}_{i'} \vert} + \sum_{i,n} v(\mathbf{r}_i-\mathbf{R}_n^0) + \tag{$e^-,V_{red};\ e^-,e^-$ } \\
+              &+ \frac{1}{2} \sum_{n \neq m} V (\mathbf{R}_n^0 - \mathbf{R}_m^0) + \tag{$E_{cohesion}$}  \\
+              &+ \sum_{i,n} \delta v (\mathbf{r}_i-\mathbf{R}_n) \tag{$e^-,\text{fonon}$}
+\end{align}
+
+Respectivamente, los términos corresponden a: 
+\begin{itemize}
+\item Dinámica de los iones
+\item Electrones en un potencial periódico en la red, junto con la
+  interacción electrón-electrón.
+\item Cohesión del sólido
+\item Interacción de los electrones con la red dinámica, también
+  denotada interacción electrón-fonón
+\end{itemize}
+
+\chapter{Aproximación de Born-Oppenheimer}
+\label{sec:bornopp}
+Tratamos de resolver el sistema:
+\begin{equation}
+\label{eq:htot} 
+ \begin{cases}
+    &\mathcal{H} = \mathcal{H}_{ion} + \mathcal{H}_{el} + \mathcal{H}_{ion-el} \\
+    &\mathcal{H}\Psi = E \Psi
+  \end{cases}
+\end{equation}
+Hay muchísimas coordenadas, ya que
+$\Psi = \Psi(\{\mathbf{r_i}\},\{\mathbf{R}_n\})$. Pero conocemos que
+la masa del electrón es mucho menor que la del protón (por un factor
+$10^4$), lo cual me permite suponer que la dinámica de los electrones
+responde inmediatamente a la dinámica de los protones. En vista de
+ello, realizamos un \emph{educated guess}:
+
+\begin{equation}
+  \begin{split}
+    &\Psi \sim \psi(\{ \mathbf{r}_i \}, \{ \mathbf{R}_n\})\phi( \{ \mathbf{R}_n\}) \stackrel{\text{not.}}{\equiv} \psi(\{ \mathbf{r} \}, \{ \mathbf{R}\})\phi( \{ \mathbf{R}\})\\
+    & (\mathcal{H}_{el}+\mathcal{H}_{el-ion})\psi(\mathbf{r},\mathbf{R})=\varepsilon _{el}(\mathbf{R})\psi(\mathbf{r},\mathbf{R})  
+  \end{split}
+\end{equation}
+
+Volvemos al Hamiltoniano total de la ec. \ref{eq:htot}, y con la
+hipótesis propuesta tratamos de simplificarlo:
+
+\begin{equation}
+  (\mathcal{H}_{ion}+\mathcal{H}_{el}+\mathcal{H}_{ion-el})\psi\phi = \mathcal{H}_{ion}[\psi\phi]+ 
+  \underbrace{\varepsilon _{el} \psi}_{\mathclap{(\mathcal{H_{\text{el}} + \mathcal{H}_{\text{el-ion}}})\psi}}\cdot \phi=\cdots
+\end{equation}
+La ecuación sería muy simple si pudiese realizar lo siguiente:
+
+\begin{equation}
+\label{eq:ansatz}
+  \cdots=\psi \underbrace{\mathcal{H}_{ion} \phi}_{E_{\text{ion}}\phi} + \varepsilon _{el} \psi \phi = \text E \psi \phi
+\end{equation}
+Lo que me daría la otra ecuación que necesito (autovalores de $\mathcal{H}_{ion})$:
+
+\begin{equation}
+  [\mathcal{H}_{ion}+\varepsilon _{el}(\mathbf{R})]\phi(\mathbf{R}) = \text E \phi(\mathbf{R})
+\end{equation}
+¿Es el ansatz de la ecuación \ref{eq:ansatz} razonable? La respuesta
+es sí, en primer orden de perturbaciones. Comencemos por expandir la
+parte problemat.ca:
+\begin{equation}
+  \begin{split}
+    \mathcal{H}_{ion} \psi(\mathbf{r},\mathbf{R})\phi(\mathbf{R}) &= \left( \frac{-\hbar^2}{2M} \nabla^2_R + V _{ion} \right) \psi \phi = \\
+    &= \frac{-\hbar^2}{2M}\nabla_R^2 (\psi\phi) + V _{ion} \psi \phi = \\
+    &= \underbrace{\frac{-\hbar^2}{2M} \left( \nabla_R^2 \psi \right)
+      \phi}_{\beta \Psi} +\frac{-\hbar^2}{2M} \psi \left( \nabla_R^2
+      \phi \right)  + \\ & +
+    \underbrace{\frac{-\hbar^2}{2M}2(\nabla_R  \psi)(\nabla_R
+      \phi)}_{\alpha \Psi}+\psi V _{ion}\phi = \\
+    &=\psi (\mathcal{H}_{ion}\phi) + \alpha \Psi + \beta \Psi
+  \end{split}
+\end{equation}
+
+donde se ha usado
+$\nabla^2 (XY) = (\nabla^2X)Y+Y(\nabla^2X)+2\cdot \nabla (X)\nabla
+(Y)$.
+La aproximación de Born-Oppenheimer será valida si $\alpha, \beta$ son
+despreciables. Veamos su influencia en la energía en primer orden de
+perturbaciones.
+
+Para $\alpha$:
+\begin{equation}
+  \begin{split}
+    \text E ^{(1)}_{\alpha} &= \iint \text{d}\mathbf{r} \ \text{d}\mathbf{R} \psi^* \phi^* \alpha =  \iint \text{d}\mathbf{r}\ \text{d}\mathbf{R}\psi^* \phi^* \left[\frac{-\hbar^2}{2M}2 (\nabla_R\psi)(\nabla_R\phi)\right] = \\
+    &= \frac{-2\hbar^2}{2M} \int \text{d}\mathbf{R}\phi^* \nabla_R \phi  \frac{-2\hbar^2}{2M} \int \text{d}\mathbf{r} \psi^* \underbrace{\nabla_R}_{\neq f(\mathbf{r})} \psi \\
+    &= -\frac{\hbar^2}{M} \int \text{d}\mathbf{R}\phi^* \nabla_R\phi
+    \frac{1}{2}\nabla_R\underbrace{\int
+      \text{d}\mathbf{r}\psi^*\psi}_{\mathclap{\text{electron number = cte.}}} \\ 
+    &= -\frac{\hbar^2}{M} \int \text{d}\mathbf{R}\phi^* \nabla_R\phi \frac{1}{2} \ \cdot \  \cancelto{0}{\nabla_R \text{N}_{e^-}} \ \ \ = \\ &= 0
+  \end{split}
+\end{equation}
+
+Para $\beta$:
+\begin{equation}
+  \begin{split}
+    \text E ^{(1)}_{\beta} =\iint \text{d}\mathbf{r} \text{d}\mathbf{R} \psi^* \phi^* \beta &=
+    \iint \text{d}\mathbf{r} \text{d}\mathbf{R} \psi^* \phi^* \left[
+      \frac{-\hbar^2}{2M}(\nabla^2_R \psi)\phi \right] = \\
+    =& \frac{-\hbar^2}{2M} \int \text{d}\mathbf{R}\phi^* \phi
+    \underbrace{\int \text{d}\mathbf{r}\psi^* \nabla_R^2 \psi}_{1 ^{\dagger}} = \cdots
+  \end{split}
+\end{equation}
+El término $1 ^{\dagger}$ es similar a la energía cinética de los
+electrones, pero está en las coordenadas de los iones
+($\mathbf{R}$). Sabemos que
+$\psi =\psi(\{\mathbf{R}\},\{\mathbf{r}\})$, y que los electrones
+están ligados a sus núcleos.
+\begin{itemize}
+\item En el caso de mínima dependencia, $\psi \sim \psi(\mathbf{r})$ y
+  la derivada con las coordenadas iónicas anula la integral.
+\item En el peor de los casos, la dependencia es máxima y los
+  electrones están fuertemente ligados a sus núcleos. Tenemos por
+  tanto $\psi \sim \psi(\mathbf{r}-\mathbf{R})$ y podemos sustituir
+  $\nabla_R \psi$ por $\nabla_r \psi$.
+\end{itemize}
+Situémonos en el peor caso, $\psi \sim
+\psi(\mathbf{r}-\mathbf{R})$. Multiplicando y dividiendo por $m$ :
+
+\begin{equation}
+  \cdots = \frac{m}{M} \int \text{d}\mathbf{R} \phi^* \phi \int  
+  \frac{-\hbar^2}{2M} \text{d}\mathbf{r} \psi^* \nabla_r^2 \psi =
+  \frac{m}{M} \langle T_e \rangle
+ \end{equation}
+ Como
+ $\frac{m}{M} \langle T_e \rangle \sim 10 ^{-4} \langle T_e \rangle$,
+ vemos que la corrección de este término es negligible.
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../fesi"
+%%% End:

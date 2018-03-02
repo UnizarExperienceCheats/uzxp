@@ -1,0 +1,129 @@
+# take the shovel to dig things
+take shovel
+east
+east
+# The ground is soft
+dig
+look
+take cpu card
+se
+take food
+se
+# A bear!
+throw food
+take key
+# Return and take the other fork
+nw
+nw
+# Go to the building
+ne
+ne
+ne
+# Look at the mail bins
+e
+look bins
+# People sometimes use their surname as user and their name as
+# password...
+w
+w
+# Hackerman mode on
+type
+# Oops, it's broken
+insert cpu into cabinet
+type
+toukmond
+robert
+# Our tcp/ip link to ---gamma---- is a little flaky. Gamma!
+# Explore...
+ls
+uncompress paper.o.Z
+exit
+# Wow! In my pocket!
+inventory
+look paper
+# Let's see the root dirs...
+type
+cd ..
+cd ..
+cd rooms
+cd hidden-area
+cat description
+# Woo! Secret zone!
+exit
+e
+s
+sw
+sw
+se
+se
+# Go to the hidden zone
+sw
+take bracelet
+look bracelet
+# k, go to the term again
+ne
+nw
+nw
+ne
+ne
+ne
+w
+type
+# Don't ssh directly to gamma! It will teleport you without you items
+cd /usr/toukmond
+ftp gamma
+anonymous
+toukmond
+type binary
+send lamp.o
+type text
+send paper.o
+send key.o
+send shovel.o
+send bracelet.o
+quit
+# Go to gamma
+ssh gamma
+worms
+# Grab inventory
+take lamp
+take paper
+take key
+take shovel
+take bracelet
+# Explore
+e
+e
+# Raise the temperature to max but not deadly
+turn dial clockwise
+turn dial clockwise
+turn dial clockwise
+w
+n
+e
+# There is a weight, I'll need it to push the button below the ladder.
+take life preserver
+# It says 'S. S. Minnow'
+look life preserver
+down
+inventory
+throw bracelet
+throw shovel
+throw life preserver
+throw key
+up
+take weight
+down
+put weight on button
+# Recover things
+take key
+take life preserver
+take shovel
+take bracelet
+look life preserver
+# MinNoW?
+nw
+up
+take statuette
+take floppy
+eat statuette

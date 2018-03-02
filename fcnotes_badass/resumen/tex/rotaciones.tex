@@ -1,0 +1,551 @@
+\chapter{Rotaciones}
+En este capítulo se contemplan las rotaciones en $\mathbb{R}^3$
+\emph{activas} (que giran el sistema físico y no el marco de
+referencia). Son transformaciones lineales $\boldrm{x} \to R\boldrm{x}$ que conservan la norma,
+representadas por matrices $3 \times 3$ tales que $\det R = 1$.
+
+Todas las rotaciones en ejes arbitrarios con origen fijo conforman el
+\emph{grupo de rotación 3D}, también llamado $SO(3)$. Se puede
+parametrizar con un eje de giro y un ángulo o con los tres ángulos de
+Euler. $SO(3)$ es un \emph{grupo de Lie}, por lo que se puede ir de
+una rotación a otra de manera continua.
+
+Con el convenio de la ``mano derecha'' para los ángulos, podemos ver
+las matrices correspondientes a rotaciones en los ejes principales:
+\begin{align}
+  R_{\text{OX}} &=
+  \begin{pmatrix}
+    1 & 0 & 0 \\
+    0&\cos \theta & -\sin \theta  \\
+    0&\sin \theta & \cos \theta  
+  \end{pmatrix} \\
+  R_{\text{OY}} &=
+  \begin{pmatrix}
+    \cos \theta &0& \sin \theta  \\
+    0 & 1 & 0 \\
+    -\sin \theta & 0&\cos \theta  \\
+  \end{pmatrix} \\
+  R_{\text{OZ}} &=
+  \begin{pmatrix}
+    \cos \theta & -\sin \theta & 0 \\
+    \sin \theta & \cos \theta & 0 \\
+    0 & 0 & 1 
+  \end{pmatrix}
+\end{align}
+
+Investiguemos que ocurre si hacemos una rotación infinitesimal con
+ángulo $\varepsilon$. Para ello, tomamos la matriz $R_\text{OZ}$ (más
+tarde se extenderá el resultado) y aproximamos $\sin \varepsilon \sim
+\varepsilon$ y $\cos \varepsilon \sim 1$:
+\begin{equation}
+  R_\text{OZ}(\varepsilon) \sim
+  \begin{pmatrix}
+    1 & -\varepsilon & 0 \\
+    \varepsilon &  1 & 0 \\
+    0 & 0& 1
+  \end{pmatrix}
+\end{equation}
+La nueva matriz es prácticamente ortogonal, ya que la norma de sus
+columnas es $1$ o $1 + \varepsilon^2 \sim 1$. Puede escribirse de forma
+especial:
+\begin{equation}
+  R_\text{OZ}(\varepsilon) = \mathbb{I} - i \varepsilon
+  \underbrace{
+   \begin{pmatrix}
+    0 & -i & 0 \\
+    i & 0 & 0 \\
+    0 & 0 & 0 
+  \end{pmatrix}}_{G_z}
+\end{equation}
+donde $G_z$ (de ``generador'') es hermítica y ortogonal. Para los
+demás ejes tenemos:
+\begin{align}
+  G_x &=
+  \begin{pmatrix}
+    0 & 0 & 0 \\
+    0&0 & -i  \\
+    0&i&0 
+  \end{pmatrix} \\
+  G_y &=
+  \begin{pmatrix}
+    0 & 0 & i \\
+    0&0 & 0  \\
+    -i&0&0 
+  \end{pmatrix} \\
+  G_z &=
+  \begin{pmatrix}
+    0 & -i & 0 \\
+    i&0 & 0  \\
+    0&0&0 
+  \end{pmatrix}
+\end{align}
+Las matrices $G_i$ son los generadores infinitesimales
+\index{generador infinitesimal}de rotaciones
+en $\mathbb{R}^3$. Se puede ver que $[G_x,G_y]=iG_z$, o de forma
+general:
+\begin{equation}
+  [G_i,G_j] = i\varepsilon_{ijk} G_k
+\end{equation}
+donde $\varepsilon_{ijk}$ es el \emph{símbolo de Levi-Civita}, evaluado
+en $i,j,k = x,y,z$.
+
+Con sumas de estas matrices se puede llegar a cualquier rotación.
+Esta álgebra es una \emph{algebra de Lie}. Veamos que, en efecto, es
+posible reconstruir una rotación. Rotamos un vector $\boldrm{x}$:
+\begin{equation}
+  \boldrm{x} \to (\mathbb{I}-i\varepsilon G_z)\boldrm{x} = R_z(\varepsilon)\boldrm{x}
+\end{equation}
+Como las rotaciones en el mismo eje conmutan entre sí, puedo escribir
+\begin{equation}
+  \begin{split}
+    R_z(\theta+\varepsilon) &= R_z(\varepsilon)R(\theta) = [\mathbb{I} -
+    i\varepsilon G_z] R_z(\theta) =\\
+    &= R_z(\theta) - i\varepsilon G_z R_z(\theta)
+  \end{split}
+\end{equation}
+Si suponemos $\varepsilon \to 0$ tenemos una ecuación diferencial formal
+en $R_z(\theta)$:
+\begin{align}
+  \frac{R_z(\theta+\varepsilon) - R_z(\theta)}{\varepsilon} &= - i
+  G_z R_z(\theta) \\
+  \frac{\text{d}}{\text{d}\theta}R_z(\theta) &= -i G_z R_z(\theta)
+\end{align}
+Es una ecuación para operadores, de solución exponencial:
+\begin{equation}
+  R_z(\theta) = \exp(-i\theta G_z)\cdot \text{cte.}
+\end{equation}
+donde $\text{cte.} =1$ ya que $R_z(0) = \mathbb{I}$. Como $G_z$ es
+hermítica, la suma exponencial converge sin problemas:
+\begin{equation}
+  \begin{split}
+    e^{-i\theta G_z} &= \mathbb{I}-i \theta G_z -
+    \frac{\theta^2}{2!}G_z^2 + i \frac{\theta^3}{3!} G_z^3 + \cdots =
+    \\
+    &= \mathbb{I} + G_z \left( -i\theta + i \frac{\theta^3}{3!} +
+      \cdots \right) + G_z^2 \left( - \frac{\theta^2}{2!} +
+      \frac{\theta^4}{4!} + \cdots \right) =\\
+    &= \mathbb{I} - i \sin \theta G_z + (\cos\theta -1)G_z^2 = \\
+    &= R_{\text{OZ}}
+  \end{split}
+\end{equation}
+donde se ha usado que $G_z^3 = G_z$.
+
+De forma general, para un eje cualquiera $\hat{n}$ se tiene
+\begin{equation}
+  R_{\hat{n}}(\theta) = e^{-i\theta \boldrm{G}\cdot \hat{n}}
+\end{equation}
+donde $\boldrm{G} = (G_x,G_y,G_z)$. Notar que $e^{-i\theta
+  \boldrm{G}\cdot \hat{n}} $ es factorizable en producto de
+exponenciales sólo si los operadores $G_i$ conmutan, y
+no es el caso.
+
+\section{Aplicaciones}
+Con lo visto, podemos encontrar analíticamente las rotaciones en
+diversos espacios vectoriales de la mecánica cuántica.
+\subsection{Espacios de Hilbert $ \Ham $}
+El espacio de las funciones de onda sin espín es un espacio de
+Hilbert. Las rotaciones transforman a las funciones de onda $\varphi$ en
+nuevas $\varphi'$. 
+
+La intuición geométrica\index{intuición} nos dice que para una rotación de ángulo
+definido la materia se ha movido de $\boldrm{x}$ a $\boldrm{x}'$, y la
+función de ondas vale en todos los puntos el valor que había antes en
+el ángulo recorrido en sentido contrario. De manera formal:
+\begin{equation}
+  \varphi'(\boldrm{x}') = \varphi(\boldrm{x}), \ \forall \boldrm{x}' \
+  \rightarrow \ \varphi'(\boldrm{x}) = \varphi(R^{-1}\boldrm{x})
+\end{equation}
+El operador que desplaza a las $\boldrm{x}$ es $R$; nos preguntamos
+cuales son las propiedades del endomorfismo $U$ que translada a las
+funciones de onda $\varphi$. Damos por descontado\footnote{Cohen no. Ver
+allí demostración rigurosa.} que es lineal y unitario. 
+Su definición
+viene dada de forma implícita por $\varphi'(\boldrm{x}) =
+\varphi(R^{-1}\boldrm{x})$; veamos su forma en una rotación
+infinitesimal. Comenzamos por calcular $R^{-1}(\varepsilon)$ para el eje
+z (de nuevo, posteriormente se verá el caso general):
+\begin{equation}
+  R^{-1}_z(\varepsilon) \sim
+  \begin{pmatrix}
+    \cos \theta & \sin \theta & 0 \\
+    -\sin \theta & \cos \theta & 0 \\
+    0 & 0 & 1 
+  \end{pmatrix}_{\theta \to \varepsilon \sim 0} =
+  \begin{pmatrix}
+    1 & \varepsilon & 0 \\
+    -\varepsilon&1 & 0 \\
+    0 & 0 & 1
+  \end{pmatrix}
+\end{equation}
+Por tanto,
+\begin{equation}
+  \varphi'(x,y,z) = \varphi(R^{-1}_z(\varepsilon) \boldrm{x}) =
+  \varphi(\boldrm{x}'), \ \ \boldrm{x}' =
+  \begin{pmatrix}
+    x+\varepsilon y \\
+    y-\varepsilon x \\
+    z
+  \end{pmatrix}
+\end{equation}
+Como $\varepsilon$ es muy pequeño, efectuamos un desarrollo en serie
+de potencias:
+\begin{equation}
+  \begin{split}
+    \varphi'(\boldrm{x}) &= \varphi(\boldrm{x}) + \pdv{\varphi}{x}
+    \underbrace{\Delta x}_{\varepsilon y} + \pdv{\varphi}{y}
+    \underbrace{\Delta y}_{-\varepsilon x} + \pdv{\varphi}{z}
+    \cancelto{0}{\Delta z} = \\
+    &= \varphi(\boldrm{x}) - \varepsilon \left[ \pdv{\varphi}{y} x -
+      \pdv{\varphi}{x}y \right] = \varphi(\boldrm{x})-\varepsilon i \frac{L_z}{\hbar}\varphi
+  \end{split}
+\end{equation}
+donde $L_z$ es la componente $z$ del operador momento angular.
+Concluimos por tanto que
+\begin{equation}
+  \boxed{
+    \varphi'(\boldrm{x}) = \left( \mathbb{I}-i \varepsilon \frac{L_z}{\hbar} \right)\varphi(\boldrm{x})
+  }
+\end{equation}
+
+Hemos obtenido que $L_z/\hbar = U$ es el generador
+infinitesimal\index{generador infinitesimal} de
+las rotaciones en el espacio de Hilbert de las funciones de onda sin
+espín. De manera similar, en el eje $y$ el operador relevante es
+$L_y/\hbar$ y $L_x/\hbar$ en el eje $x$. Tenemos una relación similar
+a la de los $G_i$ con los operadores momento angular:
+\begin{equation}
+  \left[ \frac{L_i}{\hbar}, \frac{L_j}{\hbar} \right] = i
+  \varepsilon_{ijk} \frac{L_k}{\hbar}
+\end{equation}
+Notar que mientras las $G_i$ son matrices, los $L_i$ son operadores
+diferenciales. Esto se debe a que los espacios sobre los que actúan
+son muy distintos ($\mathbb{R}^3$ y el espacio de Hilbert $ \Ham $).
+
+Con argumentos similares a los usados para $\mathbb{R}^3$, definimos
+una rotación finita en el eje $z$ como $U_z(\theta) = e^{-i\theta
+  \frac{L_z}{\hbar}}$, y en un eje arbitrario $\hat{n}$ como
+\begin{equation}
+  U_{\hat{n}} (\theta)= \exp \left(  {-i \theta
+      \frac{\boldrm{L}\cdot\hat{n}}{\hbar}} \right)
+\end{equation}
+Recordar que la exponencial no es factorizable por no conmutar los
+$L_i$. En este caso no podemos calcular la exponencial del operador
+como serie por no conocer la relación de recurrencia de sus potencias.
+
+\subsection{Espacios complejos $\mathbb{C}^2$}
+Los espines de los electrones ($\oh$) pertenecen a
+$\mathbb{C}^2$, ya que para definir el espín en cada punto del espacio
+son necesarios dos números complejos. Las funciones de onda de estas
+partículas necesitan además una extensión a espacio de Hilbert:
+\begin{equation}
+  \begin{split}
+    \varphi &= \binom{f(\boldrm{r})}{g(\boldrm{r})} = f(\boldrm{r})
+    \otimes \binom{1}{0} + g(\boldrm{r}) \otimes \binom{0}{1} \\
+    &=  f(\boldrm{r})
+    \otimes \ket{+} \  + \  g(\boldrm{r}) \otimes \ket{-} \in
+     \Ham \otimes \mathbb{C}^2
+  \end{split}
+\end{equation}
+A los \emph{ket} $\ket{+},\ket{-}$ se les suele llamar \emph{espinores}.
+Para que $\varphi$ sea de cuadrado integrable, las funciones $f,g$ han de
+cumplir que la integral de sus módulos al cuadrado sobre todo el
+espacio valgan la unidad.
+
+De manera inocente podría pensarse en que una rotación puede
+escribirse como
+\begin{equation}
+  \binom{f'(\boldrm{r})}{g'(\boldrm{r})} = \binom{f(R^{-1}\boldrm{r})}{g(R^{-1}\boldrm{r})}
+\end{equation}
+pero no es así, los vectores se transforman de forma más complicada
+que los escalares. Necesitamos utilizar los generadores de
+$\mathbb{C}^2$, las \emph{matrices de Pauli}:
+\begin{equation}
+  S_x = \frac{\hbar}{2} \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix};  \ \ 
+  S_y = \frac{\hbar}{2} \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix};  \ \ 
+  S_z = \frac{\hbar}{2} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}
+\end{equation}
+Las rotaciones en un eje arbitrario vendrán dadas por
+\begin{equation}
+  R_{\hat{n}}(\theta) = \exp \left( -i \theta
+    \frac{\boldrm{S}\cdot\hat{n}}{\hbar} \right) \in \mathbb{C}^2
+\end{equation}
+Resolviendo la serie de potencias se obtiene
+\begin{equation}
+  R_{\hat{n}}(\theta) = \mathbb{I}\cos \frac{\theta}{2} - i
+  (\boldrm{\sigma}\cdot \hat{n}) \sin \frac{\theta}{2}
+\end{equation}
+donde $\boldrm{\sigma} = \frac{2}{\hbar}\boldrm{S}$. Un espinor $\chi$
+``apunta'' en la dirección $\hat{n}$ si
+$(\boldrm{\sigma}\cdot\hat{n})\chi = +1 \chi$
+
+Puede comprobarse que, por ejemplo, un giro en $z$ no varía el valor
+del espín en $z$. No obstante, aunque podría esperarse que el operador
+$R_{\hat{n}}(2\pi) = \mathbb{I}$, resulta que lo que se obtiene es
+$-\mathbb{I}$. Notar que esto es irrelevante, ya que lo que se mide es
+siempre $\bra{\varphi|A}\ket{\varphi}$ o $|\varphi|^2$, que son siempre positivos.
+
+\subsection{Espacios de partículas con espín $ \Ham \otimes \mathbb{C}^2$}
+Resueltos los giros en $\mathbb{C}^2$ y en los espacios de Hilbert, ya
+solo queda extender los resultados al producto de ambos espacios. Como
+es razonable pensar, basta con girar primero la órbita y luego el
+espín. De manera formal, el efecto del operador $U$ sobre el espinor
+con función de onda $\varphi(\boldrm{r})\otimes \chi$ es:
+\begin{equation}
+  \left( e^{-i\theta \frac{1}{\hbar}\boldrm{L}\hat{n}} \otimes
+    e^{-i\theta \frac{1}{\hbar}\boldrm{S}\hat{n}}\right)
+  [\varphi(\boldrm{r})\otimes \chi] = \left( e^{-i\theta
+      \frac{1}{\hbar}\boldrm{L}\hat{n}}\varphi(\boldrm{r}) \right)
+  \otimes \left( e^{-i\theta \frac{1}{\hbar}\boldrm{S}\hat{n}}\chi \right)
+\end{equation}
+Realicemos una rotación infinitesimal, para ver la forma de los
+generadores. Utilizamos $\hat{n}=z$; sea $\theta \to \varepsilon\sim 0$:
+\begin{equation}
+  \begin{split}
+  U [\varphi(\boldrm{r})\otimes \chi] &= \left( e^{-i\theta
+      \frac{1}{\hbar}\boldrm{L}\hat{n}}\varphi(\boldrm{r}) \right)
+  \otimes \left( e^{-i\theta \frac{1}{\hbar}\boldrm{S}\hat{n}}\chi
+  \right)= \\
+  &= \left( \mathbb{I}-i\varepsilon \frac{L_z}{\hbar} \right)\varphi \otimes
+  \left( \mathbb{I}-i\varepsilon \frac{S_z}{\hbar} \right) \chi = \\
+  &= \varphi\otimes \chi - i\varepsilon \left( \frac{L_z}{\hbar}\varphi \right)\otimes \chi  - i \varepsilon
+  \left( \frac{S_z}{\hbar}\chi \right)\otimes \varphi  +
+  \order{\varepsilon^2} \cdots
+  \end{split}
+\end{equation}
+
+Los operadores del segundo y tercer sumando se pueden reescribir como
+extensiones al espacio producto vectorial; para el momento angular
+tenemos $L_z \varphi \otimes \chi = (L_z\otimes \mathbb{I})[\varphi \otimes
+\chi]$ y para la matriz de Pauli $ \varphi \otimes S_z\chi = ( \mathbb{I} \otimes
+S_z)[\varphi \otimes \chi]$. Con ello, obtenemos
+\begin{equation}
+  =\varphi \otimes \chi - i \frac{\varepsilon}{\hbar} (L_z\otimes \mathbb{I}+
+  \mathbb{I}\otimes S_z)
+  [\varphi\otimes\chi] + \order{\varepsilon^2} = \cdots
+\end{equation}
+que con un una notación más laxa\footnote{No hay que dejar que esta
+  notación nos haga olvidar que dos operadores de espacios vectoriales
+distintos no se pueden sumar como si tal cosa. Por ejemplo, $S_{1z}+S_{2z}$
+no es $\frac{\hbar}{2}\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} +
+\frac{\hbar}{2}\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}  =
+\hbar \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} $, sino la matriz
+$4\times 4$ que corresponde a $S_{1z}\otimes \mathbb{I} +
+\mathbb{I}\otimes S_{2z} = \begin{pmatrix} (S_{1z}) & 0 \\ 0 & (S_{2z}) \end{pmatrix}$ } podemos escribir como
+\begin{equation}
+  =\varphi \otimes \chi - i \frac{\varepsilon}{\hbar} (L_z+
+  S_z)
+  [\varphi\otimes\chi] + \order{\varepsilon^2} = \cdots
+\end{equation}
+Teniendo en cuenta que $L_z + S_z = J_z$ (operador \emph{momento
+  angular total}), obtenemos
+\begin{equation}
+  \cdots = \left( \mathbb{I} - i \varepsilon \frac{J_z}{\hbar}
+  \right)[\varphi\otimes \chi]
+\end{equation} 
+Obtenemos que el momento angular total es el generador de las
+rotaciones en el espacio $ \Ham \otimes \mathbb{C}^2$. En
+un espacio general se utiliza $\boldrm{J}_T = \sum_{ }\boldrm{J}_i +
+\sum_{ }\boldrm{S}_i$. Notar de nuevo que $\boldrm{J}$ y $\boldrm{S}$
+pertenecen a espacios distintos y no son sumables; en realidad nos
+referimos a sus extensiones a $ \Ham \otimes \mathbb{C}^2$. Las
+rotaciones en un eje arbitrario vendrán dadas por
+\begin{equation}
+R_{\hat{n}} (\theta) = \exp \left( -i \varepsilon \frac{\boldrm{J}_T\cdot
+    \hat{n}}{\hbar} \right) = e^{-i\theta \frac{\boldrm{L}_1 \cdot
+    \hat{n}}{\hbar}} e^{-i\theta \frac{\boldrm{S}_1 \cdot \hat{n}}{\hbar}}
+\cdots e^{-i\theta \frac{\boldrm{L}_N \cdot \hat{n}}{\hbar}} e^{-i\theta \frac{\boldrm{S}_N \cdot \hat{n}}{\hbar}}
+\end{equation}
+donde $N$ es el número de partículas del sistema. Cada operador actúa
+sobre sus funciones de onda correspondientes, recordar que en esta
+notación faltan muchas extensiones (varios factores ``$\otimes \mathbb{I}$'' ).
+
+\section{Rotación de observables}
+Imaginemos un montaje experimental como el de Stern-Gerlach; hacemos
+pasar electrones (espín $\oh$) por un campo magnetico
+$\boldrm{B}\propto \hat{z}$
+fuerte y vemos como el haz se divide en dos, colisionando con una
+pantalla fluorescente. Estamos midiendo el
+autovalor del observable $S_z$, y se obtienen de manera equiprobable
+los valores $\pm \nicefrac{\hbar}{2}$. Si polarizamos los espines
+sólo se obtendrá una mancha, por ejemplo la del autovalor $\nicefrac{\hbar}{2}$.
+
+Si rotamos todo el sistema de forma que el campo magnético esté
+orientado ahora en $\hat{x}$ estaremos midiendo el observable $S_x$,
+pero seguiremos obteniendo el autovalor $\nicefrac{\hbar}{2}$ (la
+mancha seguirá en el mismo sitio de la pantalla).
+
+Deducimos por tanto que rotar un sistema
+físico\jokenote{Es nuestro hecho diferencial el no
+girar el sistema de coordenadas. Nos hace diferentes, es
+decir, nos hace mucho mejores que los demás.} cambia el
+obserbable
+pero no el autovalor. Sea un observable $A$ de autovalores $a_n$ y
+autovectores $u_n$, si efectuamos una rotación en el espacio de
+Hilbert $u_n \to Ru_n = u_n'$ obtenemos
+\begin{equation}
+  A u_n = a_n u_n \ \stackrel{R}{\rightarrow} \ A'u_n' = a_n u_n'
+\end{equation}
+Nos preguntamos la relación entre el nuevo operador y el original.
+Para averiguarlo, utilizamos que $u' = Ru$:
+\begin{equation}
+  \begin{split}
+    A' u'_n &= a_n u_n' \\
+    A' Ru_n &= a_n Ru_n \\
+    A' Ru_n &= R a_n u_n \\
+    R^{-1}A' Ru_n &=  a_n u_n  \\
+    R^{-1}A' Ru_n &=  A u_n  \\
+  \end{split}
+\end{equation}
+Por lo tanto
+\begin{equation}
+  \boxed{A' = R A R^\dagger}
+\end{equation}
+donde se ha utilizado que para matrices hermíticas $R^{-1}MR=RMR^\dagger$.
+
+\subsection{Observables escalares e invariancia bajo rotaciones}
+Un ejemplo es $\boldrm{S}^2 = \frac{3}{4} \hbar \mathbb{I}$.
+Supongamos ahora que $R$ es infinitesimal; en tal caso:
+\begin{equation}
+  R = \left( \mathbb{I} - \frac{i\varepsilon}{\hbar}\boldrm{J}\cdot\hat{n} \right)
+\end{equation}
+y por lo tanto
+\begin{equation}
+  \begin{split}
+    A' &= \left( \mathbb{I} - \frac{i\varepsilon}{\hbar} \boldrm{J}\cdot
+      \hat{n} \right) A \left( \mathbb{I} + \frac{i\varepsilon}{\hbar}
+      \boldrm{J}\cdot \hat{n} \right) = \\
+    &= A - \frac{i\varepsilon}{\hbar}(\boldrm{J}\cdot\hat{n})A + A
+    \frac{i\varepsilon}{\hbar}(\boldrm{J}\cdot\hat{n}) +
+    \order{\varepsilon^2} = \\
+    &= A - \frac{i\varepsilon}{\hbar} [\boldrm{J}\hat{n},A]
+  \end{split}
+\end{equation}
+Si $A$ conmuta con cualquier función de $J$ se obtiene $A'= A$. Esta
+relación de conmutación con $\boldrm{J}$ es muy relevante cuando $A$
+es el hamiltoniano, se le denota \emph{invariancia bajo rotaciones}.
+
+Cuando un sistema es invariante bajo rotaciones para un observable es
+señal de que este es escalar, evitando romperse la simetría cuando
+rotamos el sistema. 
+
+Imaginemos una partícula libre en el plano, si rotamos el sistema un
+ángulo $\theta$ el movimiento seguirá siendo el mismo salvo por la
+rotación. Si en cambio rotamos un sistema con una fuerza vectorial,
+como un tiro parabólico en un campo gravitatorio, la trayectoria ya no
+será la misma aunque rotemos las condiciones iniciales; habría que
+rotar también la fuerza externa.
+
+De manera formal, en los sistemas con invariancia entre rotaciones
+esperamos la siguiente regla de transformación:
+\begin{equation*}
+  \begin{matrix}
+    \psi(t_0) & \stackrel{ \Ham }{\rightarrow} & \psi(t) \\
+    \downarrow R & & \downarrow R \\
+    \psi'(t_0) & \stackrel{ \Ham }{\rightarrow} & \psi'(t)
+  \end{matrix}
+\end{equation*}
+Notar que los dos operadores $R$ son el mismo.
+
+Si hay invariancia ante rotaciones, utilizando la ecuación de
+Schrödinger ($i \hbar \dot{\psi} =  \Ham \psi$) es esperable que
+\begin{equation}
+  \begin{split}
+    \psi'(t_0 + \dd{t}) &= \psi'(t_0) - \frac{i}{\hbar} \dd{t}
+     \Ham  \psi'(t_0) \\
+    \psi(t_0 + \dd{t}) &= \psi(t_0) - \frac{i}{\hbar} \dd{t}  \Ham  \psi(t_0)
+  \end{split}
+\end{equation}
+como $\psi'(t_0 + \dd{t}) = R \psi(t_0 + \dd{t})$, sustituyendo
+obtenemos
+\begin{equation}
+  \psi'(t_0)-\frac{i}{\hbar}\dd{t} \Ham \psi'(t_0) = R \psi (t_0)
+  - \frac{i}{\hbar}\dd{t}R  \Ham  \psi(t_0)
+\end{equation}
+y utilizando que $\psi'(t_0) = R \psi(t_0)$ obtenemos que
+\begin{equation}
+   \Ham R\psi = R  \Ham  \psi, \ \forall \psi,t_0,R
+\end{equation}
+Por lo tanto $[ \Ham ,R] = 0$. Hemos obtenido que el hamiltoniano
+es un operador escalar bajo rotaciones. De igual forma conmuta con
+$\boldrm{J}$ y $\boldrm{L}$. Una consecuencia inmediata es que sus
+autovalores están degenerados; a esta degeneración se le denota
+\emph{degeneración natural}. 
+
+\begin{proof}[Degeneración de la energía]
+  Sean $E$ y $\ket{\alpha,j,m}$ un autovalor y autovector del
+  hamiltoniano. Aplicamos en la ecuación de Schrödinger independiente
+  del tiempo un operador escalera al autovector:
+  \begin{equation}
+     \Ham  J_\pm \ket{\alpha,j,m} = \sqrt{j(j+1) - m(m\pm 1)}
+    \hbar  \Ham  \ket{\alpha,j,m\pm1}
+  \end{equation}
+  Como $ \Ham $ conmuta con $\boldrm{J}$, también conmuta con
+  cualquier combinación lineal de sus componentes. Como los operadores
+  escalera se construyen como combinación lineal de los componentes de
+  $\boldrm{J}$, el hamiltoniano conmuta con $J_\pm$ y podemos escribir
+  que $ \Ham J_\pm = J_\pm  \Ham $. Por tanto,
+  \begin{equation}
+    \begin{split}
+      J_\pm \Ham  \ket{\alpha,j,m} &= J_\pm E \ket{\alpha,j,m} =
+      \\ &= E
+      \sqrt{j(j+1) - m(m\pm 1)} \hbar \ket{\alpha,j,m\pm1} = \\
+      &= \sqrt{j(j+1) - m(m\pm 1)}
+    \hbar  \Ham  \ket{\alpha,j,m\pm1} =\\ &=  \Ham J_\pm \ket{\alpha,j,m}
+    \end{split}
+  \end{equation}
+  obtenemos que $ \Ham \ket{\alpha,j,m\pm1} = E
+  \ket{\alpha,j,m\pm1}$. Por tanto hay degeneración para una energía
+  $E$ fija, como mínimo $2j+1$ (número de estados $m$).
+\end{proof}
+
+\subsection{Ejemplo: potenciales centrales}
+Sea una partícula de masa $m$ en un potencial central $V(r)$. El
+hamiltoniano\jokenote{Y os preguntaréis, ¿por qué
+quiero medir eso? Pues porque sois físicos, no filósofos. Si
+no queréis medir nada os vais a la facultad de enfrente, que
+os acogerán con los brazos abiertos porque les faltan
+alumnos.} es:
+\begin{equation}
+   \Ham  = \frac{-\hbar^2}{2m}\nabla^2 + V(r)
+\end{equation}
+Claramente conmuta con rotaciones respecto al centro de fuerzas por
+simetría. Tenemos que $[ \Ham ,\boldrm{L}] = 0$, y por tanto
+$ \Ham ,L^2,L_z$ comparten autovalores.
+
+La simetría del problema nos permite escribir el hamiltoniano de
+forma puramente radial, encerrando la dependencia angular en $\boldrm{L}^2$:
+\begin{equation}
+   \Ham  = \frac{-\hbar^2}{2m} \left[ \frac{1}{r^2} \pdv{}{r}
+    \left( r^2 \pdv{}{r} \right) - \frac{\boldrm{L}^2}{\hbar^2 r^2} \right] + V(r)
+\end{equation}
+Podemos expresar sus soluciones como producto de una parte radial y
+otra angular:
+\begin{equation}
+  \psi = R(r) Y_\ell^m(\theta,\varphi)
+\end{equation}
+Si sustituyo $\psi$ en la ecuación de Schrödinger independiente del
+tiempo, se pueden cancelar de ambos lados de la ecuación los armónicos
+esféricos, y se obtiene:
+\begin{equation}
+  \frac{-\hbar^2}{2m} \dv[2]{}{r} \chi_\ell(r) + \underbrace{\left[ V(r) +
+    \frac{\hbar^2}{2mr^2} \ell (\ell+1) \right]}_{V_\text{eff}} \chi_\ell(r) = E \chi_\ell(r)
+\end{equation}
+donde hay una solución para cada $\ell$, por lo que hay que indexar las
+$\chi$. Por último, imponemos condiciones de contorno:
+\begin{equation}
+  \int_{0}^\infty |R(r)|^2 r^2 \dd{r} = \int_{4\pi}
+  |Y_\ell^m(\theta,\varphi)|^2 \dd{\Omega} = 1
+\end{equation}
+Si nos dan un autovalor podemos conocer el autoestado correspondiente,
+que está degenerado con los estados de igual energía:
+\begin{equation}
+  R_\ell(r)Y_\ell^m(\theta,\varphi), \ m = 2\ell+1
+\end{equation}
+Notar que aunque es una ecuación de segundo orden sólo se ha hablado
+de una de las soluciones. Esto es debido a que la otra no es
+normalizable por poseer una divergencia en $r=0$.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../resumen"
+%%% End:

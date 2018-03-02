@@ -1,0 +1,731 @@
+\section{2016-05-11}
+Vimos que $T_q^k$ es tensorial de rango $k$ bajo $\boldrm{J}$, con $k\in
+\mathbb{Z}^+$.
+$[J_z,T_q^k] = \hbar q T_q^k$
+$[J_{\pm},T_q^k] =  \hbar \sqrt{k(k+1)-q(q\pm1)} T_{q\pm1}^k$
+
+De la primera (
+$[J_z,T_q^k] = \hbar q T_q^k$) deducimos que
+$\braket{\alpha'j'm'}{T_q^k}{\alpha jm}=0$ si $m'\neq q+m$. De la segunda
+definición vemos que ( o vamos a ver o algo)
+\begin{equation}
+  \begin{split}
+    \mel{\alpha'j'm'}{[J_\pm,T_q^k]}{\alpha j m}  \to  \mel{\alpha'JM}{[J_\pm,T_{m_2}^{J_2}]}{\alpha j_1 m_1}
+  \end{split}
+\end{equation}
+Hemos hecho un cambio de notación. Notar que por def (la segunda, como
+hemos dicho) el el. de matriz se puede expandir. Utilizando la nueva
+notación:
+OJO: utilizamos $J_+$ (luego $J_-$)
+\begin{equation}
+  \begin{split}
+    \mel{\alpha'JM}{[J_\pm,T_{m_2}^{J_2}]}{\alpha j_1 m_1} = c_+ (j_2 m_2)
+    \mel{\alpha J M}{T_{m_2+1}^J_2}{\alpha j_1 m_1}
+  \end{split}
+\end{equation}
+Para el $J_-$ sale $c_- (JM)
+    \mel{\alpha J M-1}{T_{m_2}^{J_2}}{\alpha j_1 m_1}
+$.
+
+Luego ha puesto
+$c_- (JM)
+    \mel{\alpha J M-1}{T_{m_2}^{J_2}}{\alpha j_1 m_1} - c_+ (j_1 m_1)
+    \mel{\alpha J M}{T_{m_2}^{J_2}}{\alpha j_1 m_1+1}
+$
+
+Despejando, me queda esta formulica:
+\begin{equation}
+  \begin{split}
+    c_-(JM) \mel{\alpha' J M-1}{T_{m_2}^{J_2}}{\alpha j_1 m_1} &= c_- ( j_1 m_1 +
+    1) \mel{\alpha' J M}{T_{m_2}^{J_2}}{\alpha j_1 m_1 + 1}+ \\
+    &+ c_-(j_2 m_2+1)\mel{\alpha' J M}{T_{m_2+1}^{J_2}}{\alpha j_1 m_1}
+  \end{split}
+\end{equation}
+
+Dice que todo esto era con $J_+$. Si calculo con $J_$ hay varios cambios
+de signo
+
+\begin{equation}
+  \begin{split}
+    c_+(JM) \mel{\alpha' J M+1}{T_{m_2}^{J_2}}{\alpha j_1 m_1} &= c_+ ( j_1 m_1 -
+    1) \mel{\alpha' J M}{T_{m_2}^{J_2}}{\alpha j_1 m_1 - 1}+ \\
+    &+ c_+(j_2 m_2-1)\mel{\alpha' J M}{T_{m_2-1}^{J_2}}{\alpha j_1 m_1}
+  \end{split}
+\end{equation}
+
+obtenemos
+\begin{equation}
+  \boxed{ c_-(j_1 m_1) = c_+ (j_1 m_1 -1)}
+\end{equation}
+Esta notación ayuda a entender las tablas de Clebsch-Gordan.
+Es decir,
+$(j_1 j_2 m_1 m_2 | J M)$ y $\mel{\alpha J M}{ T_{m_2}^{J_2}}{\alpha j_1 m_1}$
+satisfacen el mismo sistema lineal homogéneo. Ejeplo:
+\begin{equation}
+  \begin{cases}
+    x+y = 0 \\
+    2x+2y = 0 \\
+    3z+3t = 0 \\
+    4z+4t = 0 \\
+    5w = 0 \\
+  \end{cases}
+\end{equation}
+Los els de matriz satisfacen
+\begin{equation}
+  \begin{cases}
+    A+B = 0 \\
+    2A+2B = 0 \\
+    3C+3D = 0 \\
+    4D+4D = 0 \\
+    5E = 0 \\
+  \end{cases}
+\end{equation}
+Ésto significa que los els de matriz dependen unos de otros, tienen
+los mismos grados de libertad.
+
+Para empezar, significa que Clebsch-Gordan que se anula, el de matriz
+que se anula, por ejemplo, el $5w=0$. Pero, ¿cuándo un Clebsch-Gordan
+es nulo? $\mel{\alpha J M}{ T_{m_2}^{J_2}}{\alpha j_1 m_1}$ es nulo si
+$M\neq m_2 + m_1$ o si $J_1 \otimes J_2$ no contiene a $J$. La segunda
+condición, la de $J_1 \otimes J_2$ significa que $J$ tiene que estar entre
+$j_1-j_2 , \cdots , j_1 + j_2$.
+
+Ejemplos
+\begin{equation}
+  \frac{A}{x} = \alpha \to B  = \alpha y
+\end{equation}
+\begin{equation}
+  \frac{c}{z} = \beta \to D  = \beta z
+\end{equation}
+
+Vemos que los grados de libertad no dependen de terceras componentes.
+Basta fijar los cocientes entre dos grados de libertad y puedo conocer
+todos los elementos de matriz gracias a los Clebsch-Gordan.
+
+Esto significa que yo puedo escribir
+\begin{equation}
+  \mel{\alpha J M}{T_{m_2}^{J_2}}{\alpha j_1 m_1} = \text{cte.} (\alpha J j_2 \alpha)(j_1
+  j_2 m_1 m_2 | JM)
+\end{equation}
+donde $\text{cte.}(\alpha J j_2 \alpha)(j_1
+  j_2 m_1 m_2 | JM)$ sería o la $\alpha$ o la $\beta$. Depende de muchas cosas,
+pero no de $M,m_1,m_2$. La dependencia en terceras componentes está
+en $(j_1
+j_2 m_1 m_2 | JM)$. TEOREMA DE WIGNER-ECKART.\footnote{Requiere que
+  lo del medio sea tensor del bicho y lo de los lados del <|> sean
+  vecs propios o algo así.}
+
+El teorema dice cosas como;
+sean $J=1,j_2=1,j_1=1$. Tendría $3^3=27$ integrales (+1,0,-1,
++1,0,-1,   +1,0,-1). Hay seis integrales distintas de cero (ver tabla,
+JM=1,1, 1,0,  1,-1). Cuántas hay que calcular de esas 6? Sólo una,
+calculada una, calculadas todas.
+
+Ejemplo de aplicación:
+\begin{equation}
+  \mel{\alpha' J:1 +1}{T_0^{J_2:1}}{\alpha J_{\text{nosé}}:1 +1} \neq 0
+\end{equation}
+Esto da
+\begin{equation}
+  (1 1 +1 0 | 1 +1) \cdot c (\alpha', 1 , T^1, \alpha, 1)
+\end{equation}
+El primer paréntesis está en la tabla. Por tanto
+$c(\alpha, 1, T^1,\alpha,1) = \frac{\mel{\alpha' 1 +1 }{T_0^1}{\alpha 1 +1}}{(1 1 +1 0 | 1
+  +1)}$
+
+y $\mel{\alpha' 1 M }{T_{m_2}^1}{\alpha 1 m_1} = c (\alpha 1 T' \alpha 1) \cdot
+\underbrace{c(\alpha' 1 T' \alpha 1)}_{\text{Un C-G (tabla)}}$.
+
+Por tanto, de las 27 sólo hay 6. Hago una, y con las tablas ya tengo
+las otras 5.
+
+Ojo, $(1 1 +1 0 | 1 +1) \stackrel{??}{\neq}0$. Utilizar la integral
+que no sea nula! si no la lías
+
+\subsection{Reglas de selección}\footnote{Ha puesto un $\varvarepsilon1$ o algo
+  así tras ``Reglas de selección''}
+Las vamos a ver en el hidrógeno. Ya las veremos en átomos de muchos electrones.
+
+Tenemos bichos como $\mel{(nlsjm)_f}{\boldrm{r}}{(nlsjm)_i}$. Los
+paréntesis indican los números cuánticos iniciales y finales.
+\begin{equation}
+\abs{ \mel{(nlsjm)_f}{\boldrm{r}}{(nlsjm)_i} }^2 =
+\abs{\mel{f}{x}{i}}^2 + \abs{\mel{f}{y}{i}}^2 + \abs{\mel{f}{z}{i}}^2
+= \cdots
+\end{equation}
+Hay tres integrales. El operador $\boldrm{r}$ se puede poner en
+coordenadas cartesianas o en coordenadas tensoriales\footnote{El
+  operador $r_q^1$ es un tensor de rango 1 bajo
+  $\boldrm{L}=\boldrm{r}\times \boldrm{p}$. Habría que comprobar que
+  $[L_z,r_q^1]=q \hbarr_q^1$ y que $[L_\pm,r_q^1]= \hbar
+  \sqrt{1(1+1)-q(q\pm1)} r_{q\pm1}^1$. Si te aburres lo haces.}. Tiene tres
+coordenadas tensoriales, la $r_0^1=z = \sqrt{\frac{4\pi}{3}} r Y_0^1$ y las $r_{\pm 1}^1= -
+\frac{1}{\sqrt{2}}(x\pm iy) \propto r Y_{\pm 1}^1 $. Coinciden con los armónicos esféricos
+casi.\footnote{Se llaman armónicos esféricos porque son la serie de
+  Fourier de algo en función de $\theta$ y $\varphi$ en una esfera. $F(\theta,\varphi)==sum c Y_i$}
+Bueno, pues tenemos tres integrales. Se puede demostrar\footnote{simple como
+el mecanismo de un sonajero,  no hay más que despejar y ya de las
+formulicas de $r_{0,1,-1}^1$.} que el tocho se puede escribir como
+\begin{equation}
+\cdots =  \abs{\mel{f}{r_{+1}^1}{i}}^2 + \abs{\mel{f}{r_{0}^1}{i}}^2 + \abs{\mel{f}{r_{-1}^1}{i}}^2
+\end{equation}
+Bueno, pues tenemos
+\begin{equation}
+  \abs{\mel{\underbrace{\alpha_fJ_f m_f}_{fijo}}{r_1^1}{\underbrace{\alpha_i J_i m_i}_{fijo}}}^2 +
+  \abs{\mel{f}{r_0^1}{i}}^2 +  \abs{\mel{f}{r_{-1}^1}{i}}^2
+\end{equation}
+Sólo hay que hacer una integral (W-E theorem) pero será no nula si
+$m_f=m_i+1$. Pero si la primera no es nula, es imposible que las demás no
+sean nulas. Cómo mucho, hay una no nula pues (o todas).
+
+Bueno, supongamos que una no es nula, la primera por ejemplo.
+$\mel{\alpha_F j_f m_F}{r_1^1}{\alpha_i j_i m_i} \neq 0 , (m_f=m_1+1)$, al menos
+por ahora. WE nos dice que $j_f \subset j_1 \otimes 1 = j_i+1, j_i,
+j_i -1$. El 1 es el espín del fotón, que es uno.
+
+En fín, vamos a lo que vamos. Escribo $\mel{f}{\boldrm{r}}{i}$ con
+significado de ``la que no se anule de todas''. me da
+\begin{equation}
+\mel{f}{\boldrm{r}}{i} = \sum_{(m_l \mu)_f, (m_l \mu)_i} (l m_l s \mu
+| j m)_f^* (lm_l s\mu | jm)_i \cdot
+\mel{(nlm_l)_f}{\boldrm{r}}{(nlm_l)_i} \braket{ \oh \mu_f}{\oh \mu_i}
+\end{equation}
+Me importa cuánto vale $\mel{(nlm_l)_f}{\boldrm{r}}{(nlm_l)_i} $.
+Notar que $\boldrm{r}$ es tensor de rango uno bajo $\boldrm{L}$ y los
+paréntesis son vects propios de no se qué, y por tanto $l_f \subset
+l_i \otimes 1 = l_i+1,l_i,l_i-1$. \emph{Un dipolo eléctrico o mantiene el momento
+angular o lo cambia en una unidad}. Si esto no ocurre, la transición
+dipolar eléctrica no existe.\footnote{
+\emph{Clarificación a duda:} $\mel{\alpha' J M}{T_{m_2}^{J_2}}{\alpha j_1 m_1} =
+c (\alpha' J T J_2 \alpha J_1)(j_1 j_2 m_1 m_2|JM=0)$ Por $J \notsubset j_1 \otimes j_2$
+}
+
+Si nos pasa esto, una transición prohibida, es que el dipolo magnético
+(que despreciamos) es relevante, u otras cosas que simplificamos.
+
+Nos queda otra regla de selección que no depende del Wigner-Eckart.
+Tiene que ver con la paridad.
+
+\begin{equation}
+  \begin{split}
+    \mel{(nlm_l)_f}{\boldrm{r}}{(nlm_l)_i} &= \int_V \dd{v}
+    R^*_{(nl)_f} (r) \underbrace{Y_{l_f}^{m_l_f*}
+      (\Omega)}_{(-1)^{l_f}} \underbrace{\{r_1^1,r_0^1,r_1^1\}}_{(-1)}
+    R_{(nl)_i}(r) \underbrace{Y_{l_i}^{m_l_i}(\Omega)}_{(-1)^{l_i}} =
+    \\
+    &= -  \underbrace{(-1)^{l_i} (-1)^{l_f}}_{-1}
+    \underbrace{\mel{(nlm)_f}{\boldrm{r}}{(nlm)_i}}_{\neq 0}
+  \end{split}
+\end{equation}
+Los parens dicen como cambian bajo paridad o algo así. Ojo $l_f
+\subset l_i-1,l_i,l_i+1$ implica que no puedo coger $l_f=l_i$ porque si no
+ya no me sale el $-1$ en la ecuación.
+
+Por lo tanto, en el dipolo eléctrico, $\text{paridad inicial} \neq \text{paridad
+inicial} $. Se dice que \emph{transporta paridad}. Notar que esto solo sirve si
+la paridad inicial y final están definidas (pares o impares).
+
+Outline:
+\begin{enumerate}
+\item Miramos els de matriz
+\item Clebsch-Gordan
+\item Definimos operadores tensoriales si existen (como $\boldrm{r}$).
+  Todos los multipolos electromagnéticos lo son.
+\item Si se cumplen cosas hacen como Clebsch-Gordan.
+\item Calculo de las 6 ints sólo 1.
+\item Los 6 que no se anulan son los que cumplen la sreglas de selección.
+\end{enumerate}
+
+Si no se cumplieran estas tres reglas de selección:
+\begin{enumerate}
+\item El dipolo eléctrico transporta momento angular.
+\item ???? ahí se ha quedado
+\end{enumerate}
+
+
+En el hidrógeno
+\begin{enumerate}
+\item Jf contenido en ji otimes 1 ($|\Delta j|=0,1$)
+\item lf contenido en li \otimes 1 ($ |\Delta l|=1$)
+\item li \neq lf ($0 !\to 0$)
+\end{enumerate}
+entre parens versión antigua
+
+Recordar, dijimos que $e^{i \boldrm{k} \boldrm{r}} \simeq 1$ y nos salía el
+dipolo ($\varvarepsilon_1$, ver fig adjunta).
+
+\section{2016-05-12}
+
+Comenzamos la sección \emph{átomos multielectrónicos} ($Z>2$). Utilizaremos la
+aproximación de campo central. Esperamos que los espectros atómicos
+sean progresivamente más complicados con $Z$ pero vemos que no es así,
+hay periodicidad en las columnas de la tabla periódica. Tratamos de
+modelar esto con un \emph{modelo de capas}. El procedimiento es
+similar al del átomo de helio.
+
+El hamiltoniano será
+\begin{equation}
+  \Ham = \sum_{i=1}^Z - \frac{\hbar^2}{2m} \nabla_i^2 - \sum_{i=1}^Z
+  \frac{Ze^2}{r_i} + \sum_{i<j} \frac{e^2}{r_{ij}} +
+  \cancelto{0}{W_\text{fine}}, \ \ M_N \gg m_e
+\end{equation}
+Nos olvidamos del término de estructura fina por ahora. Nos molesta
+$r_{ij}$ como en el helio, y lo arreglamos igual, con potenciales
+centrales virtuales.
+\begin{equation}
+  \begin{split}
+    \Ham &= \sum_{i=1}^Z - \frac{\hbar^2}{2m} \nabla_i^2 + \sum_{i=1}^Z V_z(r_i) - 
+    \\
+    &-
+      \sum_{i=1}^Z V_z(r_i) - \sum_{i=1}^Z
+    \frac{Ze^2}{r_i} + \sum_{i<j} \frac{e^2}{r_{ij}} +
+    \cancelto{0}{W_\text{fine}}, \ \ M_N \gg m_e 
+  \end{split}
+\end{equation}
+
+Obtenemos $\Ham = \Ham_0 + W$, con $\Ham_0 \gg W$. Veremos que los
+resultados son útiles cuantitativamente.\footnote{Actualmente se
+  utilizan más métodos variacionales que perturbativos.}
+La parte dificil es ver el potencial $V_z(r_i)$.
+
+Nos preguntamos cómo son los autoestados y autovalores de $\Ham_0$.
+Son fáciles de hallar porque $\Ham_0 = \sum_{i}h_i$ (son $Z$
+electrones independientes). Basta con estudiar el hamiltoniano de una
+sóla partícula: $h = \frac{-\hbar^2}{2m} \nabla^2 + V_z(r)$ con
+autoestados $\varphi_{n\ell m
+  \mu}(\boldrm{r})=R_{n\ell}(r)Y_l^m(\Omega)\ket{\mu}$\footnote{$\ket{\mu}$ es
+  el espín.}. Ojo, el armónico esférico no influye para potenciales
+centrales, sólo la parte radial. Hallaremos unos autovalores $E_{n\ell}$
+dependientes de $V_z(r)$.Vemos que este potencial es muy cómodo\footnote{Ante la ignorancia, la esfera.}.
+La degeneración de $E_{n\ell}$ será $2(2\ell+1)$\footnote{Por el $\ket{\mu}$
+  y el $Y_l^m(\Omega)$.}. Ojo, el potencial no tiene
+por qué ser de Coulomb. Las energías no tienen por qué ser de ese
+estilo\footnote{En el potencial de Coulomb había ciertas
+  coincidencias (ver dibujo del tema de potenciales centrales.)}.
+
+\paragraph{Convenio}
+Se utiliza $n_{\text{min}}=\ell+1$. Así se tiene algo parecido al átomo
+de hidrógeno\footnote{Creo que ya está apuntado por ahí. Conv. de
+  física atómica? Vale sí. Lo es. $E_{10},E_{20}\ldots$ y
+  $E_{21},E_{31},\ldots$}. Viene bien para tener en un futuro reglas memotécnicas del
+llenado de capas.
+
+\paragraph{Autovalores de $\Ham_0$}
+Recordamos que $\Ham_0 = \sum_{i=1}^Zh_i$. ¿Cuál es la energía del
+sistema? Simplemente,
+\begin{equation}
+  E = \sum_{i} k(n_i\ell_i) E_{n_i\ell_i}
+\end{equation}
+donde $k$ es el número de electrones con energía $(n_i\ell_i)$. 
+\paragraph{Autoestados de $\Ham_0$}
+Los autoestados de $\Ham_0$ son determinantes de Slater
+\footnote{Porque los electrones son fermiones independientes, en el
+  caso considerado, el modelo de capas}.
+Recordamos que la degeneración está definida, y por tanto
+$k(n_i\ell_i)<2(2\ell_i+1)$. Si cojo más, el determinante de Slater se anulará.
+Llamamos \emph{capas} a los subespacios de degenaración de $E_{n\ell}$.
+
+
+Por tanto, $k(n\ell)$ es el número electrones en la capa $(n\ell)$, también
+llamado \emph{número de ocupación}.
+$2(2\ell+1)$ es el número máximo de electrones en la capa $(n\ell)$.
+
+
+\paragraph{Nivel fundamental de $\Ham_0$}
+% Leer apuntes de pablo, pag 77
+% [...]
+La \emph{regla de Madelung}\footnote{Ojo, no sirve para hallar el
+  llenado de capas, sino para hallar la \emph{última} capa rellena.
+  Si se utiliza para ver el llenado de capas se encuentran varias
+  excepciones, como el cobre o el cromo.} nos dice que tenemos que coger el $n$
+mínimos, y dentro del mínimo $n$ el $n+\ell$ mínimo\footnote{Esta regla
+  supone el convenio ya visto de $n_{\text{min}}=\ell+1$.}.
+
+\section{2016/5/16}
+Regla de Madelung nos da las configuraciones fundamentales. También
+necesitamos las excitadas.
+\begin{itemize}
+\item Los alcalinos tienen siempre capas completas con degeneración 2.
+  Como las capas completas no contribuyen al no. det. de Slater, sólo
+  tenemos el grado de libertad del espín. Última conf. $(ns)^1$
+\item Su primer excitado tienen degeneración 6. Acaba en $(np)^1$
+\item Los alcalino-térreos tienen como última capa ``incompleta''
+ \footnote{también es completa} $(ns)^2$. La degeneración es 1 (sólo
+  hay un det. de Slater).
+\item Su primer excitado acaba en $(ns)^1(np)^1$. La degeneración es $12$.
+\item Un ejemplo no trivial es el cabono en el fundamental, acabado en
+  $2p^2$. La degeneración es $\binom{6}{2}=15$.
+\item El primer excitado del carbono acaba en $(2p)^1(3s)^1$. La deg. es 12.
+\end{itemize}
+
+Nos vamos al siguiente orden de aproximación, los términos
+espectroscópicos.
+
+\subsection{Términos espectroscópicos}
+Tenemos (o teníamos, no sé) una aproximación $\Ham = \Ham_0 +
+\cancel{W}$. Es nuestro \emph{modelo de capas}.
+La perturbación es
+\begin{equation}
+  W(\boldrm{r}_1,\ldots,\boldrm{r}_Z) = - \sum_{i=1}^Z V_z(r_i)-
+  \sum_{i=1}^Z \frac{Ze^2}{r_i} + \sum_{i<k} \frac{e^2}{r_{ij}}
+\end{equation}
+Consideramos los subespacios de degeneración de $\sum_{i}
+k(n_i\ell_i)E_i$\footnote{Notar que la base de estos subespacios son
+  determinantes de Slater de tamaño $Z\timesZ$, tantos como la
+  degeneración. Ya hemos visto que la degeneración puede ser enorme,
+  así que la cosa se complica rápido.}.
+% Mejor no encontrárselo por la noche en un sitio sin iluminación.
+% [referente a las funciones de onda]
+Tenemos que $[W,\boldrm{L}]=0$, al igual que $[W,\boldrm{S}]$.
+\footnote{Donde $\boldrm{L} = \sum_{i} \boldrm{L}_i$ e igual para $\boldrm{S}$.}
+
+La base astuta para diagonalizar será $L^2,L_z,S^2,S_z$, pero para
+dos electrones no es un CSCO. Ejemplo:
+\begin{equation}
+  1 \otimes 1 \otimes 1 = \underbrace{(0 \oplus 1 \oplus 2)}_{1\otimes
+  1} \otimes 1 = \{1,0,1,2,1,2,3\}
+\end{equation}
+Notar como se repiten algunos momentos. Hace falta saber la
+configuración (la genealogía) para romper esa degeneración. Notar como
+si aumentamos el número de electrones, aumenta la degeneración
+(momentos repetidos) y necesitamos una genealogía mayor.
+
+Luego nuestro CSCO será $L^2,L_z,S^2,S_z$ y la genealogía.
+
+No obstante, vemos que los átomos no son tan complicados a veces, y
+hay regularidades. Esto es debido a que las capas completas no
+contribuyen al momento angular.
+
+La primera capa completa es $(ns)^2$, con $L=0$ y $S=0,\cancel{1}$ (descartamos
+$L:0,S:1$ por ser una combinación simétrica).
+
+La siguiente capa completa es $(np)^6$, con
+$L=1\otimes1\otimes\cdots\otimes1 = \{0,\ldots,6\}$.Notar que algo nos
+dice que tiene que ser $L,S=0$ porque la degeneración del det de
+slater es 1\footnote{Pocas terceras componentes puedo tener...}.
+
+\subsection{Por qué las capas completas tienen $L=0$}
+
+\begin{equation}
+(np)^6 = \frac{1}{\sqrt{6!}} \sum_{p} i_p P\{(++)_1(+-)_2(0+)_3(0-)_4(-1+)_5(-1-)_6\}
+\end{equation}\footnote{p de permutaciones}
+Hay 720 sumandos\footnote{En la pizarra, $+-$ eran \verb~uparrows~} ortogonales, donde
+\begin{equation}
+  (1+)_1 = R_{np}(r_1) Y_1^{+1}(1) \ket{+}_1
+\end{equation} 
+El det de Slater es tocho, con diagonal $\varphi_{np 1+1+}(1)$, $\varphi_{np
+1+1-}(2)$, ...
+
+\subsubsection{caso con $Z=6$}
+El $L_z$ (recordar que hay muchos $\otimes \mathbb{I}$) será
+$L_z=L_{1z}+\cdots+L_{6z}$ y
+\begin{equation}
+  L_z(np)^6 = \frac{1}{\sqrt{6!}} \sum_{P} i_p L_z P \{\cdots\} =
+  \frac{1}{\sqrt{6!}} \sum_{P} i_p P L_z \{\cdots\}
+\end{equation}
+qué hace $L_z$ sobre eso? pues
+\begin{equation}
+  (L_{1z}+\cdots+L_{6z}) \{\cdots\} = + \hbar (1+)_1 (1-)_2 \cdots
+  (-1-)_6 + (1+)_1 \hbar(1-)_2 \ldots
+\end{equation}
+Me quedarán ceros. Es la versión en 6 partículas de que las terceras
+componentes se suman\footnote{Salen cosas como $(+\hbar \otimes
+  \mathbb{I} \otimes \mathbb{I} \otimes \cdots)  +(- \hbar\otimes \mathbb{I} \otimes
+  \mathbb{I} \cdots) = 0 $ (\joke a tomar viento)}.
+
+Con $L_x$ y $L_y$ es más complicado porque los vectores considerados
+no son propios de estos operadores, hagámoslo con $L_+$ y $L_-$ por
+los loles:
+\begin{equation}
+  L_+ = L_{1+} + \cdots + L_{6+}
+\end{equation}
+Recordar que faltan muchas identidades.
+\begin{equation}
+  L_+(np)^6 = \frac{1}{\sqrt{6!}} \sum_{P} i_p \underbrace{L_+
+    P\{\}}_{P L_+\{\}} 
+  \label{eq:htnht}
+\end{equation}
+
+\begin{equation}
+  \begin{split}
+    (L_{1+}+\cdots L_{6+})\{\cdots\} &=
+    \underbrace{0}_{L_{1+}\{\cdots\}} +
+    \underbrace{0}_{{L_{2+}\{\cdots\}}} + \\ &+ (1+)_1(1-)_2\sqrt{2} \hbar
+    (1+)_3 (0-)_4(-1+)_5(-1-)_6 + \\ &+ (1+)_1(1-)_2 (0+)_3 \sqrt{2}
+    \hbar(1-)_4(-1+)_5(-1-)_6 +
+  \end{split}
+\end{equation}
+Los ceros son porque no se puede subir más. Notar como hemos aumentado
+el numerico que va con el $\sqrt{2}\hbar$. Es abstracto porque nos
+estamos saltando un determinante $6\times6$, 720 sumandos.
+
+Ahora toca la parte de sumar de la eq. \ref{eq:htnht}. Pero ver que en
+la última eq. hay muchos términos rep, y por tanto esos determinantes
+de slater se anulan\footnote{Al foso!}. Luego nos queda cero.
+\begin{equation}
+  L_+ (np)^6 = 0
+\end{equation}
+Con $L_-$ pasa más de lo mismo, pero bajando en vez de subiendo.
+\begin{equation}
+  L_- (np)^6 = 0
+\end{equation}
+Por tanto, $L_x y L_y$ serán nulos sobre $(np)^6$. Como $L_z$ también
+daba cero, tenemos que $L^2(np)^6=0$. Con $S^2(np)^6$ pasa igual.
+Notar que esto pasa porque los electrones son fermiones idénticos
+\footnote{El determinante de Slater es como la parca con la guadaña.
+  No habéis oído nunca segar alfalfa con la guadaña? fzas fzash fzash
+  zashhsh\emph{shshsh}}. Tenemos que
+
+\begin{center}
+  $L^2$, $S^2$, $J^2$ dependen sólo de las capas
+  \bfseries{incompletas}
+\end{center}
+
+
+\section{2016-05-19}
+Teníamos un hamiltoniano
+\begin{equation}
+  \Ham = \Ham_0 + W + (W_\text{EF})
+\end{equation}
+Las correcciones del término $W_\text{EF}$ son de la forma
+\begin{equation}
+  \sum_{i} k(n_i \ell_i) E_{n_i \ell_i} + \Delta(\text{configuración},L,S)
+\end{equation}
+con ``configuración'' se quiere decir configuración y posible
+genealogía. Vemos que no hay influencia de las terceras componentes.
+Para $\Delta$ sólo influyen las capas incompletas\footnote{ya que las
+completas siempre tienen $L,S=0$}.
+
+para $(capa completa)(n\ell)^1$ y $(capa completa)(n\ell)^2$ (y
+complementarias) no se qué.
+
+Ha hablado de configs complementarias y regla de Hund. Buscar en
+apuntes extra.
+
+\subsection{Estructura fina}
+En $W_\text{EF}$ aparecerán como poco términos espín órbita como poco.
+Sólo con el espín órbita ($\mathbf{l}_i\cdot \mathbf{s}_i$) ya vemos
+que $[W_\text{EF},\mathbf{S}]\neq 0$ al igual que
+$[W_\text{EF},\mathbf{L}]$. En cambio, sí tendremos
+$[W_\text{EF},\mathbf{J}]=0$ porque una rotación completa conserva los
+ángulos. En el átomo de helio el razonamiento era exactamente igual.
+
+Utilizamos la notación compacta
+\begin{equation}
+  \ket{ (\text{conf}) ; L S J M}
+\end{equation}
+Lo primero que hay que recordar\footnote{Se halla igual que en el helio} es que
+\begin{equation}
+  \mel{(\text{conf})LSJM}{W}{(\text{conf})L'S'J'M'} \sim
+  \delta_{LL'}\delta_{SS'}\delta_{JJ'}\delta_{MM'} \Delta(\text{conf};L,S)
+\end{equation}
+Pasemos a calcular los elementos de matriz. OJO: Ahora ponemos
+$W_\text{EF}$ y no $W$:
+\begin{equation}
+  \begin{split}
+    \mel{(\text{conf})LSJM}{W_\text{EF}}{(\text{conf})L'S'J'M'} & \sim
+    \delta_{JJ'} \delta_{MM'} \\
+    & \nsim \delta_{LL'}\delta_{SS'}
+  \end{split}
+\end{equation}
+Ahora pasamos al acoplamiento L-S. Cuando $W_\text{EF}\ll
+W$ los elementos de fuera de la diagonal\footnote{Dice que se llama en
+realidad superdiagonal} son irrelevantes, como
+ya se vió\footnote{Lo de la matriz $2\times2$ y eso}.
+
+Recordar que $W$ es la repulsión coulombiana y $W_\text{EF}$ son los
+términos de estructura fina. 
+
+Tenemos
+\begin{equation}
+  \ev{W_\text{ef}}{(\text{conf})LSJ\cancel{M}} = \Delta_{EF}(\text{conf};LSJ)
+\end{equation}
+Notar que no depende de terceras componentes, aún persiste algo de
+degeneración. Todo idéntico a lo ya visto.
+
+Veamos algún ejemplo de lo que ocurre
+
+\paragraph{Ejemplo: Alcalinos fundamental}
+Son capas completas con $(ns)^1$ al final, con únicamente el término
+espectroscópico ${}^2S$. Se tiene $J=\oh$ y por tanto se tiene
+${}^2S_\oh$. La primera excitada es $(c.c.)(np)^1$, término
+espectroscópico ${}^2P$ y $J\in\{\oh,\nicefrac{3}{2}\}$ (doblete del
+sodio). Tenemos por tanto dos términos, ${}^2P_\oh$ y
+${}^2P_{\nicefrac{3}{2}}$. El ordenamiento es: a menor $J$ menor
+energía. Por lo tanto, (figura 1).
+
+
+\paragraph{Ejemplo: Alcalinotérreos fundamental}
+Los alcalinotérreos son más simples, al menos el fundamental. Son
+capas completas y $(ns)^2$, con término ${}^1S$ y te tiene $J=0$ por
+lo que ${}^1S_0$. La primera excitada es la $(ns)(np)$, donde tenemos
+el ${}^3P$ y el ${}^1P$. En la ${}^1P$ se tiene $J=0\otimes1=1$ y en
+la ${}^3P$ obtenemos $J=1\otimes1=\{0,1,2\}$ (figura 2).
+
+Las configuraciones complementarias son exactamente iguales, excepto
+que cuando la $J$ disminuye la energía aumenta. A esto se le llama
+\emph{multipletes invertidos}. El resto es exactamente igual, acoplar
+con Clebsch-Gordan.
+
+Regla curiosa
+
+% Use regla, not teorema
+\begin{thm}[Regla del intervalo de Landé]
+Bajo dos hipótesis
+\begin{itemize}
+\item $W_\text{EF}\ll W$ (acoplamiento L-S)
+\item Término de espín-órbita ($\sum f(r_i)\mathbf{l}_i \mathbf{s}_i$)
+  dominante en $W_\text{EF}$
+\end{itemize}
+Se tiene en la figura 3 que
+\begin{equation}
+  \frac{E(LS,J+2)-E(LS,J+1)}{E(LS,J+1)-E(LS,J)} = \frac{J+2}{J+1}
+\end{equation}
+\end{thm}
+Por eso antes se ponía el $a$ en ${}^3 P_a$. Ponían $a$ por la distancia
+entre niveles, pero medían el momento angular total sin saberlo.
+La regla funciona bien hasta el germanio aprox, luego se rompe la
+primera hipótesis\footnote{Se pasa de acoplamiento L-S a acoplamiento
+j-j. Eso ya para el año que viene.}.
+
+\subsection{Reglas de selección $\epsilon_1$}
+
+\begin{equation}
+  \mathbf{r} \ \rightarrow \ \sum_{i=1}^Z \mathbf{r}_i
+\end{equation}
+
+\begin{equation}
+  \matrixel{ (\alpha LSJM)_f}{\sum_{i}\mathbf{r}_i}{(\alpha LSJM)_i}
+  \label{eq:foobar}
+\end{equation}
+con $f$ significando final y $i$ inicial. 
+
+La primera regla de selección no tiene nada que ver con el teorema de
+Wigner-Eckart. Es que $\sum_{i}\mathbf{r}_i$ es impar, por lo que la
+paridad a ambos lados del el. de matriz de \ref{eq:foobar} debe ser
+contraria\footnote{Si la integral no sale positiva se tiene que la
+  integral es la menos integral, y queremos que la inetgla sea la mas
+  integral. Si sale $I=-I$ es nula!}.
+
+Notar que la paridad de $(1s)^2,(2s)^2,\cdots,(n\ell)^k$ son sólo los armónicos esféricos, así que va con
+$(-1)^{\ell_1},\cdots,(-1)^{\ell_z}$, con las capas completas teniendo
+paridad positiva\footnote{
+  Se tiene $(nl)^{2(2\ell+1)}$, luego (+1).
+}.
+
+% NOTA: te saltaste una clase. Creo que una sola, sí. Javi dice 2.
+\section{2016-05-25}
+Último problema de la hoja 4 (el del carbono).
+A lo loco, ya casi de memoria.
+Se tiene $L=0_S,1_A,2_S$ y $S=0_A,1_S$. Sólo son posibles, por tanto,
+las combinaciones simétricas.
+
+El ordenamiento, por el principio de Hund, sería $1S,1D,3P$.
+Las $J$ correspondientes son
+$0\otimes0=0,0\otimes2=2,1\otimes1=0,1,2$. El ordenamiento del $3P$
+será $3P2,3P1,3P0$ (la capa incompleta está menos que semillena).
+
+El primer excitado es $(\text{c.c.})(2p)^1(3s)^1$. El $L=1$ y $S=0,1$.
+El $L$ me da igual porque puedo simetrizar y antisimetrizar a gusto,
+tenemos $1P$ y $3P$ por lo tanto.
+
+Tendremos $J=0\otimes1=1$ y $J=1\otimes1=0,1,2$, así que
+$3P2,3P1,3P0$.\footnotemark
+
+\footnotetext{Hay un poco de duda porque no hay una única
+  capa incompleta, pero por analogía nos la jugamos a esa
+  distribución. En átomos más complicados, puedes esperar multiplete
+  normal y te puede salir en lab invertido o incluso mezclas raras.}
+
+figura 1
+
+\subsection{Moléculas}
+Un poquico solo. Aquí perdemos la simetría central. Hay muchos núcleos
+que son centros de fuerzas.
+
+El ejemplo más simple es un rebaño de ovejas con moscas (moscas
+electrones, lo típico, se mueven rápido y adaptan etc.)\footnote{Donde hay ganado hay mierda, y donde hay mierda
+  hay moscas}.
+
+% Peso mosca: 0.19 g
+% Peso oveja: 90-300 Lb
+
+La primera aproximación que realizamos será $m_e \ll m_N$, así que la
+energía de los electrones es mucho mayor que las de los nucleos.
+
+Estimamos la $E_e$ (electrones), $E_v$ (vibración) y $E_R$ (rotación).
+\begin{description}
+\item[Energía electrónica] Se tiene, para electrones en una caja,
+\begin{equation}
+  \begin{split}
+    E_e &\sim \frac{\hbar^2}{mR^2} \sim \frac{\hbar^2c^2}{mc^2R^2} \sim
+    \frac{(\SI{200}{\MeV\per\femto\metre})^2}{\SI{0.5}{\MeV}
+      (\SI{1e5}{\femto\metre})^2} \sim \\
+    &\sim \SI{8}{\eV}
+  \end{split}
+\end{equation}
+Está entre el visible y el ultravioleta.
+\item[Energía de vibración] Provocada por la vibración de los núcleos.
+  Suponemos una $k$ del orden de $kR^2 \sim E_e$, ya que la $E_v$ ha
+  de compensar a la $E_e$ para no romperse la molécula o algo así.
+\begin{equation}
+  \begin{split}
+    E_v &\sim \hbar \sqrt{\frac{k}{M}} \sim \frac{\hbar}{\sqrt{M}}
+    \frac{\sqrt{E_e}}{R} \sim \left( \frac{m}{M} \right)^{\oh} E_e
+    \sim \\
+    &\sim 10^{-2}E_e \lesssim \SI{0.1}{\eV}
+  \end{split}
+\end{equation}
+%leq to less or similar
+Corresponde al infrarojo cercano.
+\item[Energía de rotación] Se tiene
+\begin{equation}
+  E_R \sim \frac{L^2}{MR^2} \sim \frac{\hbar^2}{MR^2} \sim \left(
+    \frac{m}{M} \right)E_e \lesssim \SI{1e-3}{\eV}
+\end{equation}
+En este caso, las transiciones están en el infrarojo lejano. 
+
+\marginnote{Ahora viene un ladrillo de laplacianas.}
+\footnote{Openheimer estaba en el proyecto Manhattan y luego se
+  convirtió en un furibundo (no se si había furibundos en los años 60)
+  ecologista anti armas nucleares.}
+\end{description}
+
+
+Utilizamos la aproximación de Born-Oppenheimer\footnote{Ver apuntes de
+estado sólido}:
+\begin{equation}
+  \left( \sum_{i=1}^n t_i + \sum_{j=1}^N T_j + V\right) \psi = E \psi
+  \label{eq:foobarbaz}
+\end{equation}
+Con $V$ dependiente de interacción núcleo-núcleo, electrón-electrón
+y electrón-núcleo. Las minúsculas son para electrones y las mayúsculas
+para núcleos. Suponemos núcleos estáticos en $\mathbf{R}_j$:
+\begin{equation}
+  \psi(\mathbf{r}_i,\mathbf{R}_j) \sim u_{\mathbf{R}_j}(\mathbf{r}_i)w(\mathbf{R}_j)
+\end{equation}
+La ecuación de autovalores será
+\begin{equation}
+  \left[ \sum_{i=1}^n t_i + V \right] u_{\mathbf{R}_j}(\mathbf{r}_i)
+  U(\mathbf{R}_j) u_{\mathbf{R}_j(\mathbf{r}_i)}
+\end{equation}
+Obtenemos para \eqref{eq:foobarbaz}
+\begin{equation}
+  \left( \sum_{i=1}^n t_i + \sum_{i=1}^N T_j +V \right)
+  u_{\mathbf{R}_j(\mathbf{r}_i)} w(\mathbf{R}_j) = E
+  u_{\mathbf{R}_j}(\mathbf{r}_i) w(\mathbf{R}_j)
+\end{equation}
+
+fuck this.
+
+% me meo la segunda hora
+
+
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../resumen"
+%%% End:

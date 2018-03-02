@@ -1,0 +1,231 @@
+\newif\iftwoside
+\newif\ifexplicitversion
+% TOGGLE BETWEEN TWOSIDED AND ONE-SIDED
+% ----------------------------------------------------
+\twosidetrue
+%\twosidefalse
+% ----------------------------------------------------
+% TOGGLE BETWEEN EXPLICIT VERSION AND CENSORED ONE
+% ----------------------------------------------------
+\explicitversiontrue
+%\explicitversionfalse
+% ----------------------------------------------------
+\iftwoside
+\documentclass[a4paper,nofonts,symmetric,notitlepage,notoc]{tufte-book}
+\else
+\documentclass[a4paper,nofonts,notitlepage,notoc]{tufte-book}
+\fi
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{pdfpages}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{thm}{Teorema}
+\newtheorem*{thm*}{Teorema}
+\newtheorem{mydef}{Definición}
+\newtheorem*{mydef*}{Definición}
+\newtheorem{regla}{Regla}
+\newtheorem*{regla*}{Regla}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{physics}
+\usepackage{amsfonts}
+\usepackage{nicefrac}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{babel}
+\usetikzlibrary{matrix}
+\usetikzlibrary{snakes}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{blindtext}
+\usepackage{array}
+\usepackage{mdframed}
+
+\usepackage[most]{tcolorbox}
+\tcbset{
+    frame code={}
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=blue!10,
+    colframe=white,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=0mm,
+    boxsep=5pt,
+    arc=0pt,outer arc=0pt,
+    }
+
+
+\usepackage[Bjornstrup]{fncychap}
+
+% Nice captions 
+\setcaptionfont{\itshape\small}
+
+% Bold ALL
+\usepackage{bm}
+\newcommand{\boldrm}[1]{\bm{\mathrm{#1}}}
+
+% cool triple integral (more condensed)
+\renewcommand{\iiint}{\int\!\!\!\int\!\!\!\int}
+
+% Caligraphy porn
+\usepackage{mathrsfs} 
+\newcommand{\Ham}{\mathscr{H}}
+
+% Numbered sections, I'm a masochist
+\setcounter{secnumdepth}{2}
+
+% Ditch the standard 8-bit palette
+\usepackage{color}
+\definecolor{red}{HTML}{C42A2A}
+\definecolor{green}{HTML}{41C42A}
+\definecolor{blue}{HTML}{4D55AB}
+\definecolor{purple}{HTML}{C844E6}
+
+
+% TODO 
+% ✓ Puime says: 'Ciencia exacta? se me hace raro'
+% X nice \hat (nah, it's fine)
+% ✓ fix order thing with pazo and cal
+% ✓ BROKEN hbar, and I think \Omega isn't also the default one. Maybe
+%     pazocal has broken it all?
+%     Nope, it was tufte-book. The option 'nofonts' fixed it.
+% ✓ Don't 
+% X Wrapfig in vault boys (nope, it's awful)
+% ✓ Avoid the varepsilon ≡ epsilon thing. Use the proper command.
+% ✓ Fix mathrm mess. I think I broked something.
+% ✓ Check if iiints are cool enough.
+% ✓ use \ell instead of l when readability is a concern. l ↔ ℓ
+%   almost done. My only concern are the exercises; in all new things
+%   I have used ℓ systematically.
+% ✓ use nicer colors instead of 8-bit palette in tikz figures.
+% ✓ Add clarifications on non-t perturbations based on the Telegram
+%   talk with -----. (Close enough)
+% ✓ Change "el cohen" with a proper and pedantic citation.
+% ✓ Use tabular environment with the vault boys to get nice centering, maybe?
+% ✓ Add clebsch-gordan table as appendix or whatever you want to call it
+% ✓ Formulations of exercises
+% ✓ Complete em with Clebsch-Gordan sh*t 
+% ✓ Fix justification issue in some formulations of the exercises
+% (f.e. Enero 16(1))
+% ✓ FINAL BOSS: add remaining jokenotes
+
+% CUSTOM OPERATORS
+\newcommand{\oh}{ {\nicefrac{1}{2}} }
+
+\newcommand{\moh}{ {\nicefrac{-1}{2}} }
+
+\newcommand{\joke}{ \includegraphics[width=0.15\textwidth]{joke.png}}
+\newcommand{\history}{ \includegraphics[width=0.15\textwidth]{history.png}}
+
+\ifexplicitversion
+\newcommand{\jokenote}[1]{
+  \footnote{
+    \begin{tabular}{m{1.3cm}m{3cm}}
+      \joke
+      &
+      #1
+    \end{tabular}
+  }
+}
+\newcommand{\jokemargin}[1]{
+  \marginnote{
+    \begin{tabular}{m{1.3cm}m{3cm}}
+      \joke
+      &
+      #1
+    \end{tabular}
+  }
+}
+\newcommand{\historynote}[1]{
+  \footnote{
+    \begin{tabular}{m{1.3cm}m{3cm}}
+      \history
+      &
+      #1
+    \end{tabular}
+  }
+}
+\newcommand{\historymargin}[1]{
+  \marginnote{
+    \begin{tabular}{m{1.3cm}m{3cm}}
+      \history
+      &
+      #1
+    \end{tabular}
+  }
+}
+\else
+\newcommand{\jokenote}[1]{
+  \footnote{
+    Special annotations disabled
+  }
+}
+\newcommand{\jokemargin}[1]{
+  \marginnote{
+    Special annotations disabled
+  }
+}
+\newcommand{\historynote}[1]{
+  \footnote{
+    Special annotations disabled
+  }
+}
+\newcommand{\historymargin}[1]{
+  \marginnote{
+    Special annotations disabled
+  }
+}
+\fi
+\begin{document}
+
+% book cover...
+\includepdf{cover.pdf}
+% nothing behind the cover...
+\newpage\null\thispagestyle{empty}\newpage
+% at the left we have the dedicatory, as expected.
+\includepdf{dedicatory.pdf}
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+
+\part{Teoría}
+\include{tex/rotaciones}
+\include{tex/perturbaciones}
+\include{tex/part_identicas}
+\include{tex/helio}
+\include{tex/perturbaciones_t}
+\include{tex/em}
+\include{tex/multielectron}
+
+\part{Ejercicios}
+\setcounter{section}{0}
+\setcounter{chapter}{0}
+\setcounter{equation}{0}
+\include{tex/ejercicios}
+
+
+%CG pawah
+\appendix
+\part{Apéndice}
+\include{tex/appendix}
+
+
+
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

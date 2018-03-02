@@ -1,0 +1,2764 @@
+\chapter{Perturbaciones en el pozo bidimensional (2.3)}
+\begin{tcolorbox}[halign=left]
+  \emph{Una partícula de masa $m$ se encuentra en un pozo
+    bidimensional cuadrado entre ${x=\pm a}$, ${y=\pm a}$, de altura
+    infinita.
+    }
+
+    \emph{
+    Calcule los autovalores y autoestados del hamiltoniano.
+}
+\end{tcolorbox}
+La solución del sistema sin perturbar es conocida; es el producto de
+las soluciones de dos pozos 1D:
+\begin{align}
+  E_{n_x,n_y} &= \frac{\pi^2 \hbar^2}{8ma^2}(n_x^2+n_y^2) \\
+  \varphi_{n_x,n_y}(x,y) &= \varphi_{n_x}(x)\varphi_{n_y}(y)
+\end{align}
+donde $m$ es la masa del electrón y $\varphi(x)$ es la solución para el
+caso 1D de la función de ondas:
+\begin{equation}
+  \varphi(x) =
+  \begin{cases}
+   \sqrt{\frac{1}{a}} \cos \frac{n\pi x}{a} & n = 1,3,5\ldots \\
+   \sqrt{\frac{1}{a}} \sin \frac{n\pi x}{a} & n = 2,4,6\ldots 
+  \end{cases}
+\end{equation}
+El nivel fundamental es el $E_{1,1}$, cuyo autoestado correspondiente
+es el $\varphi_{1,1}$, el cual no está degenerado. El primer excitado
+$E_{12}=E_{21}$ sí que está degenerado, teniendo autoestados $\varphi_{1,2},\varphi_{2,1}$.
+\begin{tcolorbox}[halign=left]
+  \emph{Suponga una perturbación $V(x,y)=V_0$ en el cuadrado
+    limitado por $x,y>0$ (y nula en el resto del pozo).
+    Calcule en primer orden de perturbaciones la corrección a la
+    energía del nivel fundamental y a la del primer nivel excitado.}
+\end{tcolorbox}
+\section{Perturbación del nivel fundamental}
+No está degenerado, así que de manera directa:\jokemargin{Uno puede buscar la
+solución en wikipedia y decir ``¿Quién habrá hecho esto? Un desalmado
+que no tiene ni puta idea, seguro.'' o decir ``Ancha es Castilla'' y luego
+se hunde la casa y mata a toda la familia.  Menos mal que soy físico teórico y
+eso no me afecta.}
+\begin{equation}
+  \begin{split}
+    \Delta E^{(1)} &= \bra{\varphi_{1,1}}V\ket{\varphi_{1,1}} = \iint \dd{x}
+    \dd{y} \varphi_{1,1}^*(x,y) V(x,y) \varphi_{1,1}(x,y) = \\ 
+    &= \int_0^a \int_0^a \dd{x}
+    \dd{y} V_0 |\varphi_{1,1}(x,y)|^2 = \frac{V_0}{4}
+  \end{split}
+\end{equation}
+donde se ha utilizado que la función de ondas está normalizada. 
+\section{Perturbación del primer excitado}
+Este nivel presenta degeneración. Utilizamos como base de
+$E_{1,2}=E_{2,1}$ el subespacio de degeneración
+$\{\varphi_{1,2},\varphi_{2,1}\}$, al que llamaremos $\{\ket{12},\ket{21}\}$.
+La matriz de la ecuación de perturbaciones a primer orden será:
+\begin{equation}
+  \begin{pmatrix}
+    \bra{12}V\ket{12} & \bra{12}V\ket{21} \\
+    \bra{21}V\ket{12} & \bra{21}V\ket{21} 
+  \end{pmatrix} = 
+  \begin{pmatrix}
+    \nicefrac{V_0}{4} & V_0 \left( \nicefrac{4}{3\pi} \right)^2 \\
+      V_0 \left( \nicefrac{4}{3\pi} \right)^2 & \nicefrac{V_0}{4} 
+  \end{pmatrix}
+\end{equation}
+Las integrales de la diagonal son inmediatas utilizando que
+$\braket{12}{12}=\braket{21}{21}=1$. Fuera de la diagonal tenemos:
+\begin{equation}
+  \begin{split}
+    \bra{\varphi_{1,2}}V\ket{\varphi_{2,1}} &= \iint \dd{x}
+    \dd{y} \varphi_{1,2}^*(x,y) V(x,y) \varphi_{2,1}(x,y) = \\
+    &= V_0\left(\int_0^a \frac{1}{a} \cos \frac{\pi \zeta}{a} \sin
+      \frac{2\pi \zeta}{a} \dd{\zeta} \right)^2 \stackrel{\text{Wolfram}}{=} V_0 \left( \frac{4}{3\pi} \right)^2
+  \end{split}
+\end{equation}
+La otra integral es idéntica. Calculamos los autovalores y
+autovectores de la restricción de $V$ al subespacio de degeneración.
+\begin{equation}
+  \begin{vmatrix}
+    \nicefrac{V_0}{4} - \lambda & V_0 \left( \nicefrac{4}{3\pi} \right)^2 \\
+      V_0 \left( \nicefrac{4}{3\pi} \right)^2 & \nicefrac{V_0}{4} -\lambda
+  \end{vmatrix} = 0 \ \rightarrow \ \lambda = V_0 \left[ \frac{1}{4}
+    \pm \left( \frac{4}{3\pi} \right)^2 \right]
+\end{equation}
+Utilizando los dos autovalores $\lambda_+,\lambda_-$ hallamos los
+autoestados correspondientes de la matriz, lo que nos da los autoestados
+del hamiltoniano de cada nivel degenerado:
+\begin{align}
+  \ket{+} &= \frac{1}{\sqrt{2}}\binom{1}{1} \ \rightarrow \
+  \frac{1}{\sqrt{2}} \left( \varphi_{1,2} + \varphi_{2,1}  \right)\\
+  \ket{-} &= \frac{1}{\sqrt{2}}\binom{1}{-1} \ \rightarrow \
+  \frac{1}{\sqrt{2}} \left( \varphi_{1,2} - \varphi_{2,1}  \right)
+\end{align}
+Como $\lambda_+ \neq \lambda_-$ (que son las correcciones a la
+energía) no son iguales el nivel sufrirá un desdoblamiento ya en
+primer orden de perturbaciones.
+
+
+\chapter{Estructura fina del hidrógeno (2.4)}
+\begin{tcolorbox}[halign=left]
+  \emph{Calcule en primer orden de perturbaciones las correcciones de
+    estructura fina a las energías del nivel fundamental y a las del primer
+    nivel excitado del átomo de hidrógeno.}
+\end{tcolorbox}
+\section{Nivel fundamental}
+El nivel fundamental, representado por los autoestados
+$\ket{n\ \ell\ m\ \mu}=\ket{1\ 0\ 0\ \pm\oh}$, tiene degeneración
+doble y las matrices que aparecen son por tanto $2\times2$.
+\subsection{Término de masa}
+La perturbación al hamiltoniano debida al término de masa es
+\begin{equation}
+  V_m = \frac{-p^4}{8m^3c^2}
+  \label{eq:vm}
+\end{equation}
+Como el operador $V_m$ no actúa sobre el espacio de espines, tenemos
+que $\bra{100\mu}V_m\ket{100\mu'}\propto \delta_{\mu\mu'}$, lo que implicará
+una matriz diagonal en el subespacio de degeneración. Por tanto, basta
+con calcular $\bra{100}V_m\ket{100}$.
+
+Utilizando que $\frac{p^2}{2m} =  \Ham _0 - V$, podemos escribir
+\begin{equation}
+p^4 = 4m^2 ( \Ham _0^2 -  \Ham _0V - V  \Ham _0 +
+V^2)
+\label{eq:p4}
+\end{equation}
+Calculamos por separado las integrales:
+\begin{itemize}
+\item Para el hamiltoniano al cuadrado, tenemos simplemente
+\begin{equation}
+  \bra{100} \Ham _0^2 \ket{100} = E_0^2 \braket{100}{100} = E_0^2
+\end{equation}
+\item Los términos $ \Ham _0 V$ y $V  \Ham _0 $ se calculan
+  igual:
+  \begin{equation}
+    \bra{100}V  \Ham _0 \ket{100} = 2E_0^2 \braket{100}{100} = 2E_0^2
+  \end{equation}
+donde se ha utilizado el teorema del virial ($V=2E$ para potenciales centrales).
+\item El término de potencial cuadrático no es inmediato:
+\begin{equation}
+  \begin{split}
+    \bra{100}V^2\ket{100} &= \iiint \dd{\Omega} \cancel{r^2} \dd{r}
+    R_{10}^*(r){Y_0^0}^*(\Omega) \left( \frac{e^2}{4\pi\varepsilon_0}
+    \right)^2 \frac{1}{\cancel{r^2}} R_{10}(r)Y_0^0(\Omega) = \\
+    &= \left( \frac{e^2}{4\pi\varepsilon_0} \right)^2
+    \underbrace{\int_{4\pi} \dd{\Omega}|Y_0^0(\Omega)|^2}_{=1}
+    \int_0^\infty \dd{r} \frac{4}{a_0^{3}} e^{-2r/a_0} = \\
+    &=2\left( \frac{e^2}{4\pi\varepsilon_0a_0} \right)^2 = 2m^2c^4\alpha^4
+  \end{split}
+\end{equation}
+Se ha utilizado $\displaystyle R_{10} = \frac{2}{a_0^{3/2}}
+\exp(-r/a_0)$ y $\displaystyle \int_0^\infty e^{-2r/\alpha} \dd{r} =
+\frac{\alpha}{2}$, además de $a_0 = \frac{\hbar}{m c \alpha } =
+\frac{4\pi\varepsilon_0 \hbar^2}{me^2}$.
+\end{itemize}
+
+Utilizamos que la energía del nivel fundamental del hidrógeno es $E_0
+= -\frac{1}{2}mc^2\alpha^2$, obteniendo
+\begin{equation}
+  \bra{100}V_m\ket{100} \propto E_0^2 -2E_0^2 -2E_0^2 + 2m^2c^4\alpha^4 = \left( \frac{1}{4}-1+2 \right)m^2c^4\alpha^4
+\end{equation}
+donde se ha obviado que aún hay que multiplicar por $4m^2$ (ecuación
+\eqref{eq:p4}) y dividir por $8m^3c^2$ (ecuación \eqref{eq:vm}). Tras
+ello obtenemos:
+\begin{equation}
+  V_m =  \frac{5}{8}mc^2\alpha^4
+  \begin{pmatrix}
+\imat{2}
+  \end{pmatrix}
+\end{equation}
+
+\subsection{Término de Darwin}
+La perturbación provocada por el término de Darwin es
+\begin{equation}
+  V_D =
+  \frac{\hbar^2}{8m^2c^2}\frac{e^2}{4\pi\varepsilon_0}4\pi\delta(\boldrm{r})
+  \propto \delta(\boldrm{r})
+\end{equation}
+De nuevo, el operador sólo afecta a la parte espacial, siendo su
+matriz diagonal. Calculamos el elemento de la diagonal:
+\begin{equation}
+  \begin{split}
+    \bra{100}V_D\ket{100} &=
+    \frac{h^2}{8m^2c^2}\frac{e^2}{\varepsilon_0}|\varphi_{100}(\boldrm{0})|^2
+    =\\ & \stackrel{\text{tables}}{=}
+    \frac{\hbar^2}{8m^2c^2}\frac{4}{a_0^3}\frac{1}{4\pi} = \frac{1}{2}mc^2\alpha^4
+  \end{split}
+\end{equation}
+ Por tanto,
+\begin{equation}
+  V_D = \frac{1}{2}mc^2\alpha^4
+  \begin{pmatrix}
+\imat{2}
+  \end{pmatrix}
+\end{equation}
+
+\subsection{Término de espín-órbita}
+\label{subs:SOfirst}
+En este caso el operador sí que actúa sobre el espacio de los espines,
+por lo que la matriz no será diagonal.
+\begin{equation}
+  V_\text{S0} =
+  \frac{1}{2m^2c^2}\frac{1}{r}\frac{e^2}{4\pi\varepsilon_0}\frac{1}{r^2}\boldrm{l}\cdot
+  \boldrm{s} = \text{cte.}\cdot f(r) \cdot \boldrm{l}\cdot \boldrm{s}
+\end{equation}
+Escribimos\footnote{Puede demostrarse despejando de $\boldrm{J}^2 =
+  (\boldrm{L}+\boldrm{S}^2)$, sabiendo que $\boldrm{L}$ y $\boldrm{S}$
+  conmutan.} $\boldrm{l}\cdot \boldrm{s}$ como
+$\frac{1}{2}(J^2-L^2-S^2)$ para facilitar las cuentas. Veamos como
+actúa este término sobre los autoestados del sistema:
+\begin{align}
+  S^2 \ket{100\mu'} &= \frac{3}{4}\hbar^2 \ket{100\mu'}\\
+  L^2 \ket{100\mu'} &\propto l(l+1)\hbar^2 = 0 \\
+  J^2 \ket{100\mu'} &= \frac{3}{4}\hbar^2 \ket{100\mu'}
+\end{align}
+Para el último término se ha utilizado que $S^2$ no tenía un resultado
+nulo pero $L^2$ sí, de forma que los posibles valores de $j$ son
+sólamente $\pm s$ (en general van desde $l-s$ hasta $l+s$).
+
+Por tanto,
+\begin{equation}
+  \frac{1}{2}(J^2-L^2-S^2) \ket{100\mu'} = 0
+\end{equation}
+No hay término de espín-órbita porque no hay órbita\footnote{Zas.}.
+
+\subsection{Conclusiones}
+Sumando todos los términos obtenemos una perturbacion
+$V=-\frac{1}{8}mc^2\alpha^4 \mathbb{I}$. Esto nos provoca un
+corrimiento del nivel fundamental de aproximadamente
+$\SI{1.8e-4}{\eV}$. Es pequeño en comparación con la distancia
+energética al siguiente nivel, $\SI{10}{\eV}$.
+
+
+
+\section{Primer excitado}
+La degeneración en este caso es 8, ya que $\ell\in\{0,1\}$ y por tanto $m$
+puede ser o $0$ o $0,\pm 1$ y el espín puede ser $\mu = \pm
+\oh$.
+Hay muchos elementos de matriz, así que hay que buscar una base en que
+las matrices sean lo más digonales posible. Para ello nos apoyamos en
+el siguiente teorema:
+\begin{thm}
+  Si $[A,B]=0$ y $
+  \begin{cases}
+    A \boldrm{v}_1 &= \alpha_1 \boldrm{v}_1 \\
+    A \boldrm{v}_2 &= \alpha_2 \boldrm{v}_2 
+  \end{cases}
+$, donde $\alpha_1 \neq \alpha_2$ y $A=A^\dagger$ es hermítico\jokenote{A los matemáticos les importan una higa los operadores hermíticos, pero nosotros tenemos la costumbre de medir. Quizá seríamos más felices si no midiéramos. La ignorancia hace feliz a la gente. O no... No.} entonces
+\begin{equation}
+  \bra{\boldrm{v}_1}B \ket{\boldrm{v}_2} = 0
+\end{equation}
+\label{thm:conmutediagonal}
+\end{thm}
+\begin{proof}
+  Utilizando que $A$ es hermítico y conmuta con $B$,
+  \begin{align}
+    \matrixel{\boldrm{v}_1}{AB}{\boldrm{v}_2} &= \alpha_1
+\matrixel{\boldrm{v}_1}{B}{\boldrm{v}_2} \\
+    \matrixel{\boldrm{v}_1}{AB}{\boldrm{v}_2} &= \alpha_2
+\matrixel{\boldrm{v}_1}{B}{\boldrm{v}_2} 
+  \end{align}
+  Por lo tanto
+  \begin{equation}
+    \alpha_1 \matrixel{\boldrm{v}_1}{B}{\boldrm{v}_2} = \alpha_2 \matrixel{\boldrm{v}_1}{B}{\boldrm{v_2}}
+  \end{equation}
+  Supuesto que $\alpha_1 \neq \alpha_2$, necesariamente
+  \begin{equation}
+    \matrixel{\boldrm{v}_1}{B}{\boldrm{v}_2} = 0
+  \end{equation}
+
+\end{proof}
+Por lo que $B$ es diagonal por cajas en la base de autovectores de $A$,
+si conmutan:
+\begin{equation}
+  B = 
+\begin{tikzpicture}[baseline=(current bounding box.center)]%
+\matrix[matrix of math nodes,
+inner sep=0,
+nodes={draw,outer sep=0,inner sep=2pt},
+every left delimiter/.style={xshift=1ex},%tighter delimiter spacing
+every right delimiter/.style={xshift=-1ex},
+left delimiter={(},right delimiter={)},
+column sep=-\pgflinewidth,row sep=-\pgflinewidth] (r) {
+|[inner sep=3mm]|d_1&&\\
+ & |[inner sep=5mm]|d_2&\\
+&& |[inner sep=2mm]| \ddots\\
+};
+\end{tikzpicture}
+\end{equation}
+El tamaño de las cajas es $d_i \times d_i$, donde las $d_i$ son las degeneraciones
+de cada autoestado.
+
+Una posible base de $ \Ham $ con $n=2$ sería $
+\{\ket{2\ 0\ 0 \ \mu},\ket{2 \ 1 \ m \ \mu}\}$ con $\mu=\pm
+\oh$ y $m=0,\pm 1$; posee 8 elementos del tipo\footnote{El
+CSCO es $ \Ham , S^2, L^2, L_z , S_z$, pero se omite en los kets
+el término de $S^2$ por ser todo el rato igual. En el helio sí será
+necesario escribir explícitamente este término.}
+$\ket{ \Ham \ L^2\ L_z \ S_z}$. Recordando el teorema
+\ref{thm:conmutediagonal}, comprobamos si los términos perturbativos
+conmutan con $L^2,L_z,S_z$. No es necesario comprobarlo con
+$ \Ham $ ya que el autovalor sabemos que será el mismo, siendo
+inaplicable el teorema.
+
+\subsection{Término de masa}
+Sabemos que $V_m \sim p^4$. Extendemos al espacio de espinores para
+comprobar si conmuta con $S_z$:
+\begin{equation}
+  \begin{split}
+    [V_m,S_z] &=V_m S_z - S_z V_m = \\
+    &= (V_m \otimes \mathbb{I})(\mathbb{I}\otimes S_z) -
+    (\mathbb{I}\otimes S_z)(V_m \otimes \mathbb{I})
+  \end{split}
+\end{equation}
+Si aplicamos ambos términos de la resta a $[\varphi \otimes \chi]$
+obtenemos el mismo resultado, $V_m\varphi\otimes S_z \chi$. Por tanto,
+$V_m$ conmuta con $S_z$, como era de esperar. Con esto garantizamos
+que, al menos, $V_m$ tendrá dos cajas:
+
+\begin{equation}
+  V_m = 
+\begin{tikzpicture}[
+    node distance=1mm and 0mm,
+    baseline]
+\matrix (M1) [matrix of nodes,{left delimiter=(},{right delimiter=)}]
+{
+  $\mu = \oh $& 0  \\
+  0 & $\mu = \nicefrac{-1}{2}$  \\
+};
+\draw  (M1-1-1.north east) -- (M1-2-2.south west);
+\draw  (M1-1-1.south west) -- (M1-2-2.north east);
+\end{tikzpicture}
+\end{equation}
+Para el operador $L_z$ reescribimos el término de masa con ayuda de
+\begin{equation}
+  T = \frac{p^2}{2m}= \frac{-\hbar^2}{2m} \underbrace{\left[
+      \frac{1}{r^2} \pdv{r} \left( r^2 \pdv{r} \right) -
+      \frac{L^2}{\hbar r^2} \right]}_{\nabla^2}
+\end{equation}
+Vemos que por tanto $p$ se puede escribir en función de $r,L$. Como
+$[L^2,\boldrm{L}]=0$, $[\boldrm{L},T]=0$. Por lo tanto,
+$[\boldrm{L},p^2]=0$ y por tanto $[L_z,p^2]=0$. Para $p^4$ obtenemos
+los mismos resultados, deduciendo que $V_m$ conmuta con $L^2,L_z,S_z$
+y es completamente diagonal en la base elegida para $ \Ham $:
+\begin{equation}
+  \matrixel{2\ \ell \ m\ \mu}{ V_m}{2\ \ell' \ m'\ \mu'} \sim \delta_{\ell \ell'} \delta_{mm'}\delta_{\mu\mu'}
+\end{equation}
+
+\subsection{Término de Darwin}
+\label{subs:darwintermex}
+El término es básicamente $V_D \sim \delta(\boldrm{r})$. Naturalmente
+conmuta con los operadores en el espacio de espines, y con
+$\boldrm{L}$ por ser puramente radial. Tenemos que, al igual que
+$V_m$, el término será completamente diagonal:
+\begin{equation}
+  \matrixel{2\ \ell \ m\ \mu}{ V_D}{2\ \ell' \ m'\ \mu'} \sim \delta_{\ell \ell'} \delta_{mm'}\delta_{\mu\mu'}
+\end{equation}
+
+\subsection{Término de espín-órbita}
+Aquí ya no hay tanta suerte. $\boldrm{l} \cdot \boldrm{s}$ no varía si
+giro a la vez $\boldrm{l}$ y $\boldrm{s}$, pero sí lo hace al girarlos
+por separado; el término conmuta con $\boldrm{J}$.
+
+Escribiendo el término como $V_\text{SO}=
+\frac{1}{2}f(r)[J^2-L^2-S^2]$ vemos que conmuta con $L^2,S^2$ pero no
+con $L_z$. Nos aseguramos de esta última afirmación:
+\begin{equation}
+  \begin{split}
+    [V_\text{S0},L_z] &\sim [L_xS_x,L_z] + [L_yS_y,L_z] +
+    \cancelto{0}{[L_zS_z,L_z]} = \\ &= L_xS_xL_z -L_zL_xS_x+L_yS_yL_z
+    -L_zL_yS_y = \\ &= [L_x,L_z]S_x + [L_y,L_z]S_y = -i \hbar L_yS_x+i
+    \hbar L_xS_y \neq 0
+  \end{split}
+\end{equation}
+donde se ha utilizado que $L_i,S_i$ pertenecen a espacios distintos y
+por tanto conmutan. Visto que conmuta con $\boldrm{J}$ (y por tanto
+con $J^2,J_z$), nos
+preguntamos si sería mejor escoger una base\jokenote{La base astuta.} en
+$ \Ham ,S^2,L^2,J^2,J_z$ en lugar de la
+utilizada hasta ahora,
+$ \Ham , S^2, L^2, L_z , S_z$. Comprobamos si se satisfacen las
+otras dos relaciones de conmutación que nos interesan; empezando por
+$[V_\text{S0},L^2] = [J^2-L^2-S^2,L^2]=0$ obtenemos
+\begin{align}
+    [L^2,\boldrm{L}]= [L^2,\boldrm{S}] = 0 \rightarrow
+    [L^2,\underbrace{\boldrm{L}+\boldrm{S}}_{\boldrm{J}}] = 0
+    \rightarrow [J^2,L^2]&=0\\
+  [L^2,L^2] &= 0 \\
+  [S^2,L^2]&=0
+\end{align}
+Para $[V_\text{SO},S^2]$ obtenemos los mismos resultados. Por lo
+tanto, en la base propuesta la matriz resultante es diagonal para
+$V_\text{SO}$. Es fácil ver que los demás operadores también serán
+diagonales en dicha base, y obtenemos:
+\begin{equation}
+  \matrixel{2\ \ell\ j\ m}{V}{2 \ \ell' \ j'  \ m'} = \delta_{\ell\ell'}\delta_{jj'}\delta_{mm'}
+\end{equation}
+Ahora que tenemos una buena base, podemos calcular los valores numéricos de
+los elementos de matriz.
+\subsection{Cálculo de $V_m$}
+\paragraph{$\ell=0$}
+\label{paragraph:l0vm}
+
+
+Para $\ell=0$ tenemos, dada su independencia del espín,
+\begin{equation}
+  \ev{V_m}{2\ 0 \ \oh\ \oh} = \ev{V_m}{2\ 0 \ 0} \cdot \cancelto{1}{\ip{\oh\ \oh}}
+\end{equation}
+Donde se ha cambiado de la nueva base $ \Ham ,S^2,L^2,J^2,J_z$ a
+la antigua $ \Ham ,S^2,L^2,L_z,S_z$  mediante
+$\ket*{\underset{n}{2} \ \underset{\ell}{0} \ \underset{j}{\oh}\  \underset{m}{\oh}} = 1 \cdot
+\ket*{\underset{n}{2} \ \underset{\ell}{0}\ 
+  \underset{m}{0}}\otimes\ket*{\underset{s}{\oh} \
+  \underset{\mu}{\oh}}$. Notar que ambas $m$ no se refieren al mismo
+número cuántico; una es el número cuántico magnético
+$m\in\{-\ell,\cdots,0,\cdots,\ell\}$ y la otra el autovalor correspondiente
+a $J_z$.
+Escribimos $V_m$ como $\frac{-1}{2mc^2} ( \Ham ^2 -  \Ham V
+- V  \Ham  + V^2)$, y calculamos por separado las integrales:
+\begin{itemize}
+\item En primer lugar, $\ev{ \Ham ^2}{2\ 0\ 0} = E_2^2$
+\item Por el teorema del virial, 
+  \begin{equation}
+    \begin{split}
+      \ev{ \Ham V}{2\ 0 \ 0} &= \ev{V \Ham }{2\ 0 \ 0} =\\&=
+      E_2\ev{V}{2\ 0 \ 0} = E_2(-2E_2)
+    \end{split}
+  \end{equation}
+\item Por último, hallamos $\ev{V^2}{2\ 0\ 0}$ por integración:
+\begin{equation}
+  \begin{split}
+    \bra{200}V^2\ket{200} &= \iiint \dd{\Omega} \cancel{r^2} \dd{r}
+    R_{20}^*(r){Y_0^0}^*(\Omega) \left( \frac{e^2}{4\pi\varepsilon_0}
+    \right)^2 \frac{1}{\cancel{r^2}} R_{20}(r)Y_0^0(\Omega) = \\
+    &= \left( \frac{e^2}{4\pi\varepsilon_0} \right)^2
+    \underbrace{\int_{4\pi} \dd{\Omega}|Y_0^0(\Omega)|^2}_{=1}
+    \int_0^\infty \dd{r} 4 \frac{1}{8a_0^3} \left( 1- \frac{r}{2a_0}
+    \right)^2 e^{-r/a_0} = \\
+    &= \cdots =  \frac{-13}{128} m c^2 \alpha^4
+  \end{split}
+\end{equation}
+
+\end{itemize}
+
+Con esto ya tenemos toda la caja de $\ell=0$, ya que el espín no es
+relevante en este término. 
+\paragraph{$\ell=1$}
+
+Para la caja $\ell=1$ calculamos un
+término cualquiera, en este caso utilizamos $\ev{V_m}{2\ 1\ \nicefrac{1}{2}\
+  \nicefrac{1}{2}}$. Con una tabla de coeficientes de
+Clebsch-Gordan\footnote{Tenemos dos momentos angulares, el espín
+  ($\nicefrac{1}{2}$) y el orbital ($1$).}
+vemos que:
+
+\begin{equation}
+  1 \times \frac{1}{2}:\ \ \ \ket*{\underset{J}{\oh}\
+    \underset{M}{\oh}}  = \sqrt{\frac{2}{3}} \ket*{\underset{m_1}{+1}\
+    \underset{m_2}{-\oh}} -\sqrt{\frac{1}{3}} \ket*{\underset{m_1}{0}\ \underset{m_2}{\oh}}
+\end{equation}
+Por tanto,
+\begin{equation}
+  \ket*{2\  1\  \oh\   \oh} = -\sqrt{\frac{1}{3}} \ket*{\underset{n}{2}\
+  \underset{\ell}{1}\ \underset{m}{0}}\ket*{\underset{s}{\oh}\
+  \underset{\mu}{\oh}}+\sqrt{\frac{2}{3}} \ket*{\underset{n}{2}\
+  \underset{\ell}{1}\ \underset{m}{1}}\ket*{\underset{s}{\oh}\
+  \underset{\mu}{-\oh}}
+\end{equation}
+El valor medio queda:
+\begin{equation}
+  \begin{split}
+    \ev{V_m}{2\ 1\ \nicefrac{1}{2}\ \nicefrac{1}{2}} =& \frac{1}{3}
+    \ev{V_m}{2 \ 1\ 0}\cancelto{1}{\braket{\oh}{\oh}} + \\ &+ \frac{2}{3}
+    \ev{V_m}{2 \ 1\ 1}\cancelto{1}{\braket{-\oh}{-\oh}} - \\ &-
+    \sqrt{\frac{1}{3}}\sqrt{\frac{2}{3}} \matrixel{2\ 1\ 0}{V_m}{2\ 1\
+    1} \cancelto{0}{\braket{\oh}{-\oh}} - \\ &-
+    \sqrt{\frac{2}{3}}\sqrt{\frac{1}{3}} \matrixel{2\ 1\ 1}{V_m}{2\ 1\
+    0} \cancelto{0}{\braket{-\oh}{+\oh}}
+  \end{split}
+\end{equation}
+Tenemos a priori dos integrales a resolver, pero podemos poner la
+segunda en función de la primera: 
+\begin{equation}
+  \begin{split}
+    &\ev{V_m}{\alpha\ j\ m+1} = 
+\\ &=\left(
+      \frac{1}{\hbar\sqrt{j(j+1)-m(m+1)}} \right)^2
+    \ev{J_-VJ_+}{\alpha \ j \ m}
+\\ &=\left(
+      \frac{\hbar\sqrt{j(j+1)-m(m+1)}}{\hbar\sqrt{j(j+1)-m(m+1)}} \right)^2
+    \ev{V}{\alpha \ j \ m} =
+    \\ & = 
+    \ev{V_m}{\alpha\ j\ m}
+  \end{split}
+  \label{eq:exercises_recurrence}
+\end{equation}
+
+Se ha utilizado que $J_- = J_+^\dagger$, y por tanto necesitamos $J_-$
+para los bra y $J_+$ para los ket. Vemos que ambas
+integrales tienen el mismo resultado.
+Esto era de esperar, ya que $[V_m,\boldrm{S}]=[V_m,\boldrm{L}]=0$
+implica qe $[V_m,\boldrm{J}]=0$, y por tanto de $\ket{n\ l\ j\ m}$ son
+irrelevantes tanto $j$ como $m$. 
+
+Integramos uno de los términos:
+
+\begin{equation}
+  \ev{V_m}{2\ 1\ 1} = (E_2^2 -2E_2^2 - 2E_2^2 + \langle  V^2 \rangle) \left( \frac{-1}{2mc^2} \right)
+\end{equation}
+\begin{equation}
+  \begin{split}
+    \langle V^2 \rangle &= \left( \frac{e^2}{4\pi\varepsilon_0} \right)^2 
+    \iint \dd{\Omega}r^2 \dd{r}|R_{21}(r)|^2 \frac{1}{r^2} |Y_1^1|^2 =
+    \\ &=
+    \cdots = \left( \frac{e^2}{4\pi\varepsilon_0} \right)^2 \frac{1}{12a_0^2}
+  \end{split}
+\end{equation}
+Por tanto,
+\begin{equation}
+  \ev{V_m}{2\ 1\ 1} = \frac{-7}{384}mc^2 \alpha^4 = \ev{V_m}{2\ 1 \ 0}
+\end{equation}
+
+
+\paragraph{Resultado}
+Juntando los resultados anteriores, obtenemos
+\begin{equation}
+  V_m = mc^2 \alpha^4
+\begin{tikzpicture}[
+    node distance=1mm and 0mm,
+    baseline]
+\matrix (M1) [matrix of nodes,{left delimiter=(},{right delimiter=)}]
+{
+  $-\frac{13}{128}$ & $ $ & $ $ & $ $ &  $ $ & $ $ & $ $ & $ $ \\
+  $ $ & $-\frac{13}{128}$ & $ $ & $ $ &  $ $ & $ $ & $ $ & $ $ \\
+  $ $ & $ $ & $-\frac{7}{384}$ & $ $ &  $ $ & $ $ & $ $ & $ $ \\
+  $ $ & $ $ & $ $ & $-\frac{7}{384}$ &  $ $ & $ $ & $ $ & $ $ \\
+  $ $ & $ $ & $ $ & $ $ &  $-\frac{7}{384}$ & $ $ & $ $ & $ $ \\
+  $ $ & $ $ & $ $ & $ $ &  $ $ & $-\frac{7}{384}$ & $ $ & $ $ \\
+  $ $ & $ $ & $ $ & $ $ &  $ $ & $ $ & $-\frac{7}{384}$ & $ $ \\
+  $ $ & $ $ & $ $ & $ $ &  $ $ & $ $ & $ $ & $-\frac{7}{384}$ \\
+};
+\draw[red,thick] 
+        (M1-1-1.north west) -| (M1-2-2.south east) -| (M1-1-1.north
+        west) node[above right=0.2cm] {$\ell=0,j=\oh$};
+\draw[red,thick] 
+        (M1-3-3.north west) -| (M1-4-4.south east) -| (M1-3-3.north
+        west) node[above right=0.2cm] {$\ell=1,j=\oh$};
+\draw[red,thick] 
+        (M1-5-5.north west) -| (M1-8-8.south east) -| (M1-5-5.north
+        west)  node[above right=0.2cm] {$\ell=1,j=\nicefrac{3}{2}$};
+\end{tikzpicture}
+\end{equation}
+
+\subsection{Cálculo de $V_D$}
+De nuevo, se desacopla la parte de espín. Utilizando que $V_D\sim\delta(\boldrm{r})$,
+\begin{equation}
+  \ev{V_D}{2\ 0\ 0} = \frac{\hbar^2}{8m^2c^2}
+  \frac{e^{^2}}{\varepsilon_0}
+  \underbrace{|\varphi_{200}(\boldrm{r}=\boldrm{0})|^2}_{1/ 8\pi a_0^3} =
+  \frac{1}{16}mc^2 \alpha^4
+\end{equation}
+Para $l=1$ tenemos:
+\begin{equation}
+  \begin{split}
+    \bra{210}V_D\ket{210} &\propto \iiint R_{21}^*(r){Y_{1}^{0}}^*(\Omega)
+    \delta(\boldrm{r})  R_{21}(r){Y_{1}^{0}}(\Omega) \dd{V} \propto \\ &\propto
+    |\varphi_{210}({\boldrm{0}})|^2=0
+  \end{split}
+\end{equation}
+
+Obtenemos la siguiente matriz:
+
+\begin{equation}
+  V_D =  mc^2 \alpha^4
+\begin{tikzpicture}[
+    node distance=1mm and 0mm,
+    baseline]
+\matrix (M1) [matrix of nodes,{left delimiter=(},{right delimiter=)}]
+{
+  $\frac{1}{16}$ & $ $ & $ $ & $ $ &  $ $ & $ $ & $ $ & $ $ \\
+  $ $ & $\frac{1}{16}$ & $ $ & $ $ &  $ $ & $ $ & $ $ & $ $ \\
+  $ $ & $ $ & $0$ & $ $ &  $ $ & $ $ & $ $ & $ $ \\
+  $ $ & $ $ & $ $ & $0$ &  $ $ & $ $ & $ $ & $ $ \\
+  $ $ & $ $ & $ $ & $ $ &  $0$ & $ $ & $ $ & $ $ \\
+  $ $ & $ $ & $ $ & $ $ &  $ $ & $0$ & $ $ & $ $ \\
+  $ $ & $ $ & $ $ & $ $ &  $ $ & $ $ & $0$ & $ $ \\
+  $ $ & $ $ & $ $ & $ $ &  $ $ & $ $ & $ $ & $0$ \\
+};
+\draw[red,thick] 
+        (M1-1-1.north west) -| (M1-2-2.south east) -| (M1-1-1.north
+        west) node[above right=0.2cm] {$\ell=0,j=\oh$};
+\draw[red,thick] 
+        (M1-3-3.north west) -| (M1-4-4.south east) -| (M1-3-3.north
+        west) node[above right=0.2cm] {$\ell=1,j=\oh$};
+\draw[red,thick] 
+        (M1-5-5.north west) -| (M1-8-8.south east) -| (M1-5-5.north
+        west)  node[above right=0.2cm,fill=white] {$\ell=1,j=\nicefrac{3}{2}$};
+\end{tikzpicture}
+\end{equation}
+
+\subsection{Cálculo de $V_\text{SO}$}
+Este término presenta mayor complejidad, al no desacoplarse por completo.
+
+\paragraph{$\ell=0$}
+De manera similar a lo visto en la subsección \ref{subs:SOfirst}, el término es nulo
+por no haber órbita.
+
+\paragraph{$\ell=1,j=\oh$}
+
+
+Calculamos $V_\text{S0}$ en $\ket{2\ 1\  \oh \ \oh}$, por ejemplo
+\begin{equation}
+  \begin{split}
+    &\ev{\text{cte}\cdot f(r) \frac{1}{2}
+      (\boldrm{J}^2 -\boldrm{L}^2 -\boldrm{S}^2)  }{2\ 1\  \oh \  \oh}= \\
+    &= \text{cte}\cdot (-\hbar^2) \bra{2\ 1\ \oh \ \oh}
+    \frac{1}{r^3} \ket{2\ 1 \ \oh \ \oh} \stackrel{\text{like }V_m}{=}
+    \\ &= \text{cte}\cdot(-\hbar^2)
+    \bra{2\ 1\ 0}\frac{1}{r^3}\ket{2\ 1\ 0} = \\ &= - \frac{1}{48}mc^2\alpha^4
+  \end{split}
+\end{equation}
+donde se ha utilizado\footnote{Basándonos en los autovalores de los operadores.} que
+\begin{equation}
+  \begin{split}
+    &\frac{1}{2} (\boldrm{J}^2 -\boldrm{L}^2 -\boldrm{S}^2) \ket{2\ 1\
+      \oh \ \oh} = \\ &= \frac{1}{2} \left[ \frac{1}{2} \left( \frac{1}{2}
+        +1 \right) - 1(1+1)-\frac{1}{2}\left( \frac{1}{2}+1 \right)
+    \right] \hbar^2 \ket{2\ 1\ \oh \ \oh}
+  \end{split}
+\end{equation}
+
+
+
+\paragraph{$\ell=1,j=\nicefrac{3}{2}$}
+De manera similar al caso anterior,
+\begin{equation}
+  \begin{split}
+    &\bra{2\ 1\  \nicefrac{3}{2}\ m} \text{cte}\cdot \frac{1}{r^3}
+    \underbrace{\frac{1}{2} (\boldrm{J}^2 - \boldrm{L}^2 -
+      \boldrm{S}^2) \ket{ 2\ 1\  \nicefrac{3}{2}\ m}}_{\frac{1}{2}\left(
+        \frac{15}{4}-2-\frac{3}{4} \right)\hbar^2 \ket{2\ 1\ 
+        \nicefrac{3}{2}\ m}}= \\ &=  \cdots  = \frac{1}{96}mc^2 \alpha^4
+\end{split}
+\end{equation}
+
+\paragraph{Resultado}
+La matriz obtenida es:
+
+\begin{equation}
+  V_\text{SO} = mc^2 \alpha^4
+\begin{tikzpicture}[
+    node distance=1mm and 0mm,
+    baseline]
+\matrix (M1) [matrix of nodes,{left delimiter=(},{right delimiter=)}]
+{
+  $0$ & $ $ & $ $ & $ $ &  $ $ & $ $ & $ $ & $ $ \\
+  $ $ & $0$ & $ $ & $ $ &  $ $ & $ $ & $ $ & $ $ \\
+  $ $ & $ $ & $-\frac{1}{48}$ & $ $ &  $ $ & $ $ & $ $ & $ $ \\
+  $ $ & $ $ & $ $ & $-\frac{1}{48}$ &  $ $ & $ $ & $ $ & $ $ \\
+  $ $ & $ $ & $ $ & $ $ &  $\frac{1}{96}$ & $ $ & $ $ & $ $ \\
+  $ $ & $ $ & $ $ & $ $ &  $ $ & $\frac{1}{96}$ & $ $ & $ $ \\
+  $ $ & $ $ & $ $ & $ $ &  $ $ & $ $ & $\frac{1}{96}$ & $ $ \\
+  $ $ & $ $ & $ $ & $ $ &  $ $ & $ $ & $ $ & $\frac{1}{96}$ \\
+};
+\draw[red,thick] 
+        (M1-1-1.north west) -| (M1-2-2.south east) -| (M1-1-1.north
+        west) node[above right=0.2cm] {$\ell=0,j=\oh$};
+\draw[red,thick] 
+        (M1-3-3.north west) -| (M1-4-4.south east) -| (M1-3-3.north
+        west) node[above right=0.2cm] {$\ell=1,j=\oh$};
+\draw[red,thick] 
+        (M1-5-5.north west) -| (M1-8-8.south east) -| (M1-5-5.north
+        west)  node[above right=0.2cm,fill=white] {$\ell=1,j=\nicefrac{3}{2}$};
+\end{tikzpicture}
+\end{equation}
+
+\subsection{Conclusión}
+
+La matriz de perturbación resultante, tras sumar
+$V_m,V_D$ y $V_\text{SO}$, queda:
+
+\begin{equation}
+  V = \frac{1}{128}mc^2 \alpha^4
+\begin{tikzpicture}[
+    node distance=1mm and 0mm,
+    baseline]
+\matrix (M1) [matrix of nodes,{left delimiter=(},{right delimiter=)}]
+{
+    -5 & & & & & & & \\
+       &-5 & & & & & & \\
+       & & -5& & & & & \\
+       & & & -5&& & & \\
+       & & & & -1& & & \\
+       & & & & &-1 & & \\
+       & & & & & &-1 & \\
+       & & & & & & &-1 \\
+};
+\draw[red,thick] 
+        (M1-1-1.north west) -| (M1-2-2.south east) -| (M1-1-1.north
+        west) node[above right=0.2cm] {$\ell=0,j=\oh$};
+\draw[red,thick] 
+        (M1-3-3.north west) -| (M1-4-4.south east) -| (M1-3-3.north
+        west) node[above right=0.2cm] {$\ell=1,j=\oh$};
+\draw[red,thick] 
+        (M1-5-5.north west) -| (M1-8-8.south east) -| (M1-5-5.north
+        west)  node[above right=0.2cm] {$\ell=1,j=\nicefrac{3}{2}$};
+\end{tikzpicture}
+\end{equation}
+
+
+Notar la simetría oculta, las dos primeras cajas son iguales.
+
+
+\chapter{Método variacional en el litio (3.1)}
+\begin{tcolorbox}[halign=left]
+  \emph{
+    Calcule con el método de variaciones una cota superior a la
+    energía del nivel fundamental del átomo de Li con una función
+    prueba cuya parte espacial sea
+    $\varphi(\boldrm{r}_1;\alpha)\varphi(\boldrm{r}_2;\alpha)\varphi(\boldrm{r}_3;\alpha)$,
+    con $\alpha$ un parámetro adimensional. Si el valor experimental
+    es \SI{-203.5}{\eV}, ¿es correcto su cálculo? ¿Por qué?
+}
+\end{tcolorbox}
+
+Tenemos que
+\begin{equation}
+  \varphi(\vec{\boldrm{r}},\alpha) = \left( \frac{\alpha^3}{\pi a_0^3}
+  \right)^{1/2} e^{-\alpha r/a_0}
+\end{equation}
+con $\varphi_{100}(\boldrm{r})$ autoestado de
+$\frac{-\hbar^2}{m}\nabla^2- \frac{\alpha e^2}{r}$. Podemos expresar
+el hamiltoniano del sistema como
+\begin{equation}
+  \Ham = T_1+T_2+T_3+V_1+V_2+V_3+V_{12}+V_{23}+V_{31}
+\end{equation}
+Como función prueba, emplearemos $\psi =
+\varphi(\boldrm{r}_1,\alpha)\varphi(\boldrm{r}_2,\alpha)\varphi(\boldrm{r}_3,\alpha)$.
+
+Hallamos $T_1$ (las otras dos son idénticas) con ayuda del teorema del
+virial (figura \ref{fig:virialnote}).
+
+\begin{marginfigure}
+  \begin{tikzpicture}[xscale=1.5,yscale=0.5]
+    \draw [color=blue, thick] (0,1) -- (2,1);
+    \draw node [right] at (2,1) {$T$};
+    % 
+    \draw [thin, dashed] (0,0) -- (2,0);
+    \draw node [right] at (2,0) {$0$};
+    % 
+    \draw [color=blue, thick] (0,-1) -- (2,-1);
+    \draw node [right] at (2,-1) {$E$};
+    % 
+    \draw [color=blue, thick] (0,-2) -- (2,-2);
+    \draw node [right] at (2,-2) {$V$};
+    % 
+    \draw [thick,->] (-0.2,-2) -- (-0.2,1);
+    \draw node [left, rotate=90] at (-0.4,0.5) {$\text{Energy}$};
+  \end{tikzpicture}
+  \caption{Teorema del virial}
+  \label{fig:virialnote}
+\end{marginfigure}
+\begin{equation}
+  \begin{split}
+    \langle T_1 \rangle &= \ev{T_1}{\varphi(\boldrm{r}_1,\alpha)}
+    \underbrace{\ip{\varphi(\boldrm{2})}}_{=1} \underbrace{\ip{\varphi(\boldrm{3})}}_{=1} = \\
+    & \stackrel{\text{virial}}= \frac{1}{2} \frac{e^2}{a_0}\alpha^2
+  \end{split}
+\end{equation}
+como hay tres términos $\langle T_i\rangle$ obtengo el triple de este
+resultado. Para los potenciales $\langle V_i \rangle$,
+\begin{equation}
+  \begin{split}
+    \langle V_1 \rangle  &= \ev{V_1}{\varphi(\boldrm{r}_1,\alpha)}
+    1\cdot 1  = \\
+    & \stackrel{\text{virial}}=  \frac{-e^2}{a_0}\alpha^1 Z
+  \end{split}
+\end{equation}
+
+y para los términos cruzados, como ya se vió\footnote{Vete a saber donde},
+\begin{equation}
+  \begin{split}
+    \langle V_{12} \rangle  &= \ev{V_{12}}{\varphi(\boldrm{r}_1,\alpha)\varphi(\boldrm{r}_2,\alpha)}
+     = \\
+    &= \cdots = \frac{5}{8} \frac{e^2}{a_0}\alpha^1 
+  \end{split}
+\end{equation}
+Si sumamos todo obtenemos
+\begin{equation}
+  \langle \Ham \rangle_{\psi(\alpha)} = 3 \frac{e^2}{a_0} \left(
+    \frac{\alpha^2}{2}-Z\alpha+ \frac{5}{8}\alpha \right) \geq E_0 =
+  \SI{-203.5}{\eV},\ \ \forall \alpha
+\end{equation}
+El mínimo está en $\alpha = Z- \nicefrac{5}{8}$, que en el litio
+($Z=3$) resulta en \SI{-230.1}{\eV}. Vemos que el resultado es menor
+que la energía mínima del sistema, por lo que está mal.
+
+Esto se debe a que hemos utilizado una función que no es
+antisimétrica, a pesar de ser los electrones fermiones.
+
+\chapter{Acoplo de dos electrones (3.2)} 
+\begin{tcolorbox}[halign=left]
+  \emph{
+    Calcule la función de ondas de dos electrones en la configuración
+    $(2p)(3p)$ acoplados a un momento angular total $L=2$, $M_L=2$ y
+    con espín total $S=1$,$M_S=-1$. ¿Pueden acoplarse a $L=1$, $M_L=1$
+    con $S=0$, $M_S=0$? Si es así, calcule su función de ondas. Si
+    ambos electrones están en la configuración $(2p)^2$, ¿pueden
+    obtenerse los resultados anteriores?
+}
+\end{tcolorbox}
+Tenemos una función de ondas global 
+\begin{equation}
+\psi = \ket{(2p)(3p) L S  M_L M_S
+}=\ket{(2p)(3p)\  2\ 1 \ +2\ -1 }
+\end{equation}
+Utilizamos la tabla de Clebsch-Gordan para la parte espacial\footnote{Estamos acoplando dos
+  momentos angulares $1\otimes1$. Queremos pasar de la base
+  $\ell_1=1,\ell_2=1$ (dos orbitales \emph{p}) a la base $L=2,M_L=2$.
+  Si consultamos la tabla $1\otimes 1$, vemos que el coeficiente es simplemente la
+  unidad:
+  \begin{center}
+    \begin{tabular}{cc|c|}
+      \cline{3-3}
+      &    & 2          \\ \cline{3-3} 
+      &    & 2          \\ \hline
+      \multicolumn{1}{|l|}{-1} & -1 & \textbf{1} \\ \hline
+    \end{tabular}
+  \end{center}
+}y la de espín\footnote{Estamos acoplando dos
+  momentos angulares $\oh\otimes\oh$. Queremos pasar de la base
+  $s_1=\oh,s_2=\oh$ (dos electrones) a la base $S=1,M_S=-1$.
+  Si consultamos la tabla $\oh\otimes\oh$, vemos que el coeficiente es simplemente la
+  unidad:
+  \begin{center}
+    \begin{tabular}{cc|c|}
+      \cline{3-3}
+      &    & 1          \\ \cline{3-3} 
+      &    & -1          \\ \hline
+      \multicolumn{1}{|l|}{$-\oh$} & $-\oh$ & \textbf{1} \\ \hline
+    \end{tabular}
+  \end{center}
+}, y obtenemos
+
+
+
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+
+\tikzset{square arrow/.style={
+    to path={-- ++(0,-.25)  -| (\tikztotarget) \tikztonodes},below,pos=.25}}
+\begin{equation}
+  \psi = \underbrace{+1}_{\text{C.G.}} \cdot
+  R_{2p}\tikzmark{a}(\boldrm{r}_1)Y_1^{+1}\tikzmark{b}(\Omega_1) \cdot
+  R_{3p}\tikzmark{c}(\boldrm{r}_2)Y_1^{+1}\tikzmark{d}(\Omega_2) \otimes \underbrace{+1}_{\text{C.G.}}\cdot\ket{-}_1 \ket{-}_2
+  \tikz[overlay,remember picture]
+  {
+   \path[
+   color=gray,draw,out=-35,in=-145,
+   line width=0.5mm,
+   cap=round,
+   dash pattern=on .05mm off 8mm,
+   line cap=round,
+   dotted
+   ] ([xshift=3pt,yshift=-5pt]a.south) to ([xshift=-3pt,yshift=-5pt]b.south) ;
+   \draw[color=gray,thick] ([xshift=0pt,yshift=0pt]a.south) circle (0.2cm);
+   \draw[color=gray,thick] ([xshift=0pt,yshift=0pt]b.south) circle (0.2cm);
+   %
+   \path[
+   color=gray,draw,out=-35,in=-145,
+   line width=0.5mm,
+   cap=round,
+   dash pattern=on .05mm off 8mm,
+   line cap=round,
+   dotted
+   ] ([xshift=3pt,yshift=-5pt]c.south) to ([xshift=-3pt,yshift=-5pt]d.south) ;
+   \draw[color=gray,thick] ([xshift=0pt,yshift=0pt]c.south) circle (0.2cm);
+   \draw[color=gray,thick] ([xshift=0pt,yshift=0pt]d.south) circle (0.2cm);
+    }
+\end{equation}
+Notar como los términos radial y angular no son separables
+\jokenote{Esto es inseparable, va con esposas, como Mario Conde.
+  Bueno, Mario Conde lo dudo.}.
+
+La parte espacial no es simétrica ni antisimétrica, así que sumándole
+y restándole su transposición ($1 \leftrightarrow 2$) podemos
+simetrizarla o antisimetrizarla a placer. Como su transposición es
+ortogonal, el factor de normalización será $\frac{1}{\sqrt{2}}$. La
+parte de espín es simétrica, por lo que necesitamos una parte espacial
+antisimétrica:
+\begin{equation}
+  \begin{split}
+    \psi &= \frac{1}{\sqrt{2}} \Big[
+      R_{2p}(\boldrm{1})Y_1^{+1}(\boldrm{1}) \cdot
+      R_{3p}(\boldrm{2})Y_1^{+1}(\boldrm{2}) - \\
+      &- R_{2p}(\boldrm{2})Y_1^{+1}(\boldrm{2}) \cdot
+      R_{3p}(\boldrm{1})Y_1^{+1}(\boldrm{1}) \Big] \otimes \ket{-}_1
+    \ket{-}_2
+  \end{split}
+\end{equation}
+
+Si en cambio nos dan una función de ondas
+
+\begin{equation}
+\psi' = \ket{(2p)^2 L S M_L M_S
+}=\ket{(2p)^2\  2\ 1 \ +2\ -1 }
+\end{equation}
+
+Ya no podremos antisimetrizar la parte espacial, ya que es
+completamente simétrica. Su transposición es la misma función, y si se
+la restamos obtendríamos $\psi'=0$.
+
+Esta función ya no permite el acoplo, ya que la función sería o nula
+($\Psi=0$) o violaría el postulado de simetrización al ser simétrica
+sobre fermiones.
+
+\chapter{Momento angular del nivel fundamental (3.3)}
+\begin{tcolorbox}[halign=left]
+  \emph{
+    Suponga dos electrones en una configuración $2p^2$. ¿Cuál es la
+    degenaricoń de esta configuración? ¿Cuál es la degeneración de
+    cada uno de los niveles obtenidos en acoplamiento LS? Calcule, en
+    esta configuración, una función de ondas con $J=0$ y otra con
+    $J=2$ y $M=+2$.
+}
+\end{tcolorbox}
+Tenemos una función de ondas del tipo $(2p)^2$, con $J=0$ (por lo que
+$M=0$) o con $J=2,M=+2$. De los cuatro números cuánticos sólo se dan
+dos en el enunciado, por lo que quizá halla varias funciones de onda.
+Hacemos una tabla\footnote{Se descartan las combinaciones que
+  imposibilitan una función de ondas global antisimétrica.} de acoplamiento L-S:
+\begin{center}
+  \begin{tabular}{ccl}
+    L & S & J \\ \hline
+    $2_S$ & $0_A$ & $2$  \\ 
+    $1_A$ & $1_S$ & $0,1,2$ \\ 
+    $0_S$ & $0_A$ & $0$ \\ 
+  \end{tabular}
+\end{center}
+Tenemos dos funciones de onda para cada enunciado, las dos primeras
+filas valen para $J=2,M=+2$ y las dos últimas para $J=0,M=0$. 
+
+La más simple es el ``tope de la escalera'', $2\otimes 0$ para dar $J=2, M=+2$. El
+coeficiente de Clebsch-Gordan correspondiente\footnote{Si se consulta
+una tabla se verá que no existe por ser obvio} es la unidad:
+\marginnote{ Recordar que la notación $F_{(2p)^2}  \smqty{M_L\\ L}$ tiene
+  el significado de $F_{\ell\ell'}\ket{M_L\
+    L}(\boldrm{r}_2,\boldrm{r}_1)$, con $F$ la función espacial
+  correspondiente (parte radial y angular).}
+\begin{equation}
+  \begin{split}
+    \Psi &=+1 \underbrace{F_{(2p)^2} \smqty{+2\\ 2} (\boldrm{1},\boldrm{2})}_{
+      \mathclap{
+        R_{2p}\boldrm{1}Y_1^1(\boldrm{1})R_{2p}(\boldrm{2})Y^1_1(\boldrm{2})
+      } } \ket{0,0} = \\
+    &= \text{sim} \otimes \text{antisim} = \text{antisim} \  \checkmark
+  \end{split}
+\end{equation}
+
+A continuación, resolvemos el caso $1\otimes 1$ para dar de nuevo
+$J=2,M=+2$. La tabla de Clebsch-Gordan nos da un coeficiente unitario
+de nuevo:
+\begin{equation}
+  \begin{split}
+    \ket*{(2p)^2\ 
+      \underset{L}{1}\ \underset{S}{1}\ \underset{J}{2}\ \underset{M}{2}}\tikzmark{a} &=
+    +1 \cdot F_{(2p)^2} \smqty{+1 \tikzmark{c}\\1} (\boldrm{1},\boldrm{2}) \ket{1
+      \ {+1}\tikzmark{b}} = \\
+    &\text{antisim} \otimes \text{sim} = \text{antisim} \ \checkmark
+  \end{split}
+  \tikz[overlay,remember picture]
+  {
+   \draw[color=red,thin] ([xshift=-10pt,yshift=3pt]a) circle (0.2cm); 
+   \draw[color=red,thin] ([xshift=-3pt,yshift=2.3pt]b) circle (0.3cm);
+   \draw[color=red,thin] ([xshift=-3pt,yshift=2.3pt]c) circle (0.15cm);
+    }
+\end{equation}
+Notar como las componentes marcadas en rojo a ambos lados de la
+ecuación suman lo mismo. Esto debería ocurrir siempre.
+
+La función espacial es simétrica en este caso\footnote{ Se tiene 
+  \begin{equation*}
+    \textstyle
+    \begin{split}
+      F_{(2p)^2} \smqty{+1\\1} &= \frac{1}{\sqrt{2}}
+      R_{2p}(\boldrm{1})Y_1^{+1}(\boldrm{1})
+      R_{2p}(\boldrm{2})Y_1^0(\boldrm{2}) - \\
+      &- \frac{1}{\sqrt{2}}
+      R_{2p}(\boldrm{2})Y_1^{0}(\boldrm{2})
+      R_{2p}(\boldrm{1})Y_1^{+1}
+    \end{split}
+  \end{equation*}
+}.
+
+A continuación, consideremos el caso $0\otimes 0$ para dar $J=0, M=0$.
+Se tiene de nuevo un Clebsch-Gordan unitario.
+\begin{equation}
+  \begin{split}
+    \ket*{(2p) \underset{L}{0}\ \underset{S}{0}\ \underset{J}{0}\
+      \underset{M}{0}} &= +1 \cdot F_{(2p)^2} \smqty{0\\0}
+    (\boldrm{1},\boldrm{2}) \ket{0 \ {0}} = \\
+    &=\text{sim}\otimes \text{antisim} = \text{antisim} \ \checkmark
+  \end{split}
+\end{equation}
+
+Se puede comprobar que el factor $F_{(2p)^2}\smqty{0\\0}$ es par
+expandiéndolo:
+\begin{equation}
+  \begin{split}
+    F_{(2p)^2} \smqty{0\\0}&= 
+    \frac{+1}{\sqrt{3}} R_{2p}(\boldrm{1})Y_1^{1\tikzmark{a}}(\boldrm{1})
+    R_{2p}(\boldrm{2}) Y_1^{-1\tikzmark{b}}(\boldrm{2}) -\\
+    &- \frac{1}{\sqrt{3}} R_{2p}(\boldrm{1})Y_1^{0\tikzmark{c}}(\boldrm{1})
+    R_{2p}(\boldrm{2}) Y_1^{0\tikzmark{d}}(\boldrm{2}) + \\
+    & +\frac{1}{\sqrt{3}} R_{2p}(\boldrm{1})Y_1^{-1\tikzmark{e}}(\boldrm{1}) R_{2p}(\boldrm{2}) Y_1^{1\tikzmark{f}}(\boldrm{2})
+  \end{split}
+  \tikz[overlay,remember picture]
+  {
+   \draw[color=red,thin] ([xshift=-3pt,yshift=2.3pt]a) circle (0.2cm);
+   \draw[color=red,thin] ([xshift=-3pt,yshift=2.3pt]b) circle (0.2cm);
+   \draw[color=red,thin] ([xshift=-3pt,yshift=2.3pt]c) circle (0.2cm);
+   \draw[color=red,thin] ([xshift=-3pt,yshift=2.3pt]d) circle (0.2cm);
+   \draw[color=red,thin] ([xshift=-3pt,yshift=2.3pt]e) circle (0.2cm);
+   \draw[color=red,thin] ([xshift=-3pt,yshift=2.3pt]f) circle (0.2cm);
+    }
+\end{equation}
+
+donde se han utilizado la fila correspondiente de los coeficientes de Clebsch-Gordan
+correspondientes\footnote{Utilizamos la tabla $1\otimes 1$, y
+  obtenemos
+\begin{center}
+\begin{tabular}{ll|l|l|l|}
+\cline{3-5}
+                         &    & 2   & 1    & \textbf{0} \\ \cline{3-5} 
+                         &    & 0   & 0    & \textbf{0} \\ \hline
+\multicolumn{1}{|l|}{+1} & -1 & 1/6 & 1/2  & 1/3        \\ \hline
+\multicolumn{1}{|l|}{0}  & 0  & 2/3 & 0    & -1/3       \\ \hline
+\multicolumn{1}{|l|}{-1} & +1 & 1/6 & -1/2 & 1/3        \\ \hline
+\end{tabular}
+\end{center}
+Luego los coeficientes son $\nicefrac{1}{3}$, $\nicefrac{-1}{3}$ y
+$\nicefrac{1}{3}$. Para los círculos rojos empleamos las dos filas de
+la izquierda ,$\smqty{+1&-1\\ 0 & 0 \\ -1 & +1}$.
+} en los índices marcados en rojo.
+
+Por último, resolvemos el $1\otimes 1$ para dar $J=0,M=0$ (se omiten los
+otros dos). En este caso, el coeficiente de Clebsch-Gordan ya no es
+trivial\footnote{Hay que consultar una tabla $1\otimes 1$, y pasar a
+$\ket*{\underset{J}{0}\ \underset{M}{0}}$. Son los mismos coeficientes
+que en el último caso, $\nicefrac{1}{3}$, $\nicefrac{-1}{3}$ y
+$\nicefrac{1}{3}$.}:
+\begin{equation}
+  \begin{split}
+    \ket*{(2p)^2\underset{L}{1}\ \underset{S}{1}\ \underset{J}{0}\
+      \underset{M}{0}} &= \frac{1}{\sqrt{3}} F_{(2p)^2}\smqty{1\tikzmark{a}\\1}
+    \ket{1 \ {-1\tikzmark{b}}} - \\
+& -\frac{1}{\sqrt{3}} F_{(2p)^2}\smqty{0\tikzmark{c}\\1}
+    \ket{1 \ {0\tikzmark{d}}} + \\
+& +\frac{1}{\sqrt{3}} F_{(2p)^2}\smqty{-1\tikzmark{e}\\1}
+    \ket{1 \ {+1\tikzmark{f}}} - \\
+  \end{split}
+  \tikz[overlay,remember picture]
+  {
+   \draw[color=red,thin] ([xshift=-3pt,yshift=2.3pt]a) circle (0.2cm);
+   \draw[color=red,thin] ([xshift=-3pt,yshift=2.3pt]b) circle (0.3cm);
+   \draw[color=red,thin] ([xshift=-3pt,yshift=2.3pt]c) circle (0.2cm);
+   \draw[color=red,thin] ([xshift=-3pt,yshift=2.3pt]d) circle (0.25cm);
+   \draw[color=red,thin] ([xshift=-3pt,yshift=2.3pt]e) circle (0.2cm);
+   \draw[color=red,thin] ([xshift=-3pt,yshift=2.3pt]f) circle (0.3cm);
+    }
+\end{equation}
+Nuevamente, sustituímos en los círculos rojos las filas de la tabla de
+Clebsch-Gordan. Cada una de las $F$ se puede volver a sustituir
+utilizando la tabla de Clebsch-Gordan, y se obtiene que la son todas
+antisimétricas. De igual manera, todos los espinores son simétricos,
+por lo que la función de ondas total es antisimétrica, como se deseaba.
+
+\chapter{Incertidumbre en el oscilador armónico (4.1)}
+\begin{tcolorbox}[halign=left]
+  \emph{
+    Calcule, con ayuda de los operadores de creación y
+    destrucción, el producto de incertidumbre $\Delta X \Delta P$ para
+  el autoestado n-ésimo del oscilador armónico unidimensional.}
+\end{tcolorbox}
+Tenemos que
+\begin{align}
+a &= \frac{1}{\sqrt{2}} ( \hat{X}+i\hat{P}) \\
+a^\dagger &= \frac{1}{\sqrt{2}} ( \hat{X}-i\hat{P}) 
+\end{align}
+Necesitamos calcular $(\Delta X \Delta P)^2=(\langle X^2 \rangle-\langle
+X\rangle^2)(\langle P^2 \rangle-\langle P\rangle^2)$, donde $X =
+\sqrt{\frac{\hbar}{m\omega}}\hat{X}$ y $P = \sqrt{m \hbar
+  \omega}\hat{P} $. Calculamos las dos primeras integrales (los
+$\langle a \rangle$) despejando $X,P$ en función de $a,a^\dagger$:
+
+\begin{align}
+  \mel{n}{X}{n} &= \sqrt{\frac{\hbar}{m\omega}} ( \underbrace{\mel{n}{a^\dagger}{n}}_{{=\braket{n}{n+1}=0}}
+  + \underbrace{\mel{n}{a}{n}}_{=\braket{n}{n-1}=0})
+  \frac{1}{\sqrt{2}} = 0 \\
+  \mel{n}{P}{n} &= \sqrt{m \hbar\omega} ( \underbrace{\mel{n}{a^\dagger}{n}}_{{=\braket{n}{n+1}=0}}
+  - \underbrace{\mel{n}{a}{n}}_{=\braket{n}{n-1}=0})
+  \frac{1}{\sqrt{2}} = 0 
+\end{align}
+Utilizando $[a,a^\dagger]=1$ deducimos que $aa^\dagger-a^\dagger a =
+1$, y por tanto $a a^\dagger = 1 + a^\dagger a = 1 + N$. De ahí
+deducimos que
+\begin{align}
+  \mel{n}{X^2}{n} &= \cdots = \frac{\hbar}{2m\omega}(1+2n)\\
+  \mel{n}{P^2}{n} &= \cdots = \frac{m\hbar\omega}{2}(1+2n)
+\end{align}
+con el mismo procedimiento que antes. Finalmente,
+\begin{equation}
+  \Delta X \Delta P = \frac{\hbar}{2}(1+2n)
+\end{equation}
+
+\chapter{Elementos de matriz del hidrógeno (4.2)}
+\label{ej:integralloca}
+\begin{tcolorbox}[halign=left]
+  \emph{Calcule en el átomo de hidrógeno el elemento de matriz 
+    $\mel*{1\  0 \ \oh \ \oh \ {+\oh}}{r_0^1}{2\ 1  \ {\oh} \
+      {\nicefrac{3}{2}} \ {+\oh}}$ 
+  donde los kets indican los elementos $\ket{n\ \ell\ s \ j \ m}$.}
+\end{tcolorbox}
+
+De manera explícita, los kets pueden escribirse como
+\begin{align}
+  \ket{1\ 0 \ \oh \ \oh \ {+\oh}} &= \underbrace{1}_{\text{C.G.}} 
+  \varphi_{100}(\boldrm{r}) \ket{\oh \ {+\oh}} \\
+  \ket{2\ 1 \ \oh \ \nicefrac{3}{2} \ {+\oh}} &= \underbrace{\sqrt{\frac{1}{3}}}_{\text{C.G.}} 
+  \varphi_{211}(\boldrm{r}) \ket{\oh \ {-\oh}} + \underbrace{\sqrt{\frac{2}{3}}}_{\text{C.G.}} 
+  \varphi_{210}(\boldrm{r}) \ket{\oh \ {+\oh}}
+\end{align}
+En el caso no trivial se ha empleado la tabla $1\otimes \oh$. Con los
+elementos desarrollados, pasamos a calcular el elemento de matriz
+(recordar que $r_0^1=z$):
+\begin{equation}
+  \begin{split}
+    \mel*{\cdots}{r_0^1}{\cdots} &= \sqrt{\frac{1}{3}}
+    \mel{\varphi_{100}}{r_0^1}{\varphi_{211}} \underbrace{\braket{\oh\
+        {+\oh}}{\oh \ {-\oh}}}_{=0} + \\ &+\sqrt{\frac{2}{3}} 
+    \mel{\varphi_{100}}{r_0^1}{\varphi_{210}} \underbrace{\braket{\oh\
+        {+\oh}}{\oh \ {+\oh}}}_{=1} = \\
+    &=\sqrt{\frac{2}{3}} \mel{\varphi_{100}}{r_0^1}{\varphi_{210}}
+  \end{split}
+  \label{eq:electriceye}
+\end{equation}
+Vemos que la integral, a priori, no es nula:
+\begin{itemize}
+\item Tenemos que
+  $\mel{\varphi_{1\textcolor{red!80!black}{\boldrm{0}}0}}{r_0^{\textcolor{red!80!black}{\boldrm{1}}}}{\varphi_{2\textcolor{red!80!black}{\boldrm{1}}0}}$
+  cumple $\textcolor{red!80!black}{0} \in
+  \textcolor{red!80!black}{1}\otimes \textcolor{red!80!black}{1} =
+  \{0,1,2\}$.
+\item También se cumple para
+  $\mel{\varphi_{10\textcolor{green!80!black}{\boldrm{0}}}}{r^1_{\textcolor{green!80!black}{\boldrm{0}}}}{\varphi_{21\textcolor{green!80!black}{\boldrm{0}}}}$
+  que $\textcolor{green!80!black}{0}=\textcolor{green!80!black}{0} + \textcolor{green!80!black}{0}$.
+\end{itemize}
+Si se incumpliera una sóla de estas reglas no necesitariamos hacer la
+integral, pero no ha habido suerte.
+
+Notando que $r_0^1=z=r \sqrt{\frac{4\pi}{3}} Y_1^0(\Omega)$,
+realizamos la integral:
+\begin{equation}
+  \begin{split}
+    \mel{\phi_{100}}{r_0^1}{\phi_{210}} &= \sqrt{\frac{4\pi}{3}} \int_0^\infty R_{10}^* (r) r
+    R_{21}(r) r^2 \dd{r} \underbrace{\int_{4\pi}
+    Y_0^{0*}(\Omega)Y_{1}^0(\Omega)Y_1^0(\Omega) \dd{\Omega}}_{1/\sqrt{4\pi}} = \\
+    &=\frac{1}{\sqrt{3}} \int_0^\infty \left( \frac{1}{a_0} \right)^{\nicefrac{3}{2}} 2
+    e^{-r/a_0} r \left( \frac{1}{2a_0} \right)^{\nicefrac{3}{2}}
+    \frac{r}{\sqrt{3}a_0} e^{\frac{-r}{2a_0}} r^2 \dd{r} = \cdots
+  \end{split}
+\end{equation}
+La integral de los armónicos esféricos resulta
+$\frac{1}{\sqrt{4\pi}}$, puede consultarse en tablas o notarse que es
+una integral de normalización\footnotemark.
+\footnotetext{Se tiene que $Y_0^0=\text{cte.}=\frac{1}{\sqrt{4\pi}}$,
+  y que $Y_1^0 = Y_1^{0*}$.}
+
+\begin{equation}
+  \begin{split}
+    \cdots &= \frac{1}{\sqrt{3}} \frac{1}{a_0^3} \frac{1}{a_0}
+    \frac{2}{\sqrt{3}} \frac{1}{2^{3/2}} \int_0^\infty r^4 \exp \left( \frac{-3}{2}
+      \frac{r}{a_0} \right) = \\
+    &= \frac{\sqrt{2}}{2\cdot3 a_0^4} \times 24\cdot \left(
+      \frac{2a_0}{3} \right)^5 = \sqrt{2} \frac{2^7}{3^5}a_0
+  \end{split}
+\end{equation}
+donde se ha utilizado que $\int r^4 e^{-ar} \dd{r} = \frac{24}{a^5}$. Notar que aún es necesario multiplicar la integral por $\nicefrac{2}{3}$, debido a los coeficientes de \eqref{eq:electriceye}.
+
+\begin{tcolorbox}[halign=left]
+  \emph{
+    Con ayuda del elemento de matriz anterior y las tablas de
+    Clebsch-Gordan calcule los elementos (no nulos) de matriz siguientes:
+  }
+  \begin{align*}
+    &\mel*{1\  0 \ \oh \ \oh \ {m_f}}{r^1_0}{2\ 1  \ {\oh} \      {\nicefrac{3}{2}} \ {m_i}} \\
+    &\mel*{1\  0 \ \oh \ \oh \ {m_f}}{r^1_{+1}}{2\ 1  \ {\oh} \      {\nicefrac{3}{2}} \ {m_i}} \\
+    &\mel*{1\  0 \ \oh \ \oh \ {m_f}}{r^1_{-1}}{2\ 1  \ {\oh} \      {\nicefrac{3}{2}} \ {m_i}}
+  \end{align*}
+  \emph{
+    para cada posible pareja $m_f,m_i$.
+  }
+\end{tcolorbox}
+
+Las posibles transiciones son:
+\begin{center}
+  \begin{tikzpicture}
+    \tikzstyle energylevel=[thick,blue]
+    \tikzstyle photon=[thick,yellow!60!black,snake=snake,line after snake=0.2cm,->]
+    \tikzstyle fotonloco=[ultra thick,yellow!60!black,snake=snake,line after snake=0.2cm,->]
+    \tikzstyle 
+    photonlabel=[yellow!20!black,midway,fill=white]
+
+    % labels
+    \node [above] at (5.5,0.5) {$\ket{2\ 1\ \oh \ \nicefrac{3}{2}\ m_i}$};
+    \node [below] at (5.5,-3.5) {$\ket{1\ 0\ \oh \ \nicefrac{1}{2}\ m_f}$};
+    % 3/2, m_inicial
+    \draw[energylevel] (0,0) -- (2,0);
+    \node[fill=white] (a) at (1,0) {$\nicefrac{3}{2}$};
+    % 1/2, m_inicial
+    \draw[energylevel] (3,0) -- (5,0);
+    \node[fill=white] (b) at (4,0) {$\nicefrac{1}{2}$};
+    % -1/2, m_inicial
+    \draw[energylevel] (6,0) -- (8,0);
+    \node[fill=white] (c) at (7,0) {$\nicefrac{-1}{2}$};
+    % -3/2, m_inicial
+    \draw[energylevel] (9,0) -- (11,0);
+    \node[fill=white] (d) at (10,0) {$\nicefrac{-3}{2}$};
+    % +1/2, m_final
+    \draw[energylevel] (1.5,-3) -- (4.5,-3);
+    \node[fill=white] (e) at (3,-3) {$\nicefrac{+1}{2}$};
+    % -1/2, m_final
+    \draw[energylevel] (6.5,-3) -- (9.5,-3);
+    \node[fill=white] (f) at (8,-3) {$\nicefrac{-1}{2}$};
+    % transitions
+    \draw[photon] (a) -- (e) node[photonlabel] {$r_{-1}^1$};
+    \draw[photon] (b) -- (e) node[photonlabel] {$r_{0}^1$};
+    \draw[photon] (b) -- (f) node[photonlabel] {$r_{-1}^1$};
+    \draw[photon] (c) -- (e) node[photonlabel] {$r_{+1}^1$};
+    \draw[photon] (c) -- (f) node[photonlabel] {$r_{0}^1$};
+    \draw[fotonloco] (d) -- (f) node[photonlabel] {$r_{+1}^1$};
+  \end{tikzpicture}
+\end{center}
+
+
+
+Notar como las transiciones siempre cumplen $m_i + \zeta = m_f $  con
+$\zeta$ el subíndice del tensor $r_\zeta^1$. Las demás transiciones no
+lo cumplen y se han omitido.
+
+Calculamos, a modo de ejemplo, el elemento de matriz correspondiente a
+la transición marcada con la línea gruesa:
+\begin{equation}
+  \mel{1\ 0\ \oh \ \nicefrac{1}{2}\ \nicefrac{-1}{2}}{r_{+1}^1}{2\ 1\
+    \oh \ \nicefrac{3}{2} \ \nicefrac{-3}{2}} = \cdots
+\end{equation}
+
+El teorema de Wigner-Eckart nos dice que podemos relacionar esta
+integral y la ya realizada mediante los coeficientes de
+Clebsch-Gordan (\emph{nuevo} y \emph{ya calculado}):
+  \begin{equation}
+    \begin{split}
+      \mel {1\ 0\ \nicefrac{1}{2} \ \textcolor{red!60!black}{\oh\
+          \nicefrac{-1}{2}}}
+      {r_{\textcolor{blue!60!black}{+1}}^{\textcolor{blue!60!black}{1}}}
+      {2\ 1\ \oh \ \textcolor{green!60!black}{\nicefrac{3}{2}\
+          \nicefrac{-3}{2}}} &= (
+      \textcolor{green!60!black}{\nicefrac{3}{2}\ \nicefrac{-3}{2}}\
+      \textcolor{blue!60!black}{1 \ +1} | \textcolor{red!60!black}{\oh
+        \ \nicefrac{-1}{2}} ) \cdot \\ &\cdot
+      \mel{\oh}{|r^1|}{\nicefrac{3}{2}} 
+    \end{split}
+      \end{equation}
+      \begin{equation}
+        \begin{split}
+          \mel {1\ 0\ \nicefrac{1}{2} \ \textcolor{red!60!black}{\oh\
+              \oh}}
+          {r_{\textcolor{blue!60!black}{0}}^{\textcolor{blue!60!black}{1}}}
+          {2\ 1\ \oh \ \textcolor{green!60!black}{\nicefrac{3}{2}\
+              \nicefrac{1}{2}}} &= (
+          \textcolor{green!60!black}{\nicefrac{3}{2}\
+            \nicefrac{1}{2}}\ \textcolor{blue!60!black}{1 \ 0} |
+          \textcolor{red!60!black}{\oh \ \oh} ) \cdot \\
+          &\cdot
+          \mel{\oh}{|r^1|}{\nicefrac{3}{2}} 
+        \end{split} 
+  \end{equation}
+donde los paréntesis indican coeficientes de Clebsch-Gordan; por
+ejemplo $(
+      \textcolor{orange!60!black}{\nicefrac{3}{2}}\ 
+      \textcolor{purple!60!black}{\nicefrac{-3}{2}}\
+      \textcolor{orange!60!black}{1}
+      \ \textcolor{purple!60!black}{+1}
+      |
+      \oh \ \nicefrac{-1}{2}
+      )$ es el coeficiente de Clebsch-Gordan que acopla dos
+      \textcolor{orange!60!black}{momentos angulares}
+      $\nicefrac{3}{2}$ y $1$ de \textcolor{purple!60!black}{componentes}
+      $\nicefrac{-3}{2}$ y $+1$, para dar un momento total $\oh$ con
+      tercera componente $\nicefrac{-1}{2}$.\footnote{Consultando la tabla
+        $\nicefrac{3}{2}\times 1$, vemos
+        que el valor buscado es
+        \begin{center}
+          \begin{tabular}{ll|l|l|l|}
+            \cline{3-5}
+            &             & 5/2  & 3/2   & \textbf{1/2}  \\ \cline{3-5} 
+            &             & -1/2 & -1/2  & \textbf{-1/2} \\ \hline
+            \multicolumn{1}{|l|}{+1/2}          & -1          & 3/10 & 8/15  & 1/6           \\ \hline
+            \multicolumn{1}{|l|}{-1/2}          & 0           & 3/5  & -1/15 & -1/3          \\ \hline
+            \multicolumn{1}{|l|}{\textbf{-3/2}} & \textbf{+1} & 1/10 & -2/5  & \textcolor{red!60!black}{1/2}           \\ \hline
+          \end{tabular}
+        \end{center}
+        El del primer elemento de matriz visto está en otro recuadro.
+      }
+
+Sustityendo los Clebsch-Gordan correspondientes en las ecuaciones
+obtenemos
+\begin{align}
+\mel{\text{new}}{r_{+1}^1}{\text{new}} &= \sqrt{\frac{1}{2}}
+                                         \mel{\oh}{|r^{1}}{\nicefrac{3}{2}} \\
+\mel{\text{old}}{r_{0}^1}{\text{old}} &= -\sqrt{\frac{1}{3}}
+                                         \mel{\oh}{|r^{1}}{\nicefrac{3}{2}}
+                                        = \frac{\sqrt{2}\cdot2^8}{3^6}a_0
+\end{align}
+
+Dividendo ambas ecuaciones encontramos que
+\begin{equation}
+  \begin{split}
+    \mel{\text{new}}{r_{+1}^1}{\text{new}} &=
+    -\sqrt{\frac{1}{2}}\sqrt{\frac{3}{1}}\cancelto{1}{\frac{\mel{\oh}{|r^{1}}{\nicefrac{3}{2}}}{\mel{\oh}{|r^{1}}{\nicefrac{3}{2}}}}
+    \mel{\text{old}}{r_{+1}^1}{\text{old}} = \\
+    &= - \frac{\sqrt{3}\cdot 2^7}{3^6} a_0 
+  \end{split}
+\end{equation}
+
+Procediendo de manera análoga es posible calcular todos los elementos
+no nulos restantes.
+
+\chapter{Esquema de niveles del carbono (4.4)}
+
+\begin{tcolorbox}[halign=left]
+  \emph{Dibuje el esquema de niveles de la configuración fundamental
+    1s\textsuperscript{2}2s\textsuperscript{2}2p\textsuperscript{2} y
+    de la excitada
+    1s\textsuperscript{2}2s\textsuperscript{2}2p\textsuperscript{1}3p\textsuperscript{1}
+  del átomo de carbono. Indique las transiciones dipolares eléctricas
+  posibles entre los niveles de ambas configuraciones.}
+\end{tcolorbox}
+
+En el nivel inferior se tienen dos orbitales $p$ de momento angular
+orbital $\ell=1$, de forma que
+$\ell=1\otimes1=0_S,1_A,2_S$ y $S=0_A,1_S$. Como ambos electrones
+están en el mismo nivel energético, no podemos simetrizar y
+antisimetrizar la parte espacial a placer y sólo son posibles
+las combinaciones simétricas.
+
+Su ordenamiento, por el principio de Hund, sería
+${}^{3}P,{}^{1}D,{}^{1}S$ listando de menor a mayor
+energía\footnotemark.
+\footnotetext{Comenzamos por escribirlos en orden de mayor
+  multiplicidad:
+\[{}^{3}P,\ {}^{1}D \text{ y } {}^{1}S\]
+Para deshacer el ``empate'' entre ${}^{1}D$ y ${}^{1}S$, empleamos que
+para una multiplicidad dada el de mayor $L$ es el menos energético, en
+este caso ${}^{1}D$ tiene $L=2$ frente a $L=0$ de ${}^{1}S$.
+}
+
+De forma similar, en el nivel superior obtenemos ${}^{3}P,{}^{1}P$.
+
+Por otra parte, cada triplete ${}^3P$ está subdividido en tres
+subniveles ${}^3P_0$,${}^3P_1$ y ${}^3P_2$, que se ordenan de forma
+que la $J$ sea creciente con la energía (tercera regla de Hund) por
+estar la capa incompleta menos que semillena (multiplete normal).\footnotemark
+
+\footnotetext{Hay un poco de duda porque no hay una única capa
+  incompleta, pero por analogía con los ejemplos simples es la
+  distribución más razonable. En átomos más complicados no es imposible
+  esperar un multiplete normal y obtener multipletes invertidos o
+  incluso mezclas.}
+
+Veamos las transciones a distinto nivel de simplificación del
+hamiltoniano:
+\begin{description}
+\item[$\Ham_0$]
+  A este nivel (partículas independientes) sólo hay dos estados y
+  una transición, permitida por ser $\Delta\ell =1$.
+  \begin{center}
+    \begin{tikzpicture}[xscale=2,yscale=1]
+      \draw [color=blue, thick] (0,0) -- (5,0);
+      \draw [color=blue, thick] (0,-3) -- (5,-3);
+      \draw node [above] at (3,0) {$(\text{c.c.})(2p)^1(3s)^1$};
+      \draw node [above] at (3,-3) {$(\text{c.c.})(2p)^2$};
+      \draw [thick,yellow!60!black,
+      snake=snake,
+      line after snake=0.2cm, ->] (4.5,-0.5) -- (4.5,-2.5);
+    \end{tikzpicture}
+  \end{center}
+\item[V] Cuando introducimos la repulsión coulombiana el esquema de
+  niveles se complica. Las únicas transciones válidas son las de
+  singlete a singlete y las de multiplete a multiplete, ya que el
+  operador tensorial no transporta espín ($\Delta S = 0$). Además,
+  hemos de cumplir $\ell_f \in \ell_i\otimes 1$.
+  \begin{center}
+    \begin{tikzpicture}[xscale=2,yscale=1]
+      \tikzstyle photon=[thick,yellow!60!black,
+      snake=snake, line after snake=0.2cm, ->]
+      \draw [color=blue, thick] (0,0) -- (5,0);
+      \draw [color=blue, thick] (0,-0.5) -- (5,-0.5);
+      \draw [color=blue, thick] (0,-3) -- (5,-3);
+      \draw [color=blue, thick] (0,-3.5) -- (5,-3.5);
+      \draw [color=blue, thick] (0,-4) -- (5,-4);
+      \draw node [above] at (4.5,0) {${}^1P$};
+      \draw node [above] at (4.5,-0.5) {${}^3P$};
+      \draw node [above] at (4.5,-3) {${}^1S$};
+      \draw node [above] at (4.5,-3.5) {${}^1D$};
+      \draw node [above] at (4.5,-4) {${}^3P$};
+      \draw [photon] (1,0) -- (1,-3);
+      \draw [photon] (1.5,0) -- (1.5,-3.5);
+      \draw [photon] (3,-0.5) -- (3,-4);
+    \end{tikzpicture}
+  \end{center}
+\item[V\textsubscript{fine}] No se muestran todas las posibles
+  transiciones para no saturar el dibujo, sólo las que empiezan en
+${}^3P_i$ (que tienen momento angular $J=i\in\{0,1,2\}$). Notar que hemos de cumplir
+  que $J_f \in J_i\otimes 1$:
+  \begin{itemize}
+  \item Si partimos de ${}^3P_0$, con momento angular $J_i=0$, sólo
+    podemos acceder a los estados finales con $J_f\in0\otimes1=1$.
+  \item Para ${}^3P_1$ estamos limitados a $J_f \in 1\otimes 1 =
+    \{0,1,2\}$.
+  \item En ${}^3P_2$ se tiene $J_f \in 2\otimes 1 = \{1,2,3\}$. Notar
+    que no hay ningún estado en el triplete inferior con $J=3$, y que
+    no podemos acceder a $J=0$.
+  \end{itemize}
+  \begin{center}
+    \begin{tikzpicture}[xscale=2,yscale=1]
+      \tikzstyle photon=[thick,yellow!60!black,
+      snake=snake, line after snake=0.2cm, ->]
+      \draw [color=blue, thick] (0,0.5) -- (4,0.5);
+      \draw node [right] at (4,0.5) {${}^1P$};
+      \draw [color=blue] (0,-0.3) -- (4,-0.3);
+      \draw [color=blue, thick] (0,-0.5) -- (4,-0.5);
+      \draw [color=blue] (0,-0.7) -- (4,-0.7);
+      \draw node [right] at (4.2,-0.5) {${}^3P$};
+      \draw [color=blue, thick] (0,-2) -- (4,-2);
+      \draw node [right] at (4,-2) {${}^1S$};
+      \draw [color=blue, thick] (0,-3) -- (4,-3);
+      \draw node [right] at (4,-3) {${}^1D$};
+      \draw [color=blue] (0,-3.8) -- (4,-3.8);
+      \draw [color=blue, thick] (0,-4) -- (4,-4);
+      \draw [color=blue] (0,-4.2) -- (4,-4.2);
+      \draw node [right] at (4.2,-4) {${}^3P$};
+      \draw node [right] at (4,-4.2) {$\scriptstyle{0}$};
+      \draw node [right] at (4,-4) {$\scriptstyle{1}$};
+      \draw node [right] at (4,-3.8) {$\scriptstyle{2}$};
+      \draw node [right] at (4,-0.7) {$\scriptstyle{0}$};
+      \draw node [right] at (4,-0.5) {$\scriptstyle{1}$};
+      \draw node [right] at (4,-0.3) {$\scriptstyle{2}$};
+      \draw [photon] (1,-0.3) -- (1,-3.8);
+      \draw [photon] (1.2,-0.3) -- (1.2,-4);
+      \draw [photon] (2,-0.5) -- (2,-3.8);
+      \draw [photon] (2.2,-0.5) -- (2.2,-4);
+      \draw [photon] (2.4,-0.5) -- (2.4,-4.2);
+      \draw [photon] (3,-0.7) -- (3,-4);
+    \end{tikzpicture}
+  \end{center}
+\end{description}
+
+
+\chapter{Enero, 2016 (1)}
+\label{chapter:e161}
+\begin{tcolorbox}[halign=left]
+  \emph{Un electrón se encuentro en un pozo de potencial de paredes
+    impenetrables en la región $x\in(0,L)$, $y\in(0,L)$,
+    $z\in(0,L/10)$. 
+  Hay, además, una perturbación $W=V(x,y,z)S_z/\hbar$ donde
+  $V(x,y,z)=V_0$ en la región $x\in(0,L)$, $y\in(L/2,L)$,
+  $z\in(0,L/10)$. Calcule en primer orden de perturbaciones la
+  corrección a la energía del nivel fundamental y del primer nivel excitado.}
+\end{tcolorbox}
+
+\section*{Nivel fundamental}
+Siendo $\varphi_n(x) = \sqrt{\frac{2}{L}}\sin \frac{n\pi x}{L}$ los
+autoestados de un pozo de potencial cuadrado 1D, el estado fundamental
+de este pozo será $\ket{111}=\varphi_1(x)\otimes\varphi_1(y)\otimes\varphi_1(z)$.
+
+Calculamos la perturbación, teniendo en cuenta la degeneración del
+nivel debida al espín:
+\begin{equation}
+  \begin{split}
+    \Delta E &= \mel{111\pm}{W}{111\pm} =
+    \mel{111}{V_0}{111}\mel{\pm}{S_z/\hbar}{\pm} \\
+    &= V_0\braket{11}{11}\underbrace{\mel{1}{\vartheta(L/2)}{1}}_{=\nicefrac{1}{2} } \cdot \frac{1}{\hbar}
+    \mel{\pm}{S_z}{\pm}
+  \end{split}
+\end{equation}
+donde $\vartheta$ es la función escalón y se ha utilizado que la función de ondas está normalizada.
+\footnote{No integramos en todo el espacio sino únicamente en
+  $y\in(L/2,L)$, ya que la perturbación sólo existe en dicha región.
+  La simetría de la función de ondas hace que la integral de sólo una
+  mitad sea $\oh$ del valor en todo el espacio, $1$.}
+
+Como $S_z$ es $\frac{\hbar}{2}\smqty(1& \\ &-1)$ obtenemos que
+\begin{equation}
+  \begin{pmatrix}
+    \mel{111+}{W}{111+} &  \mel{111+}{W}{111-}\\
+    \mel{111-}{W}{111+} &  \mel{111-}{W}{111-}
+  \end{pmatrix} =  \frac{V_0}{4}
+  \begin{pmatrix}
+    1 &  \\
+     & -1 
+  \end{pmatrix} 
+\end{equation}
+
+Los autovalores de la diagonal son las correcciones a la energía, así
+que obtenemos que la energía se desdobla en dos niveles, uno con
+$E=E_1+\nicefrac{V_0}{4}$ y otro con $E=E_1-\nicefrac{V_0}{4}$.
+
+\section*{Primer excitado}
+La energía del sistema es, por ser un pozo cuadrado de potencial,
+\begin{equation}
+  E = n_1^2 \frac{\hbar^2\pi^2}{2mL^2} + n_2^2
+  \frac{\hbar^2\pi^2}{2mL^2} + n_3^2 \frac{\hbar^2\pi^2}{2m \left(
+      \nicefrac{L}{10} \right)^2}, \ \ n_i \in \mathbb{N}/\{0\}
+\end{equation}
+En unidades de $\frac{\hbar^2\pi^2}{2mL^2}$, obtenemos
+\begin{center}
+  \begin{tabular}{c|ccc}
+    $E$&$n_1$&$n_2$&$n_3$ \\
+    $1+1+1\cdot100=102$ & $1$ & $1$ & $1$ \\ \hline
+    $2+1+1\cdot100=103$ & $2$ & $1$ & $1$ \\
+    $1+2+1\cdot100=103$ & $1$ & $2$ & $1$ \\ \hline
+    $3+1+1\cdot100=104$ & $3$ & $1$ & $1$ \\
+    $1+3+1\cdot100=104$ & $1$ & $3$ & $1$ \\
+    $2+2+1\cdot100=104$ & $2$ & $2$ & $1$ \\ \hline
+    $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\ 
+  \end{tabular}
+\end{center}
+
+Vemos que el nivel fundamental tiene degeneración dos debido a la
+dimensión del problema, además de seguir teniendo la degeneración
+debida al espín. Notamos que los elementos de matriz
+$\mel{ij}{V_0}{ji}=0$ por la ortogonalidad\footnotemark  de los elementos de la
+base; 
+\footnotetext{Si bien $\mel{ij}{V_0}{ji}=0$ a priori no es nulo
+  porque no estamos integrando a todo el espacio, podemos
+  descomponerlo como
+  $\mel{ij}{V_0}{ji}=\braket{i}{j}\mel{i}{V_0}{j}=0\cdot
+  \underbrace{\mel{i}{V_0}{j}}_{\neq 0} = 0$}
+utilizando los resultados anteriores con $S_z$ obtenemos una
+matriz similar para el subespacio de degeneración, puramente diagonal:
+\begin{equation}
+  \frac{V_0\hbar}{4}
+  \begin{pmatrix}
+    1 &   & &  \\
+      & -1 & &  \\
+      & &1&  \\
+      & & &-1 \\
+  \end{pmatrix}
+\end{equation}
+Se ha utilizado que
+$\mel{ij\pm}{W}{ij\pm}=V_0\braket{ij}{ij}\mel{\pm}{S_z/\hbar}{\pm} =
+V_0\mel{\pm}{S_z/\hbar}{\pm}$. Nuevamente obtenemos un desdoblamiento
+de los niveles, pero en este caso los cuatro estados sólo se desdoblan
+en dos, no eliminándose completamente la degeneración.
+
+\chapter{Enero, 2016 (2)}
+\begin{tcolorbox}[halign=left]
+  \emph{Explique que son las integrales directas y de intercambio en
+    el átomo de helio.}
+\end{tcolorbox}
+Ver página \pageref{paragraph:intinterc}.
+\begin{tcolorbox}[halign=left]
+  \emph{Sabiendo que la diferencia de energías entre los términos
+    ${}^1S$ y ${}^3S$ de la configuración $(1s)(2s)$ del átomo de helio
+  son \SI{0.78}{\eV}, ¿cuánto vale la integral de intercambio en este caso?}
+\end{tcolorbox}
+
+La energía de un nivel es
+\begin{equation}
+    E = E_{n\ell} + E_{n'\ell'} + \Delta (n\ell,n'\ell',L,S) 
+\end{equation}
+donde $\Delta  = D \pm C$. El signo depende del observable
+$S$,\footnote{Es positivo para $S=0$ y negativo para $S=1$} por
+lo que se obtiene
+\begin{align}
+  E_{{}^1\!S} &= E_{11} + E_{21} + D(1121L) + C(1121L) \\
+  E_{{}^3\!S} &= E_{11} + E_{21} + D(1121L) - C(1121L) \\
+\end{align}
+y por lo tanto $\Delta E({}^1,S{}^3S) = \SI{0.78}{\eV} = 2C$, de donde
+obtenemos
+\begin{equation}
+  \boxed{
+  C = \SI{0.39}{\eV}
+  }
+\end{equation}
+
+
+\chapter{Enero, 2016 (3)}
+\begin{tcolorbox}[halign=left]
+  \emph{Calcule la vida media, en segundos, del nivel $2p_{\oh}$ del
+    átomo de hidrógeno.}
+\end{tcolorbox}
+
+Del esquema de niveles (figura \ref{fig:finehidrogen}) podemos ver como la energía del hidrógeno entre
+los niveles $1s_{\oh}$ y $2p_{\oh}$ es significativamente mayor que
+la de las transiciones entre los niveles con $n=2$, por lo que aún sin
+saber\jokenote{Efecto Lamb, obviamente} que el nivel $2p_{\oh}$ es el
+de menor energía podemos notar que $\Lambda \sim k^3$ y aproximar
+todas las demás $\Lambda$ a cero.
+
+\begin{marginfigure}
+\begin{tikzpicture}[xscale=1,yscale=2]
+  \draw [color=blue, thick] (0,0) -- (2,0);
+  \draw node [left] at (0,0) {$n=1$};
+  \draw node [right] at (2,0) {$1s_{\oh}$};
+  \draw [color=blue, thick] (0,1) -- (1.3,1);
+  \draw node [left] at (0,1) {$n=2$};
+  \draw [color=blue, thick] (1.3,1.2) -- (2,1.2);
+  \draw node [right] at (2,1.2) {$2p_{\nicefrac{3}{2}}$};
+  \draw [color=blue, thick] (1.3,1.05) -- (2,1.05);
+  \draw node [right] at (2,1.05) {$2s_{\oh}$};
+  \draw [color=blue, thick] (1.3,0.8) -- (2,0.8);
+  \draw node [right] at (2,0.8) {$2p_{\oh}$};
+\end{tikzpicture}
+  \caption{Primeros niveles del hidrógeno, estructura fina.}
+  \label{fig:finehidrogen}
+\end{marginfigure}
+
+Ese nivel está doblemente degenerado, al igual que el fundamental, por
+el espín de la partícula. Obtenemos cuatro posibles transiciones desde
+$\ket{n\ \ell \ s \ j \ m}$ hasta $\ket{n'\ \ell' \ s' \ j' \ m'}$:
+\begin{center}
+  \begin{tikzpicture}
+    \tikzstyle energylevel=[thick,blue]
+    \tikzstyle photon=[thick,yellow!60!black,snake=snake,line after snake=0.2cm,->]
+    \tikzstyle fotonloco=[ultra thick,yellow!60!black,snake=snake,line after snake=0.2cm,->]
+    \tikzstyle 
+    photonlabel=[yellow!20!black,midway,fill=white]
+
+    % labels
+    \node [right] at (10,0.3) {$2p_{\oh}$};
+    \node [right] at (10,-0.3) {$\ket{2\ 1\ \oh\ \oh \ m_i}$};
+    \node [right] at (10,-2.7) {$1s_{\oh}$};
+    \node [right] at (10,-3.3) {$\ket{1\ 0\ \oh\ \oh \ m_f}$};
+    % 1/2, m_inicial
+    \draw[energylevel] (3,0) -- (5,0);
+    \node[fill=white] (a) at (4,0) {$\nicefrac{+1}{2}$};
+    % -1/2, m_inicial
+    \draw[energylevel] (6,0) -- (8,0);
+    \node[fill=white] (b) at (7,0) {$\nicefrac{-1}{2}$};
+    % +1/2, m_final
+    \draw[energylevel] (1.5,-3) -- (4.5,-3);
+    \node[fill=white] (c) at (3,-3) {$\nicefrac{+1}{2}$};
+    % -1/2, m_final
+    \draw[energylevel] (6.5,-3) -- (9.5,-3);
+    \node[fill=white] (d) at (8,-3) {$\nicefrac{-1}{2}$};
+    % transitions
+    \draw[fotonloco] (a) -- (c) node[photonlabel] {$r_{0}^1$};
+    \draw[photon] (a) -- (d) node[photonlabel] {$r_{-1}^1$};
+    \draw[photon] (b) -- (c) node[photonlabel] {$r_{+1}^1$};
+    \draw[photon] (b) -- (d) node[photonlabel] {$r_{0}^1$};
+  \end{tikzpicture}
+\end{center}
+donde la $\zeta$ en $r_\zeta^1$ proviene de la regla $m_f = m_i +
+\zeta$. Sabemos que $m_i$ se corresponde al espín y no tiene que ver
+con el momento angular porque, como dice el subíndice del enunciado, $j=\oh$.
+
+ Realizamos una integral (la transición marcada en linua gruesa
+en el diagrama), las demás nos las dará el teorema de Wigner-Eckart.
+
+Desacoplamos los kets:
+\begin{align}
+  \ket{2 \ 1 \ \oh \ \oh \ +\oh} \stackrel{1\otimes\oh \text{ CG}}{=} &
+  \sqrt{\frac{2}{3}} \varphi_{211} \ket{-} -
+  \sqrt{\frac{1}{3}}\varphi_{210}\ket{+} \\
+  \ket{1 \ 0 \ \oh \ \oh \ +\oh} \stackrel{0\otimes\oh \text{ CG}}{=} &
+   \varphi_{100} \ket{+} 
+\end{align}
+De las dos integrales $\mel{\text{F}}{r^1_\zeta}{\text{I}}$
+correspondientes\footnote{$\mel{a+b}{W}{c}=\mel{a}{W}{c}+\mel{b}{W}{c}$}
+aquella en la que el espín no es igual a ambos lados se anula, al
+salir este del elemento de matriz y quedar $\braket{+}{-}=0$. En la
+otra obtenemos:
+
+\begin{equation}
+    \mel{\varphi_{100}+}{r_0^1}{\varphi_{210}+} = \braket{+}{+}
+    \mel{\varphi_{100}}{r_0^1}{\varphi_{210}} = \frac{\sqrt{2}\cdot2^7}{3^5}a_0
+\end{equation}
+
+Puede consultarse la resolución en el
+ejercicio \ref{ej:integralloca}. Recordar el factor
+$\sqrt{\frac{1}{3}}$ que llevaba el ket.
+
+El teorema de Wigner-Eckart nos permite hallar la relación de este
+elemento de matriz (${\mel{1\ 0\ \oh\ \oh\ +\oh}{r_0^1}{2\ 1\ \oh\ \oh\ +\oh}}$) con los demás:
+\begin{fullwidth}
+  \begin{align}
+    \mel{1\ 0\ \oh\ \oh\ +\oh}{r_0^1}{2\ 1\ \oh\ \oh\ +\oh} 
+    &=\underbrace{(\oh\ +\oh\ 1 \ 0 | \oh \ +\oh)}_{-1/\sqrt{3}} \mel{\oh}{|r^1|}{\oh} \simeq
+      0.43 a_0 \\
+    \mel{1\ 0\ \oh\ \oh\ -\oh}{r_{-1}^1}{2\ 1\ \oh\ \oh\ +\oh} 
+    &=\underbrace{(\oh\ +\oh\ 1 \ -1 | \oh \ -\oh)}_{-\sqrt{\frac{2}{3}}} \mel{\oh}{|r^1|}{\oh}\\
+    \mel{1\ 0\ \oh\ \oh\ +\oh}{r_{+1}^1}{2\ 1\ \oh\ \oh\ -\oh} 
+    &=\underbrace{(\oh\ -\oh\ 1 \ +1 | \oh \ +\oh)}_{\sqrt{\frac{2}{3}}} \mel{\oh}{|r^1|}{\oh}\\
+    \mel{1\ 0\ \oh\ \oh\ -\oh}{r_{0}^1}{2\ 1\ \oh\ \oh\ -\oh} 
+    &=\underbrace{(\oh\ -\oh\ 1 \ 0 | \oh \ -\oh)}_{1/\sqrt{3}} \mel{\oh}{|r^1|}{\oh}
+  \end{align}
+\end{fullwidth}
+Vemos que $\mel{\oh}{|r^1|}{\oh} \simeq -0.745a_0$, y por lo tanto
+  \begin{align}
+    \abs{\mel{1\ 0\ \oh\ \oh\ +\oh}{r_0^1}{2\ 1\ \oh\ \oh\ +\oh}}^2
+    &\simeq 0.185  a_0^2 \\
+    \abs{\mel{1\ 0\ \oh\ \oh\ -\oh}{r_{-1}^1}{2\ 1\ \oh\ \oh\ +\oh}}^2
+    &\simeq 0.370 a_0^2\\
+    \abs{\mel{1\ 0\ \oh\ \oh\ +\oh}{r_{+1}^1}{2\ 1\ \oh\ \oh\ -\oh}}^2
+    &\simeq 0.370 a_0^2\\
+    \abs{\mel{1\ 0\ \oh\ \oh\ -\oh}{r_{0}^1}{2\ 1\ \oh\ \oh\ -\oh}}^2
+    &\simeq 0.185 a_0^2 
+  \end{align}
+
+Como las transiciones son posibles únicamente con una coordenada, no
+hay que reagruparlas\footnote{Si una transición fuera posible con
+  varios $r_\zeta^1$, sería necesario calcular
+  $\abs{\mel{\star}{\boldrm{r}}{\star}}^2 =
+  \abs{\mel{\star}{r_{+1}^1}{\star}}^2 +
+  \abs{\mel{\star}{r_{0}^1}{\star}}^2 + \abs{\mel{\star}{r_{-1}^1}{\star}}^2$}.
+
+Obtenemos
+\begin{equation}
+  \begin{split}
+    \Lambda &= \frac{1}{2} \sum_{ij} \Lambda_{ij} \simeq \frac{1}{2}
+    \frac{4e^2}{3 \hbar} k^3
+    \underbrace{(0.185+0.370+0.370+0.185)}_{\sum
+        \abs{\mel{\star}{r_i}{\star}}^2} a_0^2=\\
+    &= \frac{2e^2}{3 \hbar} k^3 a_0^2 \times 1.1 \text{ s}
+  \end{split}
+\end{equation}
+donde el $\frac{1}{2}$ proviene del número de estados iniciales. 
+Realizando las sustituciones necesarias\footnote{
+Empleamos que la $\lambda$ entre los niveles $1$ y $2$ del hidrógeno
+es \SI{121}{\nano\metre} y que $k = \frac{2\pi}{\lambda}$.
+}
+en sistema cegesimal\footnotemark se
+obtiene un valor $\tau = \Lambda^{-1}\simeq \SI{1.6}{\nano\second}$,
+cercano al experimental.
+\footnotetext{Basta con utilizar MKS tras multiplicar $\Lambda$ por un
+prefactor $\frac{1}{4\pi\varepsilon_0}$}
+\chapter{Junio, 2015 (1)}
+\begin{tcolorbox}[halign=left]
+  \emph{Una partícula de masa $m$ y espín $1$ está sometida a un
+    potencial central $V(r)=\frac{1}{2}kr^2$, con $k=\text{cte.}$, y a
+    una perturbación}
+  \begin{equation*}
+    - \frac{p^4}{8m^3c^2} + \frac{1}{2m^2c^2}\frac{1}{r} \dv{V}{r}
+    \boldrm{\ell}\cdot \boldrm{s}
+  \end{equation*}
+  \emph{Calcule en primer orden de perturbaciones el número de niveles
+  en los que se desdobla el primer nivel excitado y la separación
+  entre ellos.}
+
+\emph{Recuerde que el primer nivel excitado del problema sin perturbar
+es una onda $p$ ($\ell=1$) con}
+\begin{equation*}
+  R(r) = \frac{8}{3}
+  \frac{
+    \beta^{\nicefrac{3}{2}}
+  }{
+    \pi^{\nicefrac{1}{4}}
+  } \beta r e^{-\frac{1}{2}\beta^2 r^2}
+\end{equation*}
+\emph{donde $\beta^4 = km/\hbar^2$.}
+\end{tcolorbox}
+
+La diferencia entre niveles perturbados no dependerá del primer
+sumando ($\sim p^4$) ya que sus elementos de matriz serán los mismos
+para todas las funciones del subespacio de degeneración (sólo varían
+en su $m$). Así pues, nos concentramos en el segundo sumando:
+\begin{equation}
+  \begin{split}
+    \frac{1}{2m^2c^2} \frac{1}{r} \dv{V}{r}
+    \boldrm{\ell} \cdot \boldrm{s} &\sim \boldrm{\ell} \cdot
+    \boldrm{s} \\
+    &\sim \frac{1}{2}(J^2 - L^2 -S^2)
+  \end{split}
+\end{equation}
+donde se ha utilizado que $J^2 = (\boldrm{L}+\boldrm{S})^2$ y que
+$\frac{1}{r}\dv{V}{r} = \frac{1}{r} kr=k$. Vemos los posibles valores
+de $\boldrm{\ell}\cdot \boldrm{s}$ para las funciones de onda del
+subespacio de degeneración:
+\begin{center}
+  \begin{tabular}{ccc|l}
+    $J^2 \in 1\otimes 1$ & $L^2$ & $S^2$ & $\boldrm{\ell}\cdot
+                                           \boldrm{s} = \frac{1}{2}(J^2-L^2-S^2)$
+    \\ \hline
+    $0$ & $1$ & $1$ & $\frac{1}{2}(0-1-1)=-1$ \\
+    $1$ & $1$ & $1$ & $\frac{1}{2}(1-1-1)=\moh$ \\
+    $2$ & $1$ & $1$ & $\frac{1}{2}(2-1-1)=0$ \\
+  \end{tabular}
+\end{center}
+
+La matriz de perturbación será
+\begin{equation}
+  \ev{\frac{-p^4}{8m^3c^2}}{\varphi_0} \mathbb{I}  - \frac{k}{2m^2c^2}
+  \begin{pmatrix}
+    +1 & & \\
+       &+\oh& \\
+       & & 0
+  \end{pmatrix}
+\end{equation}
+
+Obtenemos un desdoblamiento en tres niveles, con separación
+$\frac{1}{2} \frac{k}{2m^2c^2}$ entre ellos y
+degeneración\footnote{Por conmutar la perturbación con $J_z$} $2J+1$:
+\begin{center}
+  \begin{tikzpicture}[yscale=2]
+    \tikzstyle energylevel=[ultra thick,blue]
+    \tikzstyle transition=[thin,blue]
+    \draw[energylevel] (0,0) -- (3,0);
+    \node[above] at (1,0) {$E_0$};
+    \draw[transition] (3,0) -- (4,-1);
+    \draw[energylevel] (4,-1) -- (5,-1);
+    \draw[thin,dashed,black] (3,0) -- (5,0);
+    \draw[<->,black] (4.7,-1) -- (4.7,0) node 
+    [midway, right] {$\langle\frac{-p^4}{8m^3c^2}\rangle$};
+    \draw[transition] (5,-1) -- (6.5,-1);
+    \draw[energylevel] (6.5,-1) -- (8,-1);
+    \node[above] at (7,-1) {$J=2$};
+    \draw[transition] (5,-1) -- (6.5,-1.5);
+    \draw[transition] (5,-1) -- (6.5,-2);
+    \draw[energylevel] (6.5,-1.5) -- (8,-1.5);
+    \node[above] at (7,-1.5) {$J=1$};
+    \draw[energylevel] (6.5,-2) -- (8,-2);
+    \node[above] at (7,-2) {$J=0$};
+    \draw[<->,black] (7.8,-1.5) -- (7.8,-2) node[midway, right] {$\frac{k}{4m^2c^2}$};
+    \draw[<->,black] (7.8,-1) -- (7.8,-1.5) node[midway, right] {$\frac{k}{4m^2c^2}$};
+    \draw[->,>=stealth,black] (-1,0) -- (-1,-2) node[midway, left] {$E$};
+  \end{tikzpicture}
+\end{center}
+
+
+\chapter{Junio, 2015 (2)}
+\begin{tcolorbox}[halign=left]
+  \emph{Escriba la función de onda de los electrones de un átomo de
+    helio en la configuración (1s)(2s) si uno de ellos apunta en la
+    dirección $\hat{x}$ y el otro en la dirección $\hat{z}$.}
+\end{tcolorbox}
+Notando que $\ket{+}_x = \frac{1}{\sqrt{2}}(\ket{+}+\ket{-})$,
+escribimos
+\begin{align}
+  \varphi_1 &= \varphi_{100}(r,\Omega) \ket{+} \\
+  \varphi_2 &= \frac{1}{\sqrt{2}} \varphi_{200}(r,\Omega) (\ket{+} + \ket{-})
+\end{align}
+Y obtenemos
+\begin{equation}
+  \begin{split}
+    \varphi_1(1)\otimes\varphi_2(2) &= \frac{1}{\sqrt{2}}
+    \varphi_{100}(1)\varphi_{200}(2)\ket{+}_1\ket{+}_2 + \\
+    &+ \frac{1}{\sqrt{2}}\varphi_{100}(1)\varphi_{200}(2)\ket{+}_1\ket{-}_2 = \\
+    &= \frac{1}{\sqrt{2}}\varphi_{100}(1)\varphi_{200}(2) \left(\chi_1^1(1,2) +
+    \frac{\chi_1^0(1,2)}{\sqrt{2}} + \frac{\chi_0^0(1,2)}{\sqrt{2}}
+       \right)
+  \end{split}
+\end{equation}
+donde se ha empleado la tabla de Clebsch-Gordan $1\otimes 1$.
+Antisimetrizamos la función, como $\varphi_1\perp\varphi_2$ la
+constante de normalización será simplemente $\sqrt{2}$:
+\begin{equation}
+  \begin{split}
+    \sqrt{2}\Psi &= \varphi_1(1)\otimes\varphi_2(2) -
+    \varphi_1(2)\otimes\varphi_2(1) = \\
+    &= \frac{1}{\sqrt{2}}\varphi_{100}(1)\varphi_{200}(2) \chi_1^1(1,2) + \\
+    &+ \frac{1}{2}\varphi_{100}(1)\varphi_{200}(2) \chi_1^0(1,2) + \\
+    &+ \frac{1}{2}\varphi_{100}(1)\varphi_{200}(2) \chi_0^0(1,2) - \\
+    &- \frac{1}{\sqrt{2}}\varphi_{100}(2)\varphi_{200}(1) \chi_1^1(2,1) - \\
+    &- \frac{1}{2}\varphi_{100}(2)\varphi_{200}(1) \chi_1^0(2,1) - \\
+    &- \frac{1}{2}\varphi_{100}(2)\varphi_{200}(1) \chi_0^0(2,1) 
+  \end{split}
+\end{equation}
+
+
+
+
+\begin{tcolorbox}[halign=left]
+  \emph{¿Qué posibles valores y probabilidades pueden obtenerse si se
+    mide el espín total?}
+\end{tcolorbox}
+
+Como tenemos $\Psi$ en una base de espín total, no hay más que sumar
+los coeficientes al cuadrado. Las $\varphi$ no son un problema, puesto
+que su módulo al cuadrado en todo es espacio está normalizado.
+
+Las probabilidades de medir cada espinor serán:
+\begin{align}
+  \text{P}(\chi_0^0) &= \abs{\frac{1}{2\sqrt{2}}}^2 +
+                       \abs{\frac{1}{2\sqrt{2}}}^2 = \frac{1}{4} \\
+  \text{P}(\chi_1^0) &= \abs{\frac{1}{2\sqrt{2}}}^2 +
+                       \abs{\frac{1}{2\sqrt{2}}}^2 = \frac{1}{4} \\
+  \text{P}(\chi_1^1) &= \abs{\frac{1}{\sqrt{2}\sqrt{2}}}^2 +
+                       \abs{\frac{1}{\sqrt{2}\sqrt{2}}}^2 = \frac{1}{2}
+\end{align}
+
+\begin{tcolorbox}[halign=left]
+  \emph{Calcule $\langle (\boldrm{r}_1-\boldrm{r}_2)^2\rangle$}
+\end{tcolorbox}
+Hay tres integrales a calcular, ya que $(\boldrm{r}_1-\boldrm{r}_2)^2
+= r_1^2 + r_2^2 - \boldrm{r}_1 \cdot\boldrm{r}_2$. Utilizamos la base
+desacoplada, y calculamos $\langle r_1^2\rangle$:
+\begin{fullwidth}
+  \begin{equation}
+    \begin{split}
+      \mel{\Psi}{r^2(1)}{\Psi} &= \mel{ \frac{1}{\sqrt{2}}
+        \varphi_{100}(1)\varphi_{200}(2)\ket{+,1}\ket{+,2}_x
+        - \frac{1}{\sqrt{2}}
+        \varphi_{100}(2)\varphi_{200}(1)\ket{+,2}\ket{+,1}_x
+      }{r^2(1)}{\text{ídem}} = \\
+      &= \frac{1}{2}\mel{
+        \varphi_{100}^{(1)}\varphi_{200}^{(2)}\ket{+,1}\ket{+,2}_x}{r^2(1)}{
+        \varphi_{100}^{(1)}\varphi_{200}^{(2)}\ket{+,1}\ket{+,2}_x} -\\
+      &- \frac{1}{2} \mel{
+        \varphi_{100}^{(1)}\varphi_{200}^{(2)}\ket{+,1}\ket{+,2}_x}{r^2(1)}{
+        \varphi_{100}^{(2)}\varphi_{200}^{(1)}\ket{+,2}\ket{+,1}_x} -\\
+      &- \frac{1}{2} \mel{
+        \varphi_{100}^{(2)}\varphi_{200}^{(1)}\ket{+,2}\ket{+,1}_x}{r^2(1)}{
+        \varphi_{100}^{(1)}\varphi_{200}^{(2)}\ket{+,1}\ket{+,2}_x} +\\
+      &+ \frac{1}{2}\mel{
+        \varphi_{100}^{(2)}\varphi_{200}^{(1)}\ket{+,2}\ket{+,1}_x}{r^2(1)}{
+        \varphi_{100}^{(2)}\varphi_{200}^{(1)}\ket{+,2}\ket{+,1}_x} = \cdots
+    \end{split}
+  \end{equation}
+\end{fullwidth}
+Obtenemos, como en la teoría, integrales iguales a parejas: la
+\emph{integral de intercambio} (las cruzadas) y la \emph{integral
+  directa} (los términos directos). Realizamos las integrales directas:
+\begin{equation}
+  \begin{split}
+    &\frac{1}{2}\mel{
+      \varphi_{100}^{(1)}\varphi_{200}^{(2)}\ket{+,1}\ket{+,2}_x}{r^2(1)}{\text{ídem}}
+    = \\
+    &= \frac{1}{2}
+    \mel{\varphi_{100}^{(1)}}{r^2(1)}{\varphi_{100}^{(1)}}\braket{++_x}{++_x}\braket{\varphi_{200}^{(2)}}{\varphi_{200}^{(2)}}
+    = \\
+    &= \langle r^2\rangle_{100}
+  \end{split}
+\end{equation}
+\begin{equation}
+  \begin{split}
+    &\frac{1}{2}\mel{
+      \varphi_{100}^{(2)}\varphi_{200}^{(1)}\ket{+,2}\ket{+,1}_x}{r^2(1)}{\text{ídem}}
+    = \\
+    &= \frac{1}{2}
+    \mel{\varphi_{200}^{(1)}}{r^2(1)}{\varphi_{200}^{(1)}}\braket{+_x+}{+_x+}\braket{\varphi_{100}^{(2)}}{\varphi_{100}^{(2)}}
+    = \\
+    &= \langle r^2\rangle_{200}
+  \end{split}
+\end{equation}
+donde el término de espines es la
+unidad\footnote{$\braket{+_x+}{+_x+}=\braket{+_x}{+_x}(1)\braket{+}{+}(2)
+  = 1$, por ejemplo.}. Es inmediato que para $\langle r_2^2\rangle$ obtendremos los mismos
+resultados, pero en orden inverso. Las integrales cruzadas son nulas,
+ya que se tiene para el término espacial brakets del estilo $\braket{\varphi_{100}}{\varphi_{200}}$.
+
+Hemos obtenido que $\langle r_1^2 + r_2^2\rangle = \left( \frac{1}{2}+\frac{1}{2} \right)\langle
+r^2\rangle_{100}+ \left( \frac{1}{2}+\frac{1}{2} \right)\langle r^2\rangle_{200}$, ya sólo falta el término
+$\langle \boldrm{r}_1 \boldrm{r}_2\rangle$. Sin necesidad de realizar
+la integral, notamos que $ \boldrm{r}_1 \boldrm{r}_2$ es
+una función impar y que la parte espacial de $\Psi$ es puramente par,
+por lo que $\ev{\boldrm{r}_1 \boldrm{r}_2}{\Psi} =0$.
+
+En definitiva,
+\begin{equation}
+  \boxed{
+\langle (r_1 - r_2)^2 \rangle = \langle
+r^2\rangle_{100}+ \langle r^2\rangle_{200}
+  }
+\end{equation}
+
+Las integrales radiales resultan
+\begin{equation}
+  \begin{split}
+    \langle r^2\rangle_{100} &= \mel{R_{10}Y_0^0}{r^2}{R_{10}Y_0^0}
+    = \mel{R_{10}}{r^2}{R_{10}}\braket{Y_0^0}{Y_0^0} = \\
+    &= \int_0^\infty r^2 \dd{r} \left[ \frac{2}{a_0^{3/2}}
+      e^{-r/a_0} \right] r^2 \left[ \frac{2}{a_0^{3/2}}
+      e^{-r/a_0} \right] = \\
+    &= \frac{4}{a_0^3} \int_0^\infty r^4 e^{-2r/a_0} \dd{r} = \\
+    &= \frac{4}{a_0^3}  \frac{4!}{(2/a_0)^5} = 3a_0^2
+  \end{split}
+  \label{eq:radial}
+\end{equation}
+
+\begin{equation}
+  \begin{split}
+    \langle r^2\rangle_{200} &= \mel{R_{20}Y_0^0}{r^2}{R_{20}Y_0^0}
+    = \mel{R_{20}}{r^2}{R_{20}}\braket{Y_0^0}{Y_0^0} = \\
+    &= \int_0^\infty r^2 \dd{r}  r^2
+    \underbrace{\frac{4}{(2a_0)^3}e^{-r/a_0} \left( 1- \frac{r}{a_0}+\frac{r^2}{4a_0^2} \right)}_{R_{200}^2} = \\
+    &= \frac{4}{(2a_0)^3} \left[ 
+      \int_0^\infty r^4 e^{-r/a_0} \dd{r} +
+      \int_0^\infty \frac{r^5}{a_0} e^{-r/a_0} \dd{r} +
+      \int_0^\infty \frac{r^6}{4a_0^2} e^{-r/a_0} \dd{r} 
+    \right] = \\
+    &= \frac{4}{(2a_0)^3} \left[ 24a^5 + 120a^5 + 180a^5 \right] = 162a_0^2
+  \end{split}
+\end{equation}
+
+\chapter{Junio, 2014 (1)}
+\begin{tcolorbox}[halign=left]
+  \emph{Dos partículas de espín $\oh$ están en un pozo de potencial
+    tipo oscilador armónico isótropo. Si hay una perturbación
+    $W=\alpha S_{1z} +\beta S_{2z}$, con $\alpha$ y $\beta$ constantes
+    reales, calcule en primer orden de perturbaciones las correcciones a
+    la energía del nivel fundamental en el caso de partículas
+    idénticas y en el caso de partículas distintas.}
+\end{tcolorbox}
+
+\section*{Partículas idénticas}
+Si las partículas son idénticas, $\alpha=\beta$ necesariamente.
+Además, hemos de aplicar el postulado de simetrización y crear una
+función de ondas completamente antisimétrica (por ser fermiones, si no
+simétrica):
+\begin{align}
+  \varphi_1(1) &=\ket{0}^{(1)}\ket{\pm}^{(1)}\\
+  \varphi_2(2) &=\ket{0}^{(2)}\ket{\pm}^{(2)}\\
+  \Psi(1,2) &\propto \varphi_1(1)\varphi_2(2) \otimes
+              \varphi_1(2)\varphi_2(1) = \ket{00}(\ket{\pm\pm}-\ket{\pm\pm})
+\end{align}
+Vemos que no todas las $\Psi$ (en principio cuatro) son posibles, y
+que dos son idénticas salvo fase:
+\begin{itemize}
+  \item Para $\ket{+}\otimes\ket{+}$ obtenemos
+    \begin{equation}
+      \Psi(1,2) = \frac{1}{\sqrt{2}}\ket{00}(\ket{++}-\ket{++}) = 0 
+    \end{equation}
+    Es de esperar que se anule por ser $\varphi_1\otimes\varphi_2$
+    completamente simétrica.
+  \item Para $\ket{-}\otimes\ket{-}$ obtenemos el mismo resultado.
+  \item Con los espines diferentes, obtenemos
+    \begin{equation}
+      \Psi(1,2) = \frac{1}{\sqrt{2}}\ket{00}(\ket{+-}-\ket{-+})  = \ket{00}\chi_0^0
+    \end{equation}
+    Si utilizamos $\ket{-}\otimes\ket{+}$ en lugar de
+    $\ket{+}\otimes\ket{-}$ se obtiene la misma función pero con un
+    factor de fase $e^{i\pi}$, por la antisimetría de $\ket{+-}$.
+\end{itemize}
+
+El postulado de antisimetrización ha eliminado toda la degeneración,
+así que basta con calcular el único elemento de matriz que queda:
+\begin{equation}
+  \begin{split}
+    \ev{\alpha(S_{1z}+S_{2z})}{00\chi_0^0} &=
+    \braket{00}{00}\ev{S_{Tz}}{\chi_0^0} = \\ &= 1\cdot0 = 0
+  \end{split}
+\end{equation}
+
+Obtenemos que no hay perturbación a la energía, en primer orden de aproximación.
+
+\section*{Partículas distintas}
+En este caso todas las combinaciones son posibles, al no haber ningún
+postulado limitándonos ni ser necesario antisimetrizar:
+\begin{align}
+  \Psi_a &= \ket{00}\ket{++} \\
+  \Psi_b &= \ket{00}\ket{+-} \\
+  \Psi_c &= \ket{00}\ket{-+} \\
+  \Psi_d &= \ket{00}\ket{--} 
+\end{align}
+
+Obtenemos una matriz de perturbación $4\times4$:
+\begin{equation}
+  \begin{pmatrix}
+    \mel{\Psi_a}{W}{\Psi_a} & \mel{\Psi_a}{W}{\Psi_b} & \mel{\Psi_a}{W}{\Psi_c} & \mel{\Psi_a}{W}{\Psi_d} \\
+    \mel{\Psi_b}{W}{\Psi_a} & \mel{\Psi_b}{W}{\Psi_b} & \mel{\Psi_b}{W}{\Psi_c} & \mel{\Psi_b}{W}{\Psi_d} \\
+    \mel{\Psi_c}{W}{\Psi_a} & \mel{\Psi_c}{W}{\Psi_b} & \mel{\Psi_c}{W}{\Psi_c} & \mel{\Psi_c}{W}{\Psi_d} \\
+    \mel{\Psi_d}{W}{\Psi_a} & \mel{\Psi_d}{W}{\Psi_b} & \mel{\Psi_d}{W}{\Psi_c} & \mel{\Psi_d}{W}{\Psi_d} \\
+  \end{pmatrix} 
+\end{equation}
+
+Las partes espaciales producen brakets $\braket{00}{00}=1$, los
+elementos de la diagonal son:
+\begin{fullwidth}
+  \begin{align}
+    \mel{++}{\alpha S_1 + \beta S_2}{++} 
+    &= \alpha\mel{+}{S_1}{+} + \beta \mel{+}{S_2}{+} = \frac{+\alpha
+      \hbar}{2} + \frac{+\beta \hbar}{2} = \frac{\hbar
+      (\alpha+\beta)}{2} \\
+    \mel{+-}{\alpha S_1 + \beta S_2}{+-} 
+    &= \alpha\mel{+}{S_1}{+} + \beta \mel{-}{S_2}{-} =
+      \frac{-\hbar\alpha}{2}\braket{+}{+} +
+      \frac{-\hbar\alpha}{2}\braket{-}{-} = \frac{\hbar(\alpha-\beta)}{2}\\
+    \mel{-+}{\alpha S_1 + \beta S_2}{-+} 
+    &= \alpha\mel{-}{S_1}{-} + \beta \mel{+}{S_2}{+} =
+      \frac{-\hbar\alpha}{2}\braket{-}{-} +
+      \frac{-\hbar\alpha}{2}\braket{+}{+} = \frac{\hbar(-\alpha + \beta)}{2}\\
+    \mel{--}{\alpha S_1 + \beta S_2}{--} 
+    &= \alpha\mel{-}{S_1}{-} + \beta \mel{-}{S_2}{-} = \frac{-\alpha
+      \hbar}{2} + \frac{-\beta \hbar}{2} = \frac{-\hbar
+      (\alpha+\beta)}{2} 
+  \end{align}
+\end{fullwidth}
+
+La matríz completa, calculando el resto de elementos, es:
+\begin{equation}
+  \frac{\hbar}{2}
+  \begin{pmatrix}
+    \alpha+\beta & \alpha - \beta & \beta -\alpha & -\alpha -\beta \\
+    \alpha & \alpha - \beta & 0 & -\beta \\
+    \beta & 0 & -\alpha + \beta & -\alpha \\
+    0 & -\beta & -\alpha & -\alpha - \beta
+  \end{pmatrix}
+\end{equation}
+Tras algo de
+álgebra\footnote{\url{https://www.wolframalpha.com/input/?i={{a\%2Bb,a,b,0},{a,a-b,0,-b},{b,0,-a\%2Bb,-a},{0,-b,-a,-a-b}}}}
+vemos que la matríz sólo tiene dos autovalores no nulos, de valor
+$\lambda_\pm = \pm 2\sqrt{\alpha^2+\beta^2}$. Obtenemos que la energía se divide en
+dos niveles, distanciados $4\sqrt{\alpha^2+\beta^2}$.
+
+
+\chapter{Junio, 2014 (2)}
+\begin{tcolorbox}[halign=left]
+  \emph{Una partícula sin espín, de masa $m$ y carga $q$ está
+    confinada en una caja de paredes impenetrables entre
+$x\in(\frac{-a}{2},\frac{a}{2})$, $y\in(\frac{-a}{2},\frac{a}{2})$ y
+$z\in(\frac{-a}{10},\frac{a}{10})$.
+Calcule en aproximación dipolar eléctrica la probabilidad de
+transición del primer nivel excitado al fundamental.}
+\end{tcolorbox}
+
+De manera análoga al problema \ref{chapter:e161} tenemos un problema
+prácticamente bidimensional, de forma que el primer excitado está
+doblemente degenerado. Hay dos transiciones posibles (figura
+\ref{fig:cajacontruenos}), calculamos una de ellas con la cordenada
+cartesiana $x$ del
+tensor $\boldrm{r}$, empleando que $\psi_n(x) = \sqrt{\frac{2}{L}}\sin
+\left( \frac{n\pi}{L} [x+L/2] \right)$:
+
+\begin{marginfigure}
+  \begin{tikzpicture}
+    \tikzstyle energylevel=[thick,blue] \tikzstyle
+    photon=[thick,yellow!60!black,snake=snake,line after
+    snake=0.2cm,->] \tikzstyle fotonloco=[ultra
+    thick,yellow!60!black,snake=snake,line after snake=0.2cm,->]
+    \tikzstyle photonlabel=[yellow!20!black,midway,fill=white]
+
+    \draw[energylevel] (0,2) -- (2,2); \node[fill=white] (a) at
+    (1,2) {$\ket{21}$}; \draw[energylevel] (3,2) -- (5,2);
+    \node[fill=white] (b) at (4,2) {$\ket{12}$}; \draw[energylevel]
+    (1,0) -- (4,0); \node[fill=white] (g) at (2.5,0) {$\ket{11}$};
+    % transitions
+    \draw[photon] (a) -- (g); \draw[photon] (b) -- (g);
+  \end{tikzpicture}
+  \caption{Caja con truenos}
+  \label{fig:cajacontruenos}
+\end{marginfigure}
+
+\begin{equation}
+  \begin{split}
+    \mel{11}{x}{21} &= \mel{1}{x}{2}\braket{1}{1} = \\
+    &= \frac{2}{a}\int_{-a/2}^{a/2} \sin \left( \frac{\pi}{a}(x+a/2)
+    \right) x \sin \left( \frac{2\pi}{a}(x+a/2) \right) \dd{x} = \\
+    &= \frac{2}{a} \int_0^a \sin \left( \frac{\pi x}{a} \right)
+    (x-a/2) \sin \left( \frac{2\pi x}{a} \right) \dd{x} = \\
+    &= \cdots = \frac{-16a}{9\pi^2}
+  \end{split}
+\end{equation}
+
+La integral se resuelve mediante el uso de identidades
+trigonométricas. La transición con $z$ es nula por ser $z\simeq 0$ en
+toda la caja, y con $y$ por quedar un braket con elementos ortogonales
+de la base:
+\begin{equation}
+  \mel{11}{y}{21} = \braket{1}{2} \mel{1}{y}{1} = 0 \cdot
+  \mel{1}{y}{1} = 0
+\end{equation}
+
+Obtenemos
+\begin{equation}
+  \abs{\mel{11}{\boldrm{r}}{21}} = \abs{\mel{11}{x}{21}}^2 +
+  \abs{\mel{11}{y}{21}}^2 + \abs{\mel{11}{z}{21}}^2 \simeq 0.0324 a^2
+\end{equation}
+
+Para la transición $\mel{11}{\boldrm{r}}{12}$ se obtiene el mismo
+resultado, pero la integral no nula es la de la $y$. Obtenemos una
+probabilidad de transición
+\begin{equation}
+  \Lambda = \frac{1}{2} \sum \Lambda_{ij} = \frac{2e^2}{3 \hbar}k^3
+  \underbrace{(0.0324+0.0324)a^2}_{\sum
+    \abs{\mel{\text{F}}{\boldrm{r}}{\text{I}}}} \stackrel{\text{CGS}}{=} \SI{3e16}{\second}
+\end{equation}
+
+donde se ha utilizado que $k(n)=\frac{n\pi}{L}$ para un pozo cuadrado
+infinito y multiplicado el resultado por $\frac{1}{4\pi\varepsilon_0}$
+para pasar a sistema MKS. Para $L$ se ha tomado \SI{1}{\angstrom}.
+
+\begin{tcolorbox}[halign=left]
+  \emph{La transición desde el segundo nivel excitado al nivel
+    fundamental, ¿es más probable, menos probable o igual de probable
+    que la del apartado anterior? ¿Por qué?}
+\end{tcolorbox}
+
+Es menos probable, ya que su $\Lambda$ es nula y por tanto la vida
+media infinita. Esto se debe a que las transiciones entre niveles
+con simetría par (el fundamental y el segundo excitado lo cumplen\footnote{Se puede
+  ver rápidamente dibujándolos que todos los niveles con $n$ impar tienen
+funciones de onda pares}) se anulan por ser
+el elemento de matriz $\mel{\text{par}}{\text{impar}}{\text{par}}=0$.
+
+
+\chapter{Junio, 2014 (3)}
+\begin{tcolorbox}[halign=left]
+  \emph{Escriba una función de ondas de dos electrones en una
+    configuración (2p)\textsuperscript{2} con la tercera componente
+    del momento angular orbital total nula y con ambos espines
+    apuntando en la dirección del eje $\hat{x}$. ¿Cuál es el momento
+    angular total de los dos electrones?}
+\end{tcolorbox}
+
+La parte de espín y la espacial quedan fijadas como $R_{21}\ket{+}_x$
+por el enunciado. Queda ver qué parte angular escoger para cada función.
+
+Hay dos combinaciones de armónicos esféricos que nos dan ${L_{Tz}=0}$,
+\begin{itemize}
+\item Podemos utilizar en ambos electrones $Y_1^0$, pero entonces
+  ambas funciones son idénticas:
+  \begin{equation}
+    \varphi = R_{21}(r)Y_1^0(\Omega)\ket{+}_x
+  \end{equation}
+  Esto esta prohibido en general por el postulado de simetrización
+  ($\varphi\otimes\varphi'$ es puramente simétrica y no se puede
+  antisimetrizar) y en particular por el principio de exclusión de
+  Pauli (ambos electrones tienen exactamente los mismos números
+  cuánticos y ocupan por lo tanto el mismo estado).
+\item Podemos utilizar en una partícula $Y_1^{+1}$ y en la otra
+  $Y_1^{-1}$. El orden en que utilicemos los coeficientes da igual, al
+  antisimetrizar $\Psi$ simplemente obtendremos una fase $e^{i\pi}$ o
+  no.
+  \begin{equation}
+    \begin{split}
+      \Psi &=
+      \frac{1}{\sqrt{2}}R_{21}(1)R_{21}(2)\ket{+}_x^{(1)}\ket{+}_x^{(2)}
+      \left[ Y_1^{+1}(1)  Y_1^{-1}(2) - Y_1^{-1}(1)Y_1^{+1}(2)
+        \right] = \\
+        &=F_{(2p)^2} \smqty{0\\ 1} \ket{+}_x^{(1)}\ket{+}_x^{(2)}
+      \end{split}
+  \end{equation}
+\end{itemize}
+
+El momento orbital $L$ será la unidad\footnote{Puede comprobarse
+  desarrollando $Y_1^{+1}(1)  Y_1^{-1}(2) - Y_1^{-1}(1)Y_1^{+1}(2)$
+  con una tabla de Clebsch-Gordan. El único coeficiente que no se
+  simplifica en la expresión es el $\ket{1\ 0}$.}. A continuación,
+desarrollamos $\ket{+}_x\ket{+}_x$ en una base de espín total con los
+coeficientes de Clebsch-Gordan:
+\begin{equation}
+  \begin{split}
+    \ket{+}_x^{(1)}\ket{+}_x^{(2)} &= \frac{1}{2} \left( \ket{+}^{(1)} -
+      \ket{-}^{(1)} \right)\left( \ket{+}^{(2)} + \ket{-}^{(2)}
+    \right)= \\ &= \frac{1}{2}\ket{++} + \frac{1}{2}\ket{+-} +
+    \frac{1}{2}\ket{-+}  + \frac{1}{2}\ket{++}  = \\
+    &= \frac{1}{2} \chi_1^1 + \frac{1}{2} 
+    \left( \frac{\chi_1^0}{\sqrt{2}} + \frac{\chi_0^0}{\sqrt{2}} \right)
+    + \frac{1}{2}
+    \left( \frac{\chi_1^0}{\sqrt{2}} - \frac{\chi_0^0}{\sqrt{2}} \right)
+    + \frac{1}{2} \chi_1^{-1} = \\
+    &= \frac{1}{2} \chi_1^1 + \frac{1}{\sqrt{2}} \chi_1^0 +
+    \frac{1}{2} \chi_1^{-1}
+  \end{split}
+\end{equation}
+
+Ya sólo falta acoplar el momento orbital $F_{(2p)^2}\smqty{M_L:\ 0 \\ L_T:\ 1}$
+con el momento de espín recién hallado, utilizamos la notación
+$\ket{L\ L_z}$ y $\ket{S\ S_z}$:
+\begin{equation}
+  \begin{split}
+    \Psi &= R_{21}(1)R_{21}(2) \left[ \textcolor{red!60!black}{\ket{1\ 0}} \right] \otimes
+    \left[  \textcolor{green!60!black}{
+      \frac{1}{2}\ket{1\ +1} + \frac{1}{\sqrt{2}}\ket{1\ 0} +
+      \frac{1}{2}\ket{1\ {-1}}
+      }
+    \right] = \\
+    &= R_{21}(1)R_{21}(2) \left[ \frac{
+        \textcolor{red!60!black}{\ket{1\ 0}}
+          \textcolor{green!60!black}{\ket{1\ +1}}
+        }{2} +
+      \frac{
+        \textcolor{red!60!black}{\ket{1\ 0}}
+       \textcolor{green!60!black}{ \ket{1\ 0}}
+      }{\sqrt{2}} + \frac{
+       \textcolor{red!60!black}{ \ket{1\ 0}}
+        \textcolor{green!60!black}{\ket{1\ -1}}
+      }{2} \right] = \\
+    &= R_{21}(1)R_{21}(2) \frac{1}{2}\left( 
+      \textcolor{blue!60!black}{\frac{\ket{2\ +1}}{\sqrt{2}} - \frac{\ket{1\ +1}}{\sqrt{2}} }
+    \right) + \\
+    &+ R_{21}(1)R_{21}(2) \frac{1}{\sqrt{2}} \left(
+      \textcolor{blue!60!black}{
+        \sqrt{\frac{2}{3}}\ket{2\ 0} - \frac{\ket{0\ 0}}{\sqrt{3}}
+      }
+      \right) + \\
+    &+ R_{21}(1)R_{21}(2) \frac{1}{2} \left(
+      \textcolor{blue!60!black}{\frac{\ket{2\ -1}}{\sqrt{2}} - \frac{\ket{1\ -1}}{\sqrt{2}}}
+      \right) \\
+  \end{split}
+\end{equation}
+donde se ha utilizado la tabla de Clebsch-Gordan $1\otimes1$ para
+acoplar kets $\textcolor{red!60!black}{L=1}$ con kets
+$\textcolor{green!60!black}{S=1}$ en una base de
+$\textcolor{blue!60!black}{J\in1\otimes1=\{0,1,2\}}$. Por ejemplo, en
+$\textcolor{red!60!black}{\ket{1\ 0}}
+\textcolor{green!60!black}{\ket{1\ +1}}$ Miramos $m_1,m_2=\{0,+1\}$.
+
+En esta base, la probabilidad de medir $J=2$ es la suma de los
+coeficientes $\ket{2 \ m}$, la de mediar $J=1$ la de los coeficientes
+de los $\ket{1\ m}$ y $J=0$ la de los $\ket{0\ m}$:
+\begin{center}
+  \begin{tabular}{lcr}
+    $J$ & Coeficientes $C_i$ & $\text{P}=\sum \abs{C_i}^2$ \\ \hline
+    $2$ & $\frac{1}{2\sqrt{2}}, \frac{1}{\sqrt{2}}\frac{\sqrt{2}}{\sqrt{3}},\frac{1}{2\sqrt{2}}$ & $\frac{7}{12} \simeq 58\%$ \\
+    $1$ & $\frac{-1}{2\sqrt{2}},\frac{-1}{2\sqrt{2}}$ & $\frac{1}{4}\simeq 25\%$ \\
+    $0$ & $\frac{1}{\sqrt{2}\sqrt{3}}$ & $\frac{1}{6} \simeq 17\%$ \\
+    & & \emph{Total: }$100\%$
+  \end{tabular}
+\end{center}
+Notar que se ha utilizado que la parte radial está normalizada al
+integrar a todo el espacio al calcular $\abs{C_i}^2$. Vemos que no
+obtenemos un único momento angular total al medir, sino varios con
+distintas probabilidades.
+
+\chapter{Septiembre, 2014 (1)}
+\begin{tcolorbox}[halign=left]
+  \emph{Un átomo de hidrógeno está sometido a una perturbación
+    $V=\alpha(L_z+2S_z) + \beta(x^2+y^2)$ con $\alpha,\beta\in
+    \mathbb{R}$. Calcule en primer orden de perturbaciones la
+    corrección a la energía del nivel fundamental.}
+\end{tcolorbox}
+
+El nivel fundamental posee una doble degeneración por el espín, así
+que las matrices de perturbación serán $2\times2$ en el subespacio de degeneración.
+
+El nivel fundamental no posee momento angular, así que 
+$\mel{\varphi_{100}}{L_z}{\varphi_{100}}=0$ en todo el subespacio de
+degeneración:
+Para $S_z$ obtenemos
+$\mel{\varphi_{100}\pm}{S_z}{\varphi_{100}\pm}=\ip{\varphi_{100}}\mel{\pm}{S_z}{\pm}$, donde $S_z =
+\frac{\hbar}{2} \smqty(1& \\ & -1)$. Obtenemos
+\begin{equation}
+  \mel{\Psi}{2\alpha S_z}{\Psi} = \alpha \hbar
+  \begin{pmatrix}
+    1 & \\ & -1 \\
+  \end{pmatrix}
+\end{equation}
+
+Para calcular el otro término perturbativo, escribimos $x^2+y^2 =
+r^2-z^2 = r^2(1-\cos^2\theta)$:
+\begin{equation}
+  \begin{split}
+    \mel{\varphi_{100}}{r^2(1-\cos\theta)}{\phi_{100}} &=
+    \ev{r^2}{\varphi_{100}}\ev{1-\cos^2\theta}{Y_0^0} = \\
+    &= \langle r^2\rangle_{10} \int_0^{2\pi} \dd{\varphi}\int_0^\pi
+    \dd{\theta}\sin\theta (1-\cos^2\theta)
+    \underbrace{\abs{Y_0^0}^2}_{=1/4\pi} = \\ &= \cdots =\frac{2}{3} \langle
+    r^2\rangle_{10}
+  \end{split}
+\end{equation}
+
+El valor de $\langle r^2 \rangle_{10}$ es $3a_0^2$, como ya se calculó
+en la ecuación \eqref{eq:radial}. La integral no depende del espín,
+así que es constante en todo el subespacio de degeneración. Los
+términos con fuera de la diagonal ($\braket{\pm}{\mp}$) serán nulos.
+
+Juntando los tres términos,
+obtenemos
+\begin{equation}
+  \mel{\Psi}{V}{\Psi} =
+  \begin{pmatrix}
+    0+\alpha \hbar +2\beta a_0^2 & \\
+    & 0-\alpha \hbar +2\beta a_0^2  \\
+  \end{pmatrix}
+\end{equation}
+
+El nivel sube a $E = E_0 +2\beta a_0^2$, y se desdobla en dos niveles
+no degenerados separados $2\alpha \hbar$, como puede verse en la
+figura \ref{fig:levelfthis}
+\begin{marginfigure}
+  \begin{tikzpicture}[xscale=0.6, yscale=2]
+    \tikzstyle energylevel=[ultra thick,blue]
+    \tikzstyle transition=[thin,blue]
+    \draw[energylevel] (0,0) -- (3,0);
+    \node[above] at (1,0) {$E_0$};
+    \draw[transition] (3,0) -- (4,+1);
+    \draw[energylevel] (4,+1) -- (5,+1);
+    \draw[thin,dashed,black] (3,0) -- (5,0);
+    \draw[<->,black] (4.7,+1) -- (4.7,0) node 
+    [midway, right] {$2\beta a_0^2$};
+    \draw[transition] (5,+1) -- (6.5,+1.5);
+    \draw[transition] (5,+1) -- (6.5,0.5);
+    \draw[energylevel] (6.5,+1.5) -- (8,+1.5);
+    \draw[energylevel] (6.5,0.5) -- (8,0.5);
+    \draw[<->,black] (7.8,+0.5) -- (7.8,+1.5) node[midway, right]
+    {$2\alpha \hbar$};
+  \end{tikzpicture}
+  \caption{Efecto de la perturbación}
+  \label{fig:levelfthis}
+\end{marginfigure}
+
+\chapter{Septiembre, 2014 (2)}
+\begin{tcolorbox}[halign=left]
+  \emph{Sea $\Phi_0$ el estado fundamental del átomo de helio y $\Phi$
+  un estado de la configuración excitada (1s)(2p).}
+
+\emph{Escoja $\Phi$ de forma que sea autoestado de los observables
+  $L^2,S^2,J^2,J_z$ y además $\mel{\Phi_0}{z_1+z_2}{\Phi}\neq 0$}
+\end{tcolorbox}
+
+Utilizando la notación $\ket{(n\ell)\ (n'\ell')\ L\ S\ J\ M}$,
+escribimos el nivel fundamental como el $\ket{(1s)^2\ 0\ 0\ 0\ 0}$. El
+estado excitado propuesto será el $\ket{(1s)(2p)\ L\ S\ J\ M}$:
+\begin{itemize}
+\item El momento angular orbital total estará en $S\otimes P=0\otimes
+  1 = \{1\}$, así que $L=1$.
+\item Las transiciones dipolares han de cumplir $\Delta S = 0$; el
+  estado fundamental tiene $S=0$ así que el excitado también ha de
+  tener espín nulo.
+\item Tenemos $L=1$ y $S=0$, así que $J\in1\otimes0=\{1\}$.
+\item Para $M$ tendremos como posibles valores $0,\pm 1$. Como la
+  transición la realiza $z_1+z_2 = R_0^1$ se ha de cumplir $M_i + 0 =
+  M_f$, donde el $0$ proviene del subíndice del $R_0^1$. $M_f$ es la
+  del fundamental, que es nula, así que $M$ será nula también para el excitado.
+\end{itemize}
+
+Obtenemos:
+\begin{equation}
+  \Phi = \ket{(1s)(2p)\ 1\ 0 \ 1 \ 0}
+\end{equation}
+
+\begin{tcolorbox}[halign=left]
+  \emph{Calcule el elemento de matriz anterior tomando funciones de
+    onda radiales del átomo de hidrógeno con carga $Z=2$.}
+\end{tcolorbox}
+
+El primer paso es desacoplar las funciones de onda.
+El nivel fundamental es trivial, ya que $J$
+proviene exclusivamente del espín y la parte espacial es puramente simétrica:
+\begin{equation}
+  \begin{split}
+    \Phi_0 &= \ket{(1s)^2\ 0\ 0\ 0\ 0} =
+    R_{10}(1)R_{10}(2)Y_0^0(1)Y_0^0(2)\chi_0^0 = \\
+    &= \varphi_{100}(1)\varphi_{100}(2) \chi_0^0
+  \end{split}
+\end{equation}
+
+En el excitado tenemos de nuevo $S=0$, así que $J$ proviene
+exclusivamente del momento angular orbital. Como el orbital $s$ aporta
+momento orbital nulo, y la tercera componente tiene que ser nula
+($M=0$), el armónico esférico del orbital $p$ tiene que ser $Y_1^0$ de
+entre todos los posibles\footnote{A priori,
+  $\{Y_0^0,Y_0^{+1},Y_0^{-1}\}$}.
+Obtenemos $\varphi_1 = R_{10}Y_0^0$ y $\varphi_2=R_{21}Y_1^0$, de
+forma que la función de ondas del sistema será (salvo normalización)
+$(\varphi_1(1)\otimes\varphi_2(2)+
+\varphi_1(2)\otimes\varphi_2(1))\chi_0^0$ al acoplar junto al
+espín\footnote{Normalmente se utiliza $\varphi_1(1)\otimes\varphi_2(2)
+  - \varphi_1(2)\otimes\varphi_2(1)$, pero en esos casos estamos
+metiendo en $\varphi$ también el espín, así que directamente
+antisimetrizamos. En este caso se estan simetrizando por separado la
+parte espacial y el espín, y como este último ($\chi_0^0$) es ya
+antisimétrico necesitamos una parte espacial simétrica, no
+antisimétrica, de forma que $\Psi$ sea antisimétrica.}.
+
+\begin{equation}
+  \Phi = \ket{(1s)(2p)\ 1\ 0\ 1\ 0} = [\varphi_{100}(1)\varphi_{210}(2)
+   + \varphi_{210}(1)\varphi_{100}(2)]
+  \chi_0^0
+\end{equation}
+
+Empezamos por la primera integral, $z_1$:
+  \begin{equation}
+    \begin{split}
+      &\mel{\varphi_{100}(1)\varphi_{100}(2)\chi_0^0}{z_1}{[\varphi_{100}(1)\varphi_{210}(2)
+        + \varphi_{210}(1)\varphi_{100}(2)] \chi_0^0
+      } = \\
+      &= \ip{\chi_0^0}
+      \mel{\varphi_{100}(1)\varphi_{100}(2)}{z_1}{\varphi_{100}(1)\varphi_{210}(2)}
+      + \\
+      &+\ip{\chi_0^0}
+      \mel{\varphi_{100}(1)\varphi_{100}(2)}{z_1}{\varphi_{210}(1)\varphi_{100}(2)}
+      = \\
+      &= 
+      \mel{\varphi_{100}}{z}{\varphi_{100}}\cancelto{0}{\braket{\varphi_{100}}{\varphi_{210}}}
+      +\mel{\varphi_{100}}{z}{\varphi_{210}}\braket{\varphi_{100}}{\varphi_{100}}
+      = \\
+      &= \mel{\varphi_{100}}{r_0^1}{\varphi_{210}} =
+      \mel{\varphi_{100}}{\sqrt{\frac{4\pi}{3}}rY_1^0}{\varphi_{210}}
+      = \\
+      &= \sqrt{\frac{4\pi}{3}}\int_0^\infty r^2 \dd{r} R_{10} r R_{21}
+      \underbrace{\int_{4\pi}  \dd{\Omega} Y_0^0 Y_1^0
+        Y_1^0}_{=\frac{1}{\sqrt{4\pi}}\int \dd{\Omega} \abs{Y_1^0}^2 =
+        \frac{1}{\sqrt{4\pi}}} = \\
+      &= \frac{1}{\sqrt{3}} \int_0^\infty r^2 \dd{r}
+      \frac{2}{a_0^{3/2}} e^{-r/a_0} r \frac{1}{\sqrt{3}(2a_0)^{3/2}}
+      \frac{r}{a_0} e^{\frac{-r}{2a_0}} = \\
+      &= \frac{\sqrt{2}}{6a_0^4} \int \dd{r} r^4 e^{\frac{-2r}{3a_0}}
+      = \\
+      &= \frac{\sqrt{2}\cdot3^5}{2^3} a_0
+    \end{split}
+  \end{equation}
+
+  En $z_2$ obtenemos el mismo resultado:
+
+  \begin{equation}
+    \begin{split}
+      &\mel{\varphi_{100}(1)\varphi_{100}(2)\chi_0^0}{z_2}{[\varphi_{100}(1)\varphi_{210}(2)
+        + \varphi_{210}(1)\varphi_{100}(2)] \chi_0^0
+      } = \\
+      &= \ip{\chi_0^0}
+      \mel{\varphi_{100}(1)\varphi_{100}(2)}{z_2}{\varphi_{100}(1)\varphi_{210}(2)}
+      + \\
+      &+ \ip{\chi_0^0}
+      \mel{\varphi_{100}(1)\varphi_{100}(2)}{z_2}{\varphi_{210}(1)\varphi_{100}(2)}
+      = \\
+      &= 
+      \braket{\varphi_{100}}{\varphi_{100}}\mel{\varphi_{100}}{z}{\varphi_{210}}
+      +\cancelto{0}{\braket{\varphi_{100}}{\varphi_{210}}}\mel{\varphi_{100}}{z}{\varphi_{100}}
+      = \\
+      &= \cdots = \frac{\sqrt{2}\cdot3^5}{2^3} a_0
+    \end{split}
+  \end{equation}
+
+  En resumen,
+  \begin{equation}
+    \boxed{
+      \mel{\Phi_0}{z_1+z_2}{\Phi} = \frac{\sqrt{2}\cdot 3^5}{4}a_0
+    }
+  \end{equation}
+
+\chapter{Examen extra (1)}
+\begin{tcolorbox}[halign=left]
+  \emph{Un electrón está confinado en un cubo de paredes
+    impenetrables y lado $L$ con una de sus caras sobre la
+superficie terrestre. Suponga que $L$ es mucho menor que el radio de
+la tierra, de forma que la energía potencial gravitatoria del electrón
+es $V(x,y,z)=mgz$, donde $z$ es la altura respecto a la superficie
+terrestre.}
+
+\emph{Calcule en primer orden de perturbaciones las correcciones de la
+interacción gravitatoria a las energías del nivel fundamental y del
+primer excitado del electrón.}
+\end{tcolorbox}
+
+\section*{Nivel fundamental}
+
+
+
+En el nivel fundamental obtenemos integrales del estilo de
+\begin{equation}
+  \begin{split}
+    \Delta E &= \mel{111}{mgz}{111} = mg \ip{11}{11} \mel{1}{z}{1} =
+    \\
+    &= mg \int_0^L \dd{z} \sqrt{\frac{2}{L}} \sin \left( \frac{\pi z}{L} 
+    \right) z \sqrt{\frac{2}{L}} \sin \left( \frac{\pi z}{L} \right)  =\\ 
+&= \frac{2mg}{L} \int_0^L \dd{z} \sqrt{\frac{2}{L}} \sin^2 \left(
+  \frac{\pi z}{L} \right) = \\
+&= \frac{2mg}{L} \int_0^L \dd{z}\frac{z - z\cos \left( \frac{2\pi z}{L}
+  \right)}{2} = \\ &= \frac{mg}{L}  
+\left[ \frac{z^2}{2} - \frac{zL}{2\pi}\sin(\frac{2\pi z}{L}) - \frac{L}{2\pi}
+  \cos(\frac{2\pi z}{L}) \right]_0^L  = \\
+&= \frac{mg}{L} \left[ \frac{L^2}{2} + 0 \right] = \frac{mgL}{2}
+  \end{split}
+\end{equation}
+donde se ha utilizado que $\int x\cos ax \dd{x} = \frac{x}{a} \sin(ax)
++ \frac{1}{a^2}\cos(ax) $ (integración por partes).
+El valor de la integral no depende del espín, así que obtenemos para
+el subespacio de degeneración\footnote{Hay degeneración doble por el
+  espín}
+\begin{equation}
+  \begin{pmatrix}
+    \mel{111+}{V}{111+} &  \mel{111+}{V}{111-} \\
+    \mel{111-}{V}{111+} &  \mel{111-}{V}{111-}
+  \end{pmatrix} =
+  \frac{mgL}{2}
+  \begin{pmatrix}
+    1 &  \\ & 1
+ \end{pmatrix}
+\end{equation}
+
+Los dos niveles tienen la misma corrección\footnote{La matriz tiene
+  ambos autovalores idénticos}, de valor $\frac{1}{2}mgL$, así que no
+se desdoblan.
+
+\section*{Primer excitado}
+A la degeneración del espín se suma una triple degeneración debida a
+la simetría de la caja:
+
+\begin{center}
+  \begin{tabular}{c|ccc}
+    $E$&$n_1$&$n_2$&$n_3$ \\
+    $1+1+1=3$ & $1$ & $1$ & $1$ \\ \hline
+    $2+1+1=4$ & $2$ & $1$ & $1$ \\
+    $1+2+1=4$ & $1$ & $2$ & $1$ \\ 
+    $1+1+2=4$ & $1$ & $1$ & $2$ \\ \hline
+    $3+1+1=5$ & $3$ & $1$ & $1$ \\
+    $1+3+1=5$ & $1$ & $3$ & $1$ \\
+    $1+1+3=5$ & $1$ & $1$ & $3$ \\
+    $1+2+2=5$ & $1$ & $2$ & $2$ \\
+    $2+2+1=5$ & $2$ & $2$ & $1$ \\ \hline
+    $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\ 
+  \end{tabular}
+\end{center}
+
+Las integrales $\ev{V}{211}$, $\ev{V}{121}$ y todas aquellas con
+función en $z$ $\ket{1}$ darán el mismo
+resultado que antes, porque se
+reducen a calcular $\ev{V}{1}$. Para $\ev{V}{2}$
+obtenemos:
+\begin{equation}
+  \begin{split}
+    \ev{V}{2} &= \frac{2mg}{L}\int_0^L \dd{z} z \sin^2 \left(
+      \frac{2\pi
+        z}{L} \right) = \\
+    &= \cdots = \frac{mgL}{2}
+  \end{split}
+\end{equation}
+
+El resultado es el mismo que en la integral anterior porque el término
+que cambia al desarrollar el $\sin^2(x)$ se anula.
+
+La integral $\mel{2}{V}{1}$ es innecesaria porque, como veremos, esos términos resultan nulos por los factores que les acompañan.
+
+Los bloques
+de fuera de la diagonal se anulan por ser los espines del braket
+ortogonales, y en la diagonal tendremos dos bloques $3\times 3$
+\begin{equation}
+  \begin{pmatrix}
+    \mel{211}{V}{211} &  \mel{211}{V}{121} & \mel{211}{V}{112} \\
+    \mel{121}{V}{211} &  \mel{121}{V}{121} & \mel{121}{V}{112} \\
+    \mel{112}{V}{211} &  \mel{112}{V}{121} & \mel{112}{V}{112} 
+  \end{pmatrix}
+\end{equation}
+
+Vemos que los términos fuera de la diagonal del bloque son nulos, porque la parte en $\hat{x},\hat{y}$ de los brakets nos da factores del estilo $\braket{i}{j}$, que se anulan por la ortogonalidad de los elementos de la base.
+
+Utilizando las integrales que acabamos de realizar, podemos calcular la
+expresión explícita de la matriz completa como $\frac{1}{2}mgL \cdot \mathbb{I}_{\ 6\times 6}$
+
+Vemos que nuevamente no hay desdoblamiento.
+
+\begin{tcolorbox}[halign=left]
+  \emph{Estime para qué valor de $L$ puede decirse que el primer orden
+  de perturbaciones ya no es una buena aproximación. ¿Es entonces $L$
+  mucho menor que el radio de la tierra?}
+\end{tcolorbox}
+
+Imponemos que $\Delta E$ sea como máximo un $10\%$ del $E$, y
+obtenemos para el nivel fundamental ($E_{111} = 3\cdot\frac{\hbar^2
+  \pi^2}{2m L^2}$):
+\begin{equation}
+  \frac{\Delta E}{E_{111}} = \frac{m^2 g L}{3 \hbar^2 \pi^2} \simeq
+  25\cdot10^6 L < 0.1
+\end{equation}
+Por lo tanto obtenemos $L < \SI{4}{\nm}$. Es mucho menor que el radio
+de la tierra, pero muy grande en comparación con las distancias
+nucleares típicas.
+
+
+\chapter{Examen extra (2)}
+\begin{tcolorbox}[halign=left]
+  \emph{Dos partículas idénticas sin espín $(S=0)$ están en un
+    potencial central en una configuración (2p)\textsuperscript{2}.}
+
+  \emph{Calcule la degeneración de esta configuración.}
+\end{tcolorbox}
+Sus funciones de onda, antes de antisimetrizar, serán del estilo $\varphi_m = R_{21}Y_1^m$. Como $m\in\{-1,0,1\}$, obtenemos varias combinaciones posibles para 
+$\Psi_{m,m'} = \varphi_{m}(1)\otimes\varphi_{m'}(2) - \varphi_{m}(2)\otimes\varphi_{m'}(1)$:
+\begin{align}
+  \Psi_{+1,+1} &= 0 \ \ (\varphi=\varphi') \\
+  \Psi_{+1,0} &=\frac{1}{\sqrt{2}} R_{21}(1)R_{21}(2) [Y_1^{+1}(1)Y_1^0(2)-Y_1^{0}(1)Y_1^{+1}(2)] \\
+  \Psi_{+1,-1} &=\frac{1}{\sqrt{2}} R_{21}(1)R_{21}(2) [Y_1^{+1}(1)Y_1^{-1}(2)-Y_1^{-1}(1)Y_1^{+1}(2)] \\
+  \Psi_{0,+1} &=\frac{1}{\sqrt{2}} R_{21}(1)R_{21}(2) [Y_1^{0}(1)Y_1^{+1}(2)-Y_1^{+1}(1)Y_1^{0}(2)] \\
+  \Psi_{0,0} &= 0 \ \ (\varphi=\varphi') \\
+  \Psi_{0,-1} &=\frac{1}{\sqrt{2}} R_{21}(1)R_{21}(2) [Y_1^{0}(1)Y_1^{-1}(2)-Y_1^{-1}(1)Y_1^{0}(2)] \\
+  \Psi_{-1,+1}&=\frac{1}{\sqrt{2}} R_{21}(1)R_{21}(2) [Y_1^{-1}(1)Y_1^{+1}(2)-Y_1^{+1}(1)Y_1^{-1}(2)] \\
+  \Psi_{-1,0} &=\frac{1}{\sqrt{2}} R_{21}(1)R_{21}(2) [Y_1^{-1}(1)Y_1^0(2)-Y_1^{0}(1)Y_1^{-1}(2)] \\
+  \Psi_{-1,-1} &= 0 \ \ (\varphi=\varphi') 
+\end{align}
+
+No obstante, notamos que $\Psi_{-1,+1}= -\Psi_{+1,-1}$ y que $\Psi_{0,+1}= -\Psi_{+1,0}$,$\Psi_{0,-1}= -\Psi_{-1,0}$, de forma que sólo hay dos funciones posibles: $\Psi_{0,0}$ y $\Psi_{-1,+1}$. La degeneración será doble.
+
+
+\begin{tcolorbox}[halign=left]
+  \emph{Suponga que la tercera componente del momento angular orbital
+    de una partícula es $+\hbar$ y la de la otra es $-\hbar$. Escriba
+    una función de ondas que satisfaga estas condiciones.}
+\end{tcolorbox}
+
+Necesariamente será la $\Psi_{+1,-1}$.
+
+\begin{tcolorbox}[halign=left]
+  \emph{¿Puede escribir dos funciones de onda que satisfagan las
+    condiciones anteriores y que sean ortogonales entre sí? ¿Por qué?}
+\end{tcolorbox}
+
+No, ya que únicamente nos queda $\Psi_{0,0}$ y no cumple la condición de tener momentos angulares $\pm \hbar$.
+
+\begin{tcolorbox}[halign=left]
+  \emph{Suponga que se mide el momento angular total del sistema
+    descrito por la función de ondas del segundo apartado. ¿Qué
+    valores pueden obtenerse y con qué probabilidades?}
+\end{tcolorbox}
+
+Acoplamos ambos $\ell$ con la tabla de Clebsch-Gordan $1\otimes 1$:
+\begin{equation}
+  \begin{split}
+    \Psi_{+1,-1} &= \frac{1}{\sqrt{2}}R_{21}(1)R_{21}(2) [Y_1^{+1}(1)Y_1^{-1}(2)-Y_1^{-1}(1)Y_1^{+1}(2)] \\
+     &= \frac{1}{\sqrt{2}}R_{21}(1)R_{21}(2) [\frac{2}{\sqrt{2}} \ket{2 0}] \\
+     &= R_{21}(1)R_{21}(2) \ket{2 0} \\
+  \end{split}
+\end{equation}
+
+Obtenemos una función con momento angular orbital total $\ket{2 0}$ y sin espín, luego $J\in 2\otimes 0 = \{2\}$. Hay una probabilidad del 100\% de medir $J=2$.
+
+\chapter{Último examen}
+Se deja su resolución como ejercicio para el lector.
+
+\begin{tcolorbox}[halign=left]
+  \emph{Una partícula sin espín y de masa $m$ está en un potencial
+    tipo oscilador anisótropo $V=\oh (kx^2+ky^2+k'z^2)$ donde
+    $k'=k+\Delta k$ y $\Delta k \ll k$.}
+
+  \emph{Si escribe $V=\oh (kx^2+ky^2 +kz^2) + \oh(\Delta k z^2)$ puede
+  considerar que el ltimo sumando es una perturbación al oscilador
+  armónico isótropo. Calcule en primer orden de perturbaciones la
+  corrección a la energía del nivel fundamental y del primer nivel excitado. }
+
+\emph{Escriba las energías de la solución exacta del oscilador
+  anisótropo y calcule su aproximación a primer orden en $\Delta k$.
+  ¿Son iguales a los resultados del apartado anterior? (spoiler: sí)}
+\end{tcolorbox}
+
+\begin{tcolorbox}[halign=left]
+  \emph{Dos bosones idénticos independientes de espín 1 están en un
+    potencial central. ¿Cuáles son los términos espectroscópicos de
+    las configuraciones (1s)\textsuperscript{2}, (1s)(2s) y
+    (2p)\textsuperscript{2}? ¿Cuál es la degeneración de cada una de
+    estas configuraciones?}
+
+  \emph{Escriba una función de ondas de la configuración (1s)(2s) con
+    el máximo momento angular orbital total y el mínimo espín total.}
+
+  \emph{Suponga que los 6 electrones del átomo de carbono tuvieran
+    espín 1 (Ojo, entonces son bosones y se apelotonan). ¿Cuáles serían los
+    términos espectroscópicos de la configuración fundamental y de la
+    primera excitada?}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[halign=left]
+  \emph{
+  Describa el efecto Zeeman. Si se observa en el átomo de sodio, ¿cuál
+  de las transiciones del nivel ${}^{2}\! P_{\oh}$ de la primera
+  configuración excitada al nivel fundamental ${}^2\! S_{\oh}$ es la
+  más probable?}
+\end{tcolorbox}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../resumen"
+%%% End:
